@@ -1,0 +1,45 @@
+<view class="listWrapper">
+  <view class="item" wx:for="{{list}}" wx:for-index="index" >
+    <view class="headerWrapper w">
+      <view class="wr">
+        <image class="hg" src="./image/HG.png"></image>
+        <image class="icon" src="{{item.UserIcon}}"></image>
+      </view>
+      <view>
+        <view class="o">{{item.NickName}}</view>
+        <view class="k">{{item.CreateTime}}</view>
+      </view>
+    </view>
+    <view class="num w">{{item.TotalsDirectly}}</view>
+    <view class="num w">{{item.TotalsPeople}}</view>
+    <view data-index="{{index}}" bindtap="showMask" class="wxWrapper w">
+      <image src="./image/wx.png"></image>
+    </view>
+  </view>
+</view>
+
+<popup bind:lintap="CanCelStatus" content-align="center" show="{{isPopupShow}}">
+  <view class="member-info">
+    <image bindtap="CanCelStatus" class="close" src="./image/close.png"></image>
+    <view class="item_w" style="margin-buttom:30rpx;">
+              <view class="wr">
+                <image class="hg" src="./image/HG.png"></image>
+                <image class="icon" src="{{currentTarget.UserIcon}}"></image>
+              </view>
+    </view>
+    <view class="item_w">
+                <view class="o">
+                  <view class="name">电话：</view>
+                  <view class="text">{{currentTarget.Phone}}</view>
+                </view>
+                <image bindtap="makePhoneCall" class="phone" src="./image/phone.png"></image>
+    </view>
+    <view class="item_w">
+                <view class="o">
+                  <view class="name">微信：</view>
+                  <view class="text">{{currentTarget.WechatNumber?currentTarget.WechatNumber:''}}</view>
+                </view>
+                <view class="btn_W" bindtap="copyTBL">复制</view>
+    </view>
+  </view>
+</popup>

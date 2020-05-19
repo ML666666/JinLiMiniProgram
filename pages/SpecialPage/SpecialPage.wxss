@@ -1,0 +1,235 @@
+.brand-tabbar{
+  left: 0;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 30rpx;
+  background: #fff;
+  z-index: 200;
+}
+.brand-tabbar .item{
+  flex: 1;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  font-size: 30rpx;
+}
+.brand-tabbar .item image{
+  width: 16rpx;
+  height: 26rpx;
+  margin-left: 6rpx;
+}
+.brand-tabbar .active{
+  color: red;
+}
+.goodList{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 22rpx 16rpx 20rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.goodList .good{
+  width: 352rpx;
+  border-radius: 6rpx;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.goodList .good .imageWrapper{
+  width: 352rpx;
+  height: 352rpx;
+  overflow: hidden;
+}
+.goodList .good .imageWrapper image{
+  width: 100%;
+}
+.goodList .good .title{
+  width: 100%;
+  height: 78rpx;
+  /* margin-bottom: 8rpx; */
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+  word-wrap: normal;
+  -webkit-line-clamp: 2;
+  font-size: 28rpx;
+  color: rgb(44, 62, 80);
+}
+.goodList .good .detail{
+  padding:10rpx 20rpx 20rpx;
+  box-sizing: border-box;
+}
+.goodList .good  .sales-price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goodList .good  .sales-price .price{
+  color: #ff0101;
+  font-weight: 700;
+}
+.goodList .good  .sales-price .sales{
+  font-size: 24rpx;
+  color: #888;
+  text-decoration:line-through;
+}
+.TopImgBanner{
+  width: 750rpx;
+  height: 220rpx;
+  position: relative;
+}
+.TopImgBanner image{
+  width: 750rpx;
+  height: 220rpx;
+}
+.TopImgBanner .time{
+  position: absolute;
+  top: 160rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+.TopImgBanner  .radius{
+  width:33rpx;
+  height:33rpx;
+  background:rgba(255,255,255,0.8);
+  border-radius:50%;
+  font-size:20rpx;
+  font-family:PingFang SC;  
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  text-align: center;
+  line-height: 33rpx;
+}
+.TopImgBanner  .c{
+  font-size:25rpx;
+  font-family:Adobe Heiti Std;
+  font-weight:normal;
+  color:rgba(255,255,255,1);
+  margin: 0 9rpx;
+  height: 33rpx;
+  line-height: 33rpx;
+}
+.TopImgBanner  .red{
+  background:linear-gradient(172deg,rgba(229,41,32,0.8),rgba(237,69,60,0.8));
+  color: #fff;
+}
+.TopImgBanner .m{
+  font-size:25rpx;
+  font-family:Adobe Heiti Std;
+  font-weight:normal;
+  color:rgba(255,255,255,1);
+  margin: 0 9rpx;
+}
+.TopImgBanner .share{
+  position: absolute;
+  z-index: 100;
+  width: 38rpx;
+  height: 38rpx;
+  top: 15rpx;
+  right: 15rpx;
+}
+.OederMask{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 300;
+  transform: translateY(100%);
+  transition: 0.4s;
+  transition-timing-function:ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.OederMask .contant .Mask{
+  position: absolute;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  top: 0rpx;
+  background: #fff;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #3683d6;
+  font-size: 32rpx;
+}
+.activeMaks{
+  transform: translateY(0%);
+}
+.OederMask .vMask{position: absolute;height: 100%;width: 100%;top: 0px;left: 0px;right: 0px; z-index: 100}
+.OederMask .contant{
+  background: #fff;
+  z-index: 200;
+  border-radius:30rpx 30rpx 0px 0px;
+  position: relative;
+  padding: 34rpx 25rpx 35rpx 25rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.OederMask .title{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  text-align: center;
+  margin-bottom: 34rpx;
+}
+.OederMask .text{
+  width: 488rpx;
+  margin-left: 160rpx;
+}
+.OederMask textarea{
+  font-size:27rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:40rpx;
+}
+.OederMask .num{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  text-align: right;
+  margin-bottom: 48rpx;
+}
+.OederMask .contant .goodImg{
+  position: absolute;
+  width: 120rpx;
+  height: 120rpx;
+  top: 100rpx;
+  left: 25rpx;
+}
+.OederMask .btn{
+  width: 100%;
+  height:88rpx;
+  background:rgba(255,51,51,1);
+  border-radius:44px;
+  text-align: center;
+  line-height: 88rpx;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}
+.OederMask .close{
+  position: absolute;
+  top: 34rpx;
+  right: 34rpx;
+  width: 24rpx;
+  height: 24rpx;
+}

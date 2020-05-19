@@ -1,0 +1,4 @@
+/* pages/Active/FreeOfCharge/JLHtml/JLHtml.wxss */
+rich-text{
+  width: 750rpx;
+}

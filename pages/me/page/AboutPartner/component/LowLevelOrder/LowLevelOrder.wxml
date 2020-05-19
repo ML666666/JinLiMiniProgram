@@ -1,0 +1,25 @@
+<view class="Low">
+  <title bind:Tclick='Tclick'>下级用户商城订单</title>
+  <view class="listWrapper">
+    <view class="item" wx:for="{{RegionalPartner.listMallOrder}}">
+      <view class="data">
+        {{item.Date}}
+      </view>
+      <view class="wrapper">
+        <view class="i">
+          <view class="t">用户消费(元)</view>
+          <view class="p"> <TF num="{{item.OrderAmount}}"></TF></view>
+        </view>
+        <view class="i">
+          <view class="t">购物币使用</view>
+          <view class="p"> <TF num="{{item.ShoppingBi}}"></TF></view>
+        </view>
+        <view class="i">
+          <view class="t">预估佣金(元)</view>
+          <view class="p c"> <TF num="{{item.ActualAmount}}"></TF></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

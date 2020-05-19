@@ -1,0 +1,16 @@
+<!--pages/me/page/help/help.wxml-->
+<view class="help">
+  <TopBar title="帮助"></TopBar>
+  <van-collapse value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item 
+        wx:for="{{list}}" 
+        wx:for-index="idx"
+        wx:key="key"
+        title="{{item.title}}"
+        name="{{idx}}">
+        <view style="padding:14rpx;line-height:32rpx;color: #2c3e50;">
+          <rich-text style="width:100%;" nodes="{{item.html}}"></rich-text>
+        </view>
+    </van-collapse-item>
+  </van-collapse>
+</view>

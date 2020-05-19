@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "LoadingPage":"../LoadingPage/LoadingPage",
+    "pullDownRefresh":"../pullDownRefresh/pullDownRefresh",
+    "van-transition": "/miniprogram_npm/vant-weapp/transition/index",
+    "Status_Popup":"../Status_Popup/Status_Popup"
+  }
+}

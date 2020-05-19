@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "hotSell": "/gob/gobComponent/hotSell/hotSell"
+  }
+}

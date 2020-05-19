@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "userInfo":"./component/userInfo/userInfo",
+    "OrderListWapper":"./component/OrderListWapper/OrderListWapper",
+    "MyGoldCoinRecord":"./component/MyGoldCoinRecord/MyGoldCoinRecord"
+  }
+}

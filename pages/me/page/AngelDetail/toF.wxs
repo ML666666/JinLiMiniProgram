@@ -1,0 +1,6 @@
+function toF(num){
+  return num.toFixed(2)
+}
+module.exports = {
+  toF: toF
+};

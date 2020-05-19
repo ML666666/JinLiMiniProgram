@@ -1,0 +1,14 @@
+<!--pages/search/component/searchTop/searchTop.wxml-->
+<view class='searchTop' style="top:{{navHeight}}px;">
+    <!-- <image bindtap='toKefu' mode="widthFix" class='icon icon_1' src='/pages/search/image/kefu.png'></image>
+    <view class='Search'>
+      <image mode="widthFix" src='/pages/search/image/search.png'></image>
+      <text bindtap='toSearch'>请输入商品名称</text>
+    </view>
+    <image bindtap="toMsg" mode="widthFix" class='icon icon_2' src='/pages/search/image/xiaoxi.png'></image> -->
+    <view bindtap='toSearch' class='Search'>
+      <image mode="widthFix" src='/pages/search/image/search.png'></image>
+      <text>请输入商品名称</text>
+    </view>
+</view>
+<view style="height:100rpx;"></view>

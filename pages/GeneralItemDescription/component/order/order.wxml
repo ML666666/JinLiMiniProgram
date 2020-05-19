@@ -1,0 +1,157 @@
+<wxs src="./F.wxs" module="tools" />
+<!-- goodtype==0为普通商品 -->
+<!-- goodtype==1为天使会员 -->
+<!-- goodtype==2为幸运双拼 -->
+<!-- goodtype==3为免单接龙 -->
+
+<!-- ProductType == 0 为普通商品/天使会员 -->
+<!-- ProductType == 1 为幸运双拼 -->
+<!-- ProductType == 2 为免单接龙 -->
+<!-- ProductType == 3 为幸运双拼 -->
+<view class="order">
+    <dialog/>
+    <!-- ！TwoPersonChipNo 表示非参与团购 -->
+    <view class="item item_1" wx:if="{{!TwoPersonChipNo}}"> 
+      <button class="c" open-type="contact">
+        <image mode="widthFix" src="./image/kf.png"></image>
+        <text>客服</text>
+      </button>
+      <!-- <view wx:if="{{detail.ProductType==0}}" bindtap="toCard" class="c">
+        <view wx:if="{{cardNum>0}}" class="num">{{cardNum}}</view>
+        <image mode="widthFix" src="./image/q.png"></image>
+        <text>购物车</text>
+      </view> -->
+      <view wx:if="{{detail.Supplier.SupplierId}}" bindtap="toGoodList" class="c">
+        <image mode="widthFix" src="./image/dp.png"></image>
+        <text>店铺</text>
+      </view>
+      <view bindtap="Favorite" data-FavoriteID="{{FavoriteID}}" class="c">
+        <image mode="widthFix" wx:if="{{FavoriteID==0}}" src="./image/scb.png"></image>
+        <image mode="widthFix" wx:if="{{FavoriteID>0}}" src="./image/sc.png"></image>
+        <text>{{FavoriteID>0?'已':''}}收藏</text>
+      </view>
+    </view>
+    <!-- ActivityInfoType>=8 && ActivityInfoType<=10 为活动状态 活动结束后可自行删除-->
+    <block wx:if="{{(ActivityInfoType==8 || ActivityInfoType==9 || ActivityInfoType==10)}}">
+
+        <block wx:if="{{ActivityInfoType==10}}">
+          <!-- <view bindtap="{{ProductStatus!=1?'':'toOrder'}}"  class="item item_2 item_p">
+              <view class="price">￥{{tools.toF(detail.SalePrice)}}</view>
+              <view class="t">正价购买</view>
+          </view> -->
+          <view bindtap="{{ProductStatus!=1 && detail.ActivityInfo.CanDraw?'':'toOrder'}}" 
+                data-isActive="true" class="item item_3 item_p">
+              <view wx:if="{{PickGoodObj}}" class="price">￥{{tools.toF(PickGoodObj.SalePrice)}}</view>
+                <view wx:else class="price">
+                  <block wx:if="{{detail.ActivityInfo.CanDraw}}">
+                      <block wx:if="{{topPrice}}">
+                        ￥{{tools.toF(detail.skuMinSalePrice)}}
+                      </block>
+                      <block wx:else>
+                        ￥{{tools.toF(detail.SalePrice)}}
+                      </block>
+                  </block>
+                  <block wx:else>
+                    呼唤朋友领特权
+                  </block>
+                </view>
+              <view class="t">
+                <block wx:if="{{detail.ActivityInfo.CanDraw}}">
+                  立即秒杀
+                </block>
+                <block wx:else>
+                  <!-- （每邀请3名好友解锁，可获得一次秒杀资格） -->
+                </block>
+              </view>
+          </view>
+        </block>
+
+        <block wx:if="{{ActivityInfoType==9}}">
+          <view bindtap="{{ProductStatus!=1?'':'toOrder'}}"  class="item item_2 item_p">
+              <view wx:if="{{PickGoodObj}}" class="price">￥{{tools.toF(PickGoodObj.SalePrice)}}</view>
+                <view wx:else class="price">
+                      <block wx:if="{{topPrice}}">
+                        ￥{{tools.toF(detail.skuMinSalePrice)}}
+                      </block>
+                      <block wx:else>
+                        ￥{{tools.toF(detail.SalePrice)}}
+                      </block>
+              </view>
+              <view class="t">正价购买</view>
+          </view>
+          <view bindtap="{{ProductStatus!=1?'':'toOrder'}}" wx:if="{{CanDraw}}" data-isActive="true" class="item item_3 item_p">
+              <view class="price">￥0.00</view>
+              <view class="t">付邮领取</view>
+          </view>
+        </block>
+
+
+        <block wx:if="{{ActivityInfoType==8}}">
+          <view bindtap="{{ProductStatus!=1?'':'toOrder'}}"  class="item item_3 item_p">
+                <view wx:if="{{PickGoodObj}}" class="price">￥{{tools.toF(PickGoodObj.SalePrice)}}</view>
+                <view wx:else class="price">
+                      <block wx:if="{{topPrice}}">
+                        ￥{{tools.toF(topPriceNoShoppingBi)}}
+                      </block>
+                      <block wx:else>
+                        ￥{{tools.toF(detail.SalePrice)}}
+                      </block>
+                </view>
+                <view data-type="0"  class="t">{{IsVip?'原价购买':'购物享特权'}}</view>
+          </view>
+        </block>
+
+    </block>
+
+    <block wx:else>
+      <view bindtap="{{ProductStatus!=1?'':'toOrder'}}"  
+            wx:if="{{(detail.ProductType==0) && !TwoPersonChipNo}}" 
+            class="item item_2 item_p">
+            <block wx:if='{{ProductStatus!=1}}'>
+              <view class="price">已售罄</view>
+            </block>
+            <block wx:else>
+                <view wx:if="{{PickGoodObj}}" class="price">￥{{tools.toF(PickGoodObj.SalePrice)}}</view>
+                <view wx:else class="price">
+                      <block wx:if="{{topPrice}}">
+                        ￥{{tools.toF(detail.skuMinSalePrice)}}
+                      </block>
+                      <block wx:else>
+                        ￥{{tools.toF(detail.SalePrice)}}
+                      </block>
+                </view>
+                <view data-type="0"  class="t">立即购买</view>
+            </block>
+      </view>
+
+      <view bindtap="{{ProductStatus!=1?'':'toOrder'}}" 
+            class="item item_3 item_p">
+            <block wx:if='{{ProductStatus!=1}}'>
+              <view class="price">已售罄</view>
+            </block>
+            <block wx:else>
+
+                <view class="price" wx:if="{{PickGoodObj}}">
+                ￥{{tools.toF(PickGoodObj.SalePrice-PickGoodObj.ShoppingBi)}}</view>
+                <view wx:else 
+                      class="price">
+                      <block wx:if="{{topPrice}}">
+                        ￥{{tools.toF(topPrice)}}
+                      </block>
+                      <block wx:else>
+                        ￥{{tools.toF(detail.SalePrice-detail.ShoppingBi)}}
+                      </block>
+                </view>
+
+                <view data-type="1"  class="t">
+                      {{detail.ProductType==0?'购物币抵扣':''}} 
+                      {{detail.ProductType==3? TwoPersonChipNo?'参与拼单':'发起拼单':''}}
+                      {{detail.ProductType==2?'购物币抵扣':''}}
+                      {{detail.ProductType==7?'立即购买':''}}
+                </view>
+            </block>
+
+        
+      </view>
+    </block>
+</view>

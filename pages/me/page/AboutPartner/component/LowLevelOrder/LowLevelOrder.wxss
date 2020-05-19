@@ -1,0 +1,65 @@
+.Low{
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+.listWrapper{
+  width: 100%;
+  box-sizing: border-box;
+}
+.listWrapper .item{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.listWrapper .item .data{
+  text-align: left;
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  width: 100%;
+  margin-bottom: 24rpx;
+  padding-left: 50rpx;
+}
+.listWrapper .wrapper{
+  display: flex;
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+.listWrapper .i{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.listWrapper .i .t{
+  font-size:24rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(173,173,173,1);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  margin-bottom: 12rpx;
+}
+
+.listWrapper .i .p{
+  font-size:40rpx;
+  font-family:DINPro-Medium,DINPro;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  /* line-height:51px; */
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+.listWrapper .i .c{
+  color: #EE5900;
+}

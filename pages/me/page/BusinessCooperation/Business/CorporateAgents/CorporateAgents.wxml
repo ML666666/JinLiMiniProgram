@@ -1,0 +1,93 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+  <TopBar title="{{'企业代理商'}}"></TopBar>
+  <bar title_1="{{'填写商户信息'}}" title_2="{{'平台审核'}}" active="{{active==3?1:2}}"></bar>
+
+  <block wx:if="{{active==3}}">
+    <InputWrppaer>
+      <InputTips tipsText="{{'店铺名称'}}"></InputTips>
+      <input 
+          value="{{BusinessShopName}}"
+          data-name="BusinessShopName" 
+          bindinput="inputValue"
+          placeholder="请输入店铺名称" 
+          placeholder-class="placeholder" 
+          class="inputClass"></input>
+
+      <InputTips tipsText="{{'法人名称'}}"></InputTips>
+      <input 
+          value="{{BusinessIdentityCardName}}"
+          data-name="BusinessIdentityCardName" 
+          bindinput="inputValue"
+          placeholder="请输入法人名称" 
+          placeholder-class="placeholder" 
+          class="inputClass"></input>
+
+      <InputTips tipsText="{{'身份证号'}}"></InputTips>
+      <input 
+          value="{{BusinessIdentityCardNumber}}"
+          data-name="BusinessIdentityCardNumber" 
+          bindinput="inputValue"
+          placeholder="请填写身份证号" 
+          placeholder-class="placeholder" 
+          class="inputClass"></input>
+
+      <InputTips tipsText="{{'法人身份证正反面'}}"></InputTips>
+      <uploadCard 
+          front="{{BusinessIdentityCardImage_front}}" 
+          verso="{{BusinessIdentityCardImage_verso}}" 
+          bind:getCardImage='getImage'></uploadCard>
+      
+      <InputTips tipsText="{{'统一社会信用代码'}}"></InputTips>
+      <input 
+          value="{{BusinessCreditCode}}"
+          data-name="BusinessCreditCode" 
+          bindinput="inputValue"
+          placeholder="请填写统一信用代码" 
+          placeholder-class="placeholder" 
+          class="inputClass"></input>
+
+      <InputTips tipsText="{{'营业执照'}}"></InputTips>
+      <uploadImage 
+          ImageUrl="{{BusinessLicenseImage}}" 
+          ImgaeName='{{"BusinessLicenseImage"}}' 
+          bind:getImage='getImage'></uploadImage>
+
+      <InputTips tipsText="{{'开户许可证'}}"></InputTips>
+      <uploadImage 
+          isShowTips="{{false}}" 
+          ImageUrl="{{OpeningPermitImage}}" 
+          ImgaeName='{{"OpeningPermitImage"}}' 
+          bind:getImage='getImage'></uploadImage>
+
+      <InputTips tipsText="{{'公司门头照'}}"></InputTips>
+      <uploadImage
+          isShowTips="{{false}}"  
+          ImageUrl="{{CompanyDoorImage}}" 
+          ImgaeName='{{"CompanyDoorImage"}}' 
+          bind:getImage='getImage'></uploadImage>
+
+      <InputTips tipsText="{{'员工办公照片'}}"></InputTips>
+      <uploadImage
+          isShowTips="{{false}}" 
+          ImageUrl="{{EmployeeOfficeImage}}" 
+          ImgaeName='{{"EmployeeOfficeImage"}}' 
+          bind:getImage='getImage'></uploadImage>
+
+    </InputWrppaer>
+    
+    <makeSureBtn wx:if="{{isEditData==true}}" bind:makeSure='makeSure' isDisabled="{{!isFillOut}}"></makeSureBtn>
+    <makeSureBtn wx:else bind:makeSure='makeSure' isDisabled="{{true}}"></makeSureBtn>
+  </block>
+
+  <block wx:else>
+      <status_success wx:if="{{active==1}}"></status_success>
+      <status_loading wx:if="{{active !=1 && active !=3 }}" bind:toRefresh='toRefresh'></status_loading>
+  </block>
+
+</PageLoadingWrapper>

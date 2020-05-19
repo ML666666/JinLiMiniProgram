@@ -1,0 +1,37 @@
+.inputClass{
+  font-size:30rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-bottom: 50rpx;
+  display: flex;
+  align-items: center;
+}
+.placeholder{
+  font-size:30rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(204,204,204,1);
+}
+.inputWrapper{
+  position: relative;
+}
+.inputWrapper .arrow{
+  width: 22rpx;
+  position: absolute;
+  top: 50%;
+  right: 0rpx;
+  transform: translateY(-50%);
+}
+
+.inputClass .select{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 264rpx;
+}
+.inputClass .select image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 24rpx;
+}

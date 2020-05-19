@@ -1,0 +1,90 @@
+<wxs src="./F.wxs" module="tools" />
+<!--pages/GeneralItemDescription/component/Good_Detail/Good_Detail.wxml-->
+<!-- goodtype==0为普通商品 -->
+<!-- goodtype==1为天使会员 -->
+<!-- goodtype==2为幸运双拼 -->
+<!-- goodtype==3为免单接龙 -->
+<!-- detail.IsOnlyGoldPay是否只允许购物币购买 -->
+
+<!-- ProductType == 0 为普通商品/天使会员 -->
+<!-- ProductType == 1 为幸运双拼 -->
+<!-- ProductType == 2 为免单接龙 -->
+<!-- ProductType == 3 为幸运双拼 -->
+
+<view class="goodDetail">
+
+  <!-- <view class="priceWrapper">
+    <view class="wrapper_1">
+        <view>{{detail.IsOnlyGoldPay?'购物币:':'￥'}}{{detail.SalePrice}}</view>
+        <view class="r">
+            <view class="re"></view>
+            市场价￥{{detail.MarketPrice}}
+        </view>
+    </view>
+
+    <view class="wrapper_2">
+        <text>{{detail.SaleCount}}人{{detail.ProductType==3?'已拼团':'付款'}}</text>
+    </view>
+  </view> -->
+  <view class="priceWrapper">
+    <view class="c">
+      <view class="tag">锦鲤团</view>
+      <!-- 如该价格有波动 -->
+      <block wx:if="{{lastPrice && (topPrice!=lastPrice)}}">
+        <view class="price" wx:if="{{PickGoodObj}}"> <!-- 如用户选择了新商品则显示新商品的价格 -->
+          {{detail.IsOnlyGoldPay?'购物币:':'￥'}}
+          <text style="font-size:32rpx;">{{tools.toF(PickGoodObj.SalePrice-PickGoodObj.ShoppingBi)}}</text>
+        </view>
+        <block wx:else> <!-- 否则显示价价格区间 -->
+          <view class="price"> 
+              {{detail.IsOnlyGoldPay?'购物币:':'￥'}}
+              <text style="font-size:32rpx;">{{detail.PriceRange}}</text>
+          </view>
+          <!-- <view class="spliteLine"></view>
+          <view class="price">
+              {{detail.IsOnlyGoldPay?'购物币:':'￥'}}
+              <text style="font-size:32rpx;">{{tools.toF(lastPrice)}}</text>
+          </view> -->
+        </block>
+      </block>
+      <block wx:else>
+        <view class="price"> 
+          {{detail.IsOnlyGoldPay?'购物币:':'￥'}} 
+          <text style="font-size:32rpx;">{{detail.PriceRange}}</text>
+        </view>
+
+      </block>
+      <view class="del" wx:if="{{detail.ProductType != 7}}">
+      ￥{{tools.toF(detail.MarketPrice)}}
+      </view>
+    </view>
+    <!-- <view class="count">{{TheCount}}折</view> -->
+  </view>
+  <view class="good_title">
+    {{detail.ProductTitle}}
+  </view>
+  <!-- 普通商品 -->
+  <!-- <view wx:if="{{detail.ProductType==0}}"  bindtap="toAngel" class="angel">
+    <view class="c">
+      <image mode="widthFix" src="./image/angel.png"></image>
+      <view class="e">天使会员预计可省<view>￥{{count}}</view></view>
+    </view>
+    <view wx:if="{{!IsAngel}}" class="right">
+      <view>成为</view>
+      <view>天使会员</view>
+    </view>
+  </view> -->
+
+  <!-- 幸运双拼 -->
+  <!-- <view class="o" wx:if="{{detail.ProductType == 3}}">
+    <image 
+      style="width:493.8rpx;height:24.88rpx;"                                                                                     src="http://h5.huizhisuo.com/static/img/LuckyProcess.cdb0074.png">
+      </image>
+  </view> -->
+
+  <!-- 免单接龙 -->
+  <!-- <view class="o" wx:if="{{detail.ProductType == 2}}">
+    <image style="width:670rpx;height:24.88rpx;" src="http://192.168.0.200:818/static/img/process.dd8ebc9.png"></image>
+  </view> -->
+
+</view>

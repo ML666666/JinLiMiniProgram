@@ -1,0 +1,17 @@
+.wrapper{
+  padding: 20rpx;
+  font-size: 26rpx;
+  box-sizing: border-box;
+}
+.wrapper .title{
+  font-size: 34rpx;
+  text-align: left;
+  color: #2c3e50;
+  font-weight: bold;
+}
+.wrapper .provenance{
+  padding: 20rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  color: #2c3e50;
+}

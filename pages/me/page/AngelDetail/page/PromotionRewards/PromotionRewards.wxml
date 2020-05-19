@@ -1,0 +1,35 @@
+<wxs src="./../../toF.wxs" module="tools" />
+<TopBar title="奖励明细"></TopBar>
+
+<view class="rewards-info">
+  <view class="questionWrapper">
+    <image bindtap="toQuestion" src="./image/question.png"></image>
+  </view>
+  <view class="rewards-text">累计奖励</view>
+  <view class="rewards-total-num">{{tools.toF(totalReward)}}</view>
+  <view bindtap="toGetRewards" class="rewards-btn">提现</view>
+</view>
+
+<view class="tabbar">
+  <view class="item {{type==0?'active':''}}" bindtap="changeTab" data-type="0">待入账</view>
+  <view class="item {{type==1?'active':''}}" bindtap="changeTab" data-type="1">已入账</view>
+</view>
+
+<view class="listWrapper">
+  <view class="item" wx:if="{{listWrapper[type].lst.length}}" wx:for="{{listWrapper[type].lst}}">
+    <view class="left">
+      <image class="header" src="{{item.UserIcon}}"></image>
+      <view class="c">
+            <view class="a">{{item.NickName}}</view>
+            <view class="b">{{item.CreateTime}}</view>
+      </view>
+    </view>
+    <view class="right">
+      <view class="a">{{tools.toF(item.InCome)}}</view>
+      <view class="b">{{item.IsEntryStr}}</view>
+    </view>
+  </view>
+  <view>
+    <Loading show="{{loading || listWrapper[type].isOver}}" type="{{listWrapper[type].isOver?'end':'loading'}}" />
+  </view>
+</view>

@@ -1,0 +1,65 @@
+<!--pages/me/component/header/header.wxml-->
+<view style="padding-top:{{paddingTop}}px" class="header">
+
+  <view class="info">
+    <view class="c">
+      <image class='headerImg' src="{{userObj.currentUser.UserIcon}}"></image>
+      <view class="t">
+        <text>{{userObj.currentUser.NickName}}</text>
+        <view>ID.{{userObj.currentUser.MemberId}}</view>
+      </view>
+    </view>
+    <view></view>
+  </view>
+
+  <view style="margin-top:{{(!userObj.SuperAgentStatus && userObj.AgentReviewStatus!=2)?'70rpx':'0rpx'}}" class="numWrapper">
+    <view bindtap="toYe" wx:if="{{userObj.SuperAgentStatus || userObj.AgentReviewStatus==2}}" class="r">
+      <text>{{userObj.balance}}</text>
+      <view>余额</view>
+    </view>
+    
+    <view bindtap="toDk" class="r">
+      <text>{{userObj.DeductionBalance}}</text>
+      <view>购物币</view>
+    </view>
+    
+    <view bindtap="toCollection" class="r">
+      <text>{{userObj.FavoriteNum}}</text>
+      <view>收藏夹</view>
+    </view>
+
+  </view>
+  
+  <!-- <block wx:if="{{userObj.SuperAgentStatus || userObj.AgentReviewStatus==2}}">
+    <view class="isAngelWrapper">
+      <view class="isAngel">
+      
+        <view wx:if="{{userObj.SuperAgentStatus}}">
+          <image src="{{angel_status_1}}"></image>  
+        </view>
+        <view wx:else> -->
+          <!-- userObj.AgentReviewStatus==2为天使会员 -->
+          <!-- <image wx:if="{{userObj.AgentReviewStatus==2}}" src="{{angel_status_3}}"></image>   -->
+          <!-- 否则为非天使会员 -->
+          <!-- <image wx:else src="{{angel_status_2}}"></image> -->
+        <!-- </view>   -->
+        
+        <!-- userObj.AgentReviewStatus==2为天使会员 -->
+        <!-- <view wx:if="{{userObj.AgentReviewStatus==2}}" bindtap="toAngelDetail" class="c"> -->
+          <!-- 查看天使会员权益 -->
+        <!-- </view> -->
+        <!-- 否则为非天使会员 -->
+        <!-- <view wx:else bindtap="toggleCheckAngel" class="c"> -->
+          <!-- 查看天使会员权益 -->
+        <!-- </view> -->
+      <!-- </view> -->
+    <!-- </view> -->
+  <!-- </block> -->
+
+  <popup show="{{isCheckAngel}}">
+    <view class="CheckAngel">
+      <view bindtap="toW" class="btn"></view>
+      <image class="close" bindtap="toggleCheckAngel" src="./image/close.png"></image>
+    </view>
+  </popup>
+</view>

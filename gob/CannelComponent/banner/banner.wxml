@@ -1,0 +1,16 @@
+<wxs src="../setUrl.wxs" module="tools" />
+<swiper
+ bindchange='swiperChange' 
+ indicator-dots="{{param.list.length>1?true:false}}"
+ autoplay="{{true}}" 
+ indicator-active-color="{{'rgba(255,255,255,1)'}}"	 
+ indicator-color="{{'rgba(255,255,255,0.4)'}}" 
+ interval="{{3000}}" duration="{{800}}"
+ current="{{activeindex}}"
+ class="banner">
+    <block wx:for="{{param.list}}" wx:if="{{tools.isOpenTime(NowData,item.start_time,item.end_time)}}" wx:for-index="index">
+      <swiper-item>
+          <image lazy-load="true" data-index="{{index}}" bindtap="click" src="{{tools.setUrl(item.pic_url,imgDomain,imgVersion)}}"></image>
+      </swiper-item>
+    </block>
+</swiper>

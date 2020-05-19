@@ -1,0 +1,48 @@
+<!--pages/index/indexPage/specialSell/specialSell.wxml-->
+<view class='hotSell'>
+  <image   
+    class='banner' 
+    wx:if="{{orderCannal.categoryInfo.AdPicture}}" 
+    src='{{orderCannal.categoryInfo.AdPicture}}'></image>
+  <view class='tipsIconWrapper'>
+    <image  mode="widthFix" class='tipsIcon' src='{{orderCannal.hotIcon.hotIconUrl}}'></image>
+  </view>
+  
+  <scroll-view class="productsList" scroll-x="true">
+                    <view
+                      data-Id='{{item.Id}}' bindtap="toGoodDetail" 
+                      class='goodItem' 
+                      wx:for="{{orderCannal.hotProducts}}"
+                      wx:for-item="item" 
+                      wx:key="index">
+                      <view class='itemWrapper'>
+                        <image src='{{item.ProductImg}}'></image>
+                        <text class='title'>{{item.ProductTitle}}</text>
+                        <text class='price'>￥{{item.SalePrice}}</text>
+                      </view>
+                    </view> 
+  </scroll-view>
+
+  <view class='tipsIconWrapper'>
+    <image  mode="widthFix" class='tipsIcon' src='{{orderCannal_2.hotIcon.hotIconUrl}}'></image>
+  </view>
+  <!-- 单向瀑布流 -->
+  <view wx:if="{{!isWaterfall}}" class='product_good'>
+    <view data-Id='{{item.Id}}' bindtap="toGoodDetail" wx:for="{{orderCannal_2.rows}}">
+      <good_item item="{{item}}"></good_item>
+    </view>
+  </view>
+  
+  <!-- 双向瀑布流 -->
+  <view wx:if="{{isWaterfall}}" class="warterFailList">
+     <view wx:for="{{orderCannal_2.rows}}" bindtap="toGoodDetail" class="item" data-id="{{item.Id}}" >
+      <image src="{{item.ProductImg}}"></image>
+      <view class="title">{{item.ProductTitle}}</view>
+      <view class="Integral">
+        <view>￥{{item.SalePrice}}</view>
+        <text>销量{{item.SaleCount}}件</text>
+      </view>
+    </view> 
+  </view>
+
+</view>

@@ -1,0 +1,248 @@
+/* pages/makeSureOrder/makeSureOrder.wxss */
+.makeSureOrder{height:100%;width: 100%;background:rgba(246,246,246,1);padding: 25rpx; padding-bottom: 200rpx; box-sizing: border-box;}
+.makeSureOrder>view{background: #fff;}
+.makeSureOrder .adress_wrapper{padding: 30rpx;margin-bottom: 20rpx;font-size: 30rpx; color: #2c3e50;}
+.makeSureOrder .t_item{display: flex;justify-content: space-between;height: 66.66rpx;align-items: center;box-sizing: border-box;}
+.makeSureOrder .t_item view{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.makeSureOrder .check{
+  width: 36rpx;
+  height: 36rpx;
+}
+.makeSureOrder .t_item text{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.makeSureOrder .payType{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  display: flex;
+  align-items: center;
+  height: 78rpx;
+  margin-bottom: 28rpx;
+  border-bottom: 2rpx solid rgba(246,246,246,1);
+  position: relative;
+}
+.makeSureOrder .splitWrapper{
+  box-sizing: border-box;
+  padding: 25rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  padding-top: 0rpx;
+}
+.makeSureOrder .border{
+  /* border-top: 2rpx solid #e4e4e4;border-bottom: 2rpx solid #e4e4e4; */
+}
+.makeSureOrder .wx{
+  width: 355rpx;
+  height: 56rpx;
+}
+.makeSureOrder .gou{width: 42rpx;height: 46rpx;}
+.makeSureOrder .moneyWrapper{
+    height: 86rpx;
+    box-sizing: border-box;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-left: 25rpx;
+    padding-right: 25rpx;
+    margin-bottom: 20rpx;
+}
+.makeSureOrder .moneyWrapper .w{display: flex;align-items: center;}
+.makeSureOrder .moneyWrapper .w view{font-size: 26rpx;color: #2c3e50;}
+.makeSureOrder .moneyWrapper .w text{color: #F83E53;font-weight: 700;font-size: 26rpx;}
+.makeSureOrder .moneyWrapper .c{display: flex;align-content: center;justify-content: flex-end;}
+.makeSureOrder .moneyWrapper .c text{font-size:30rpx;font-family:PingFang SC;font-weight:500;color:rgba(51,51,51,1);margin-right: 27rpx;}
+/* .makeSureOrder .moneyWrapper .van-checkbox {width: 68rpx;margin-right:5rpx;} */
+.makeSureOrder .title{padding: 0 30rpx 10rpx;font-size: 30rpx;color: #888;background: transparent;}
+.makeSureOrder .listWrapper .item{border-bottom: 2rpx solid #cccc;padding: 30rpx;box-sizing: border-box;display: flex;justify-content: space-between;} 
+.makeSureOrder .listWrapper .item image{width: 140rpx;height: 140rpx;}
+.makeSureOrder .listWrapper .item .Wrapper{padding: 0rpx 15rpx;width: 540rpx;}
+.makeSureOrder .listWrapper .item .t{font-size:26rpx;font-family:PingFang SC;font-weight:500;color:rgba(51,51,51,1);
+overflow: hidden;
+display: -webkit-box;
+-webkit-box-orient:vertical;
+-webkit-line-clamp:2;}
+.makeSureOrder .listWrapper .item .c{font-size:24rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(102,102,102,1);}
+.makeSureOrder .listWrapper .item .p{display: flex;justify-content: space-between;align-items: center;}
+.makeSureOrder .listWrapper .item .p .w text{font-size:32rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(229,43,34,1);}
+.makeSureOrder .listWrapper .item .p .k{font-size: 26rpx;font-weight: 700;}
+.makeSureOrder .buttom{display: flex;position: fixed;height: 100rpx;bottom: 0rpx;left: 0rpx;right: 0rpx;justify-content: flex-end;z-index: 100;}
+.makeSureOrder .buttom .price{display: flex;justify-content: center; flex-direction: column;align-items: flex-end;margin-right: 21rpx;}
+.makeSureOrder .buttom .price{color: #555;font-size: 28rpx;}
+.makeSureOrder .buttom .price text{font-weight: 700;color: #F83E53;}
+.makeSureOrder .buttom .price .w{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.makeSureOrder .buttom .btn{
+  width:220rpx;
+  height:100rpx;
+  background:linear-gradient(90deg,rgba(229,41,32,1) 0%,rgba(237,69,60,1) 100%);
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 100rpx;
+}
+.makeSureOrder .tag{
+  width:6rpx;
+  height:26rpx;
+  background:linear-gradient(0deg,rgba(229,41,32,1) 0%,rgba(237,69,60,1) 100%);
+  border-radius:3rpx;
+  margin-right: 15rpx;
+}
+.makeSureOrder .DefaultAdress{position: relative; display: flex;justify-content: flex-start;align-items: center; padding: 30rpx 20rpx; margin-bottom: 20rpx;box-sizing: border-box;}
+.makeSureOrder .DefaultAdress .one{margin-right: 24rpx;display: flex;justify-content: center;align-items: center;}
+.makeSureOrder .DefaultAdress .one .w{font-size:34rpx;font-family:PingFang SC;font-weight:500;color:rgba(51,51,51,1);}
+.makeSureOrder .DefaultAdress .one .e{border: 2rpx solid #F83E53;background: #F83E53; color: #fff;padding: 2rpx 4rpx;text-align: center;font-size: 26rpx;}
+.makeSureOrder .DefaultAdress .two .w{font-size: 30rpx;color: #2c3e50;}
+.makeSureOrder .DefaultAdress .two .e{width:518rpx;font-size:26rpx;font-family:PingFang SC;font-weight:500;color:rgba(102,102,102,1);line-height:40rpx;overflow: hidden;
+display: -webkit-box;
+-webkit-box-orient:vertical;
+-webkit-line-clamp:2;}
+.makeSureOrder .DefaultAdress .arrow{position: absolute; top: 50%;right: 20rpx;transform: translateY(-50%);width: 40rpx;height: 40rpx;}
+
+.makeSureBuy{
+  background-size: cover;
+  width: 550rpx;
+  height: 412rpx;
+  position: relative;
+}
+.makeSureBuy .bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+.makeSureBuy .c{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.makeSureBuy .c .i_1{
+  font-size: 36rpx;
+  margin-bottom: 36rpx;
+}
+.makeSureBuy .c .i_2{
+  font-size:30rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+}
+.makeSureBuy  .btn{
+  width: 180rpx;
+  height: 66rpx;
+  margin-top: 36rpx;
+}
+.makeSureBuy .close{
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 28rpx;
+  height: 28rpx;
+  z-index: 251;
+}
+.inputWrapper{
+
+}
+.CanDeductionWrapper{
+  height: 76rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.CanDeductionWrapper .w{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.CanDeductionWrapper .r{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:#E62A21;
+}
+.CanDeductionWrapper .r text{
+  color:rgba(153,153,153,1);
+}
+.inputWrapper{
+  width:100%;
+  height:64rpx;
+  background:rgba(246,246,246,1);
+  border-radius:4rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  padding-left: 21rpx;
+  box-sizing: border-box;
+}
+.PCLASS{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  line-height: 64rpx;
+}
+.isZTWrapper{
+  height: 70rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2rpx solid rgba(246,246,246,1);
+}
+.isZTWrapper view{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  margin-left: 15rpx;
+}
+
+
+.makeSureOrder .payType .isAllMDZQ{
+  height: 100%;
+  width: 200rpx;
+  align-items: center;
+  position: absolute;
+  justify-content: flex-end;
+  top: 0rpx;
+  right: 0rpx;
+  display: flex;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  margin-left: 14rpx;
+}
+.makeSureOrder .payType .isAllMDZQ view{
+  margin-left: 20rpx;
+}

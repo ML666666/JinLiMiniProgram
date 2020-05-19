@@ -1,0 +1,18 @@
+<!--pages/GeneralItemDescription/component/GoodsDirectly/GoodsDirectly.wxml-->
+<view wx:if="{{detail.Supplier.SupplierId}}" bindtap="toGoodList" class="GoodsDirecty">
+  <view class="Directly"> 
+    <view class="_wrapper">
+      <image src="{{detail.Supplier.SupplierIcoImg}}"></image>
+      <view class="w">
+        <view class="e">{{detail.Supplier.SupplierName}}</view>
+        <view class="r">商品数量<text style="margin-left:5rpx">{{detail.Supplier.ProductCount}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="btn">
+      进店逛逛
+      <!-- <image src="./image/arrow.png"></image> -->
+    </view>
+    
+  </view>
+</view>

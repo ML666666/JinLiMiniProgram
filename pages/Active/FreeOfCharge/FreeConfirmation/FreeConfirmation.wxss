@@ -1,0 +1,108 @@
+.wrapper{
+  background: #f5f5f5;
+}
+.iconWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 477rpx;
+  background: #fff;
+}
+.iconWrapper .s{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 60rpx;
+  margin-bottom: 20rpx;
+}
+.iconWrapper .t{
+  font-size: 30rpx;
+  color: #ff3339;
+  margin-bottom:60rpx;
+}
+.iconWrapper .btn{
+  width: 600rpx;
+  height: 103rpx;
+}
+.iconWrapper .z{
+  color: #888;
+  margin-bottom: 40rpx;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
+.iconWrapper .z .u{
+  text-decoration: underline；
+}
+.listWrapper .title{
+  text-align: center;
+  padding: 30rpx 0;
+  font-size: 34rpx;
+  font-weight: 700; 
+  color: #2c3e50;
+}
+.listWrapper .listW{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+.listWrapper .listW .item{
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 340rpx;
+  margin-bottom:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+.listWrapper .listW .item image{
+  width: 233rpx;
+  height: 300rpx;
+}
+.listWrapper .listW .item .t{
+  font-size: 30rpx;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 10rpx;
+  width: 270rpx;
+  text-align: left;
+}
+.listWrapper .listW .item .w{
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 20rpx;
+  width: 270rpx;
+  text-align: left;
+  font-size: 24rpx;
+}
+.listWrapper .listW .item .p{
+  color: #f92d4c;
+  font-size: 40rpx;
+  width: 270rpx;
+  text-align: left;
+}
+.share{
+  border:none;
+  padding: 0rpx;
+  line-height: 0rpx;
+}
+button{
+  border: none;
+  background: transparent;
+}
+.button-hover{
+  background: transparent;
+}
+button:after{
+  border: none;
+}
+button[plain]{
+  border:none !important;
+}

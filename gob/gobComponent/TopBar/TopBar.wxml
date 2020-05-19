@@ -1,0 +1,31 @@
+<!--gob/gobComponent/TopBar/TopBar.wxml-->
+<Status_Popup></Status_Popup><!-- 状态栏 -->
+<view  class="gobTopBar {{fixed?'isFlex':''}}" style="height:{{navHeight}}px;background:{{bgColor}};z-index:{{zIndex}};">
+    
+    <view style="height:{{statusBar}}px" class="bar">
+
+        <view wx:if="{{!custom}}">
+          <view bindtap="back" wx:if="{{_isShowArror}}">
+            <image wx:if="{{ArrowType}}"  class="Arrow" src="./imgae/black.png"></image>
+            <image wx:else  class="Arrow" src="./imgae/white.png"></image>
+          </view>
+          <image wx:if="{{!_isShowArror && !isHideHome}}" 
+                 bindtap="toHome" 
+                 class="home" 
+                 src="./imgae/HOME.png"></image>
+        </view>
+        
+        <view class="custom" wx:else>
+          <slot></slot>
+        </view>
+        
+        <view style="color:{{titleColor}}; font-size:{{globaltitlelFontSize}}rpx" class="title">
+          <view  wx:if='{{customTitle}}'>
+                 <slot></slot>
+          </view>  
+          <text wx:else>{{title}}</text>
+        </view>
+    </view>
+    
+</view>
+<view wx:if="{{fixed}}" style="height:{{navHeight}}px;"></view>

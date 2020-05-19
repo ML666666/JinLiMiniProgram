@@ -1,0 +1,89 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+    <TopBar title="我的团队"></TopBar>
+    
+    <view class="questionWrapper">
+      <image bindtap="CanCelStatus" class="question" src="./image/question.png"></image>
+    </view>
+    
+    <view class="myTeam">
+      <view class="item">
+        <view class="w">总人数</view>
+        <view class="e">{{userObj.TotalsPeople}}</view>
+      </view>
+      <view class="item">
+        <view class="w">直属粉丝</view>
+        <view class="e">{{userObj.TotalsDirectly}}</view>
+      </view>
+      <view class="item">
+        <view class="w">直属代理</view>
+        <view class="e">{{userObj.DirectlyAgent}}</view>
+      </view>
+      <view class="item">
+        <view class="w">近7日直属新增</view>
+        <view class="e">{{userObj.TotalsDirectly7Day}}</view>
+      </view>
+    </view>
+
+    <view class="detailWrapper">
+      <van-collapse value="{{ activeNames }}" bind:change="onChange">
+        <van-collapse-item title="我的邀请人" name="1">
+          <view class="item_w_Wrapper">
+            <view class="item_w">
+                <view class="headerWrapper">
+                    <image class="HG" src="./image/HG.png"></image>
+                    <image class="header" src="{{userObj.UserIcon}}"></image>
+                </view>
+                <view class="o"><view class="name">{{userObj.NickName}}</view></view>
+            </view>
+            <view class="item_w">
+                <view class="o">
+                  <view class="name">电话：</view>
+                  <view class="text">{{userObj.Phone}}</view>
+                </view>
+                <image bindtap="makePhoneCall" class="phone" src="./image/phone.png"></image>
+            </view>
+            <view class="item_w">
+                <view class="o">
+                  <view class="name">微信：</view>
+                  <view class="text">{{userObj.WechatNumber?userObj.WechatNumber:''}}</view>
+                </view>
+                <view class="btn_W" bindtap="copyTBL">复制</view>
+            </view>
+          </view>
+        </van-collapse-item>
+      </van-collapse>
+      <view class="title">
+        我的团队
+      </view>
+      <view class="list">
+        <view class="item">用户</view>
+        <view class="item">直属人数</view>
+        <view class="item">核心团队</view>
+        <view class="item">联系方式</view>
+      </view>
+      
+      <list list="{{List}}"></list>
+      
+      <Loading show="{{loading}}" type="{{isOver?'end':'loading'}}" />
+    </view>
+
+
+<popup bind:lintap="CanCelStatus" content-align="center" show="{{isPopupShow}}">
+    <view class="about">
+      <view class="title">什么是我的邀请人?</view>
+      <view class="p">1、“我的邀请人”是邀请您来注册平台的会员</view>
+      <view class="p">2、联系“我的邀请人”有助于更快熟悉平台以及相关操作</view>
+      <view class="btn" bindtap="CanCelStatus">
+        我知道啦
+      </view>
+    </view>
+</popup>
+
+</PageLoadingWrapper>
+

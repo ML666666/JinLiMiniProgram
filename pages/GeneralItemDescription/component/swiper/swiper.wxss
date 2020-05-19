@@ -1,0 +1,125 @@
+
+.SwiperWrapper{position: relative;}
+.SwiperWrapper .SLBrand{
+  position: absolute; 
+  right: 0rpx;
+  bottom: 57rpx;
+  width: 156rpx;
+  height: 57rpx;
+  border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+  background:rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+.SwiperWrapper .SLBrand image{
+  width: 34rpx;
+  height: 34rpx;
+  margin-left: 13rpx;
+  margin-right: 5rpx;
+}
+.brandInfo{
+  position: absolute;
+  width:173rpx;
+  height:59rpx;
+  background:rgba(0,0,0,0.5);
+  border-radius:29rpx;
+  left: 24rpx;
+  bottom: 21rpx;
+  z-index: 100;
+  display: flex;
+}
+.brandInfo image{
+  width:59rpx;
+  height:59rpx;
+  background:rgba(255,255,255,1);
+  border-radius:50%;
+  
+}
+.brandInfo view{
+  width: 93rpx;
+  margin-left: 10rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height: 59rpx;
+}
+.SwiperWrapper .iconWrapper{position: absolute;right: 25rpx;top: 25rpx;z-index: 120;background: rgba(255, 255, 255, 0.6);
+width: 50rpx;height: 50rpx;display: flex;justify-content: center;align-items: center;border-radius: 50%;overflow: hidden;}
+.SwiperWrapper van-icon{
+  height: 32rpx;
+  width: 32rpx;
+  transform: translateY(-2rpx)
+}
+.wrapper{
+  width: 750rpx;
+  height: 750rpx;
+  overflow: hidden;
+  position: relative;
+}
+.sellOutIcon{
+  width: 180rpx;
+  height: 180rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.wrapper .selectWrapper{
+  position: absolute;
+  height: 56rpx;
+  bottom: 40rpx;
+  left: 50%;
+  z-index: 0;
+  display: flex;
+  transform: translateX(-50%);
+}
+.wrapper .selectWrapper .item{
+  width: 76rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  border-radius: 60rpx;
+  font-size: 20rpx;
+  background: hsla(0,0%,100%,.8);
+  border: none;
+  box-sizing: border-box;
+}
+.wrapper .selectWrapper .item:first-child{
+  margin-right: 10rpx;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+.wrapper video{
+  width: 750rpx;
+  height: 750rpx;
+}
+.wrapper .selectWrapper .red{
+  background: linear-gradient(180deg,#fc2d58,#f12b27);
+  color: #fff;
+}
+
+.wrapper .selectWrapper .item:first-child:before {
+  content: "";
+  position: absolute;
+  top: 18rpx;
+  transform: translateY(-50%);
+  left: 10rpx;
+  width: 0;
+  height: 0;
+  border-width: 8rpx;
+  border-style: solid;
+  border-color: transparent transparent transparent #000;
+}
+
+.wrapper .selectWrapper .red:first-child:before {
+  border-color: transparent transparent transparent #fff !important;
+}

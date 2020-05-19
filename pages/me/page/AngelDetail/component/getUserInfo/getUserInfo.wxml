@@ -1,0 +1,29 @@
+<view class="userInfo">
+  <view class="wrapper">
+    <view class="redact-content">
+        <view class="ceil">
+          <view class="name">姓名</view>
+          <input data-name="RealName" bindinput="input" value="{{RealName}}" class="input" type="text"></input>
+        </view>
+        <view class="ceil">
+          <view class="name">手机号码</view>
+          <input data-name="Phone" bindinput="input" value="{{Phone}}"  class="input" type="text"></input>        
+        </view>
+        <view class="ceil">
+          <view class="name">微信号</view>
+          <input data-name="WechatNumber" bindinput="input" value="{{WechatNumber}}"  class="input" type="text"></input>
+        </view>
+    </view>
+    <view class="cell-qrcode">
+      <view class="title">微信二维码</view>
+      <view class="ceil-img">
+        <image wx:if="{{QRCodeUrl}}" src="{{QRCodeUrl}}" class="c"></image>
+        <image bindtap="addImg" src="./image/add.png"></image>
+      </view> 
+    </view>
+  </view>
+  <view class="confirm-btn">
+      <view bindtap="MakeSure" class="btn">确定</view>
+      <view bindtap="cancel" class="btn">稍后再谈</view>
+  </view>
+</view>

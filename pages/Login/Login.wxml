@@ -1,0 +1,59 @@
+
+
+<!--pages/Login/Login.wxml-->
+
+
+<TopBar isHideHome="{{true}}" title="登陆"></TopBar>
+  
+<view class='login'>
+  <van-popup  show="{{ show }}" bind:close="onClose">
+    <view class='loginWrapper'>
+      <view class='title'>
+        验证手机号
+      </view>
+
+      <view class='Wrapper'>
+        <view class='inputWrapper'>
+          <text class='title_T'>手机号:</text>
+          <input style='width:500rpx;' data-name='phone' bindinput='input' value='{{phone}}' type='text'></input>
+        </view>
+        <view class='inputWrapper'>
+          <text class='title_T'>短信验证码:</text>
+          <input style='width:260rpx;' data-name='code' bindinput='input' value='{{code}}' type='text'></input>
+          <view  bindtap='getCode' class='getCode'>
+            {{time==60?'获取验证码':time+'s'}}
+          </view>
+        </view>
+      </view>
+      
+      <view class='btn' bindtap='bindPhone'>
+        绑定
+      </view>
+    </view>
+  </van-popup>
+
+  <view style="min-height:{{windowHeight}}px;" class="wxWrapper">
+     <image mode="widthFix" src="{{LogoUrl}}" class="logo"></image>
+     <view>
+        <button class="wxLogin"
+            disabled="{{isLoading}}"
+            open-type="getUserInfo"
+            bindgetuserinfo="getUserInfoFun">
+            <image  mode="widthFix" src="{{btnUrl}}"></image>      
+        </button>
+
+        <button bindtap="CENCEL" class="wxLogin CENCEL">
+          暂不登录
+        </button>
+
+        
+        <view class="isRead">
+          <van-checkbox bindtap="changeIsdefault" checked-color="#ff1d26" value="{{isdefault}}"></van-checkbox>
+          <view>我已阅读并同意</view>
+          <view bindtap="toXY" class="blue">《锦鲤团用户服务协议》</view>
+        </view>
+     </view>
+  </view>
+
+  <toast show="{{isLoading}}" title="登录中..." icon="loading" />
+</view>

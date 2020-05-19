@@ -1,0 +1,66 @@
+.zf{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.zf .zhifu{
+  width: 140rpx;
+  margin-bottom: 20rpx;
+  margin-top: 40rpx;
+}
+.zf .title{
+  font-size: 36rpx;
+}
+.zf .TheContent{
+  margin-top: 100rpx;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+  width: 90%;
+}
+.zf .TheContent .item{
+  box-sizing: border-box;
+  padding: 30rpx 40rpx;
+}
+.zf .TheContent .item:first-child{
+  border-bottom: 1px solid #ddd;
+}
+.zf .TheContent .item image{
+  margin-right: 20rpx;
+}
+.zf .TheContent .item input{
+  width: 100%;
+  height: 30rpx;
+}
+.zf .TheContent .item .c{
+  height: 61rpx;
+  display: flex;
+  align-items: center;
+}
+.btn{
+  text-align: center;
+  width: 80%;
+  border-radius: 50rpx;
+  padding: 30rpx;
+  margin-top: 40rpx;
+  border: none;
+  font-size: 36rpx;
+  font-weight: bolder;
+  font-weight: 300;
+}
+.red{
+  background: red;
+  color: #fff;
+}
+.t{
+  background: #ddd;
+  color: #000;
+}
+
+.tips{
+  margin-top: 40rpx;
+  color: #00b7ff;
+  font-size: 24rpx;
+}
+.popup-content {
+ z-index: 202;
+}

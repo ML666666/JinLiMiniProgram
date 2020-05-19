@@ -1,0 +1,58 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}">
+  <view style="min-height:{{windowHeight}}px;background: #f5f5f5">
+    <TopBar></TopBar>
+    <view class='top'>
+        <view class='searchBar'>
+          <image src='./image/search.png'></image>
+          <input type='text' value='{{keyword}}' bindinput="input" bindconfirm="toSearch" name='keyWord'></input>
+        </view>
+        <view bindtap='toSearch' class='cancel'>搜索</view> 
+    </view>
+    <view class="btnWrapper">
+      <view class="btn {{type==0?'active':''}}" bindtap="changeType" data-type="0">综合</view>
+      <view class="btn {{type==1?'active':''}}" bindtap="changeType" data-type="1">销量</view>
+      <view class="btn {{type==2?'active':''}}" bindtap="changeType" data-type="2">
+        <view class="arrowWrapper">
+          价格
+          <view wx:if="{{type==2}}">
+              <view class="arrowWrapper_2" wx:if="{{!isDown}}">
+                <image class="one" src="./image/activeArrow.png"></image>
+                <image src="./image/Arrow.png"></image>
+              </view>
+              <view class="arrowWrapper_2" wx:if="{{isDown}}">
+                <image class="one" src="./image/Arrow.png"></image>
+                <image src="./image/activeArrow.png"></image>
+              </view>
+          </view>
+          <view wx:else>
+              <view class="arrowWrapper_2">
+                  <image class="one" src="./image/Arrow.png"></image>
+                  <image src="./image/Arrow.png"></image>
+              </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="listWrapper">
+      <view wx:for="{{list}}" data-Id="{{item.Id}}" bindtap="toGoodDetail" class="item">
+        <image src="{{item.ProductImg}}" class="image"></image>
+        <view class="describe">
+          <view class="title">{{item.ProductTitle}}</view>
+          <view class="sales-price">
+            <view class="price">￥{{item.SalePrice}}</view>
+            <view class="sales">{{item.SaleCount}}人已付款</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <Loading 
+                show="{{loading || isOver}}" 
+                type="{{isOver?'end':'loading'}}" ></Loading>
+  </view>
+</PageLoadingWrapper>

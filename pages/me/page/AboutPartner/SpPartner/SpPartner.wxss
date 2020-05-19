@@ -1,0 +1,88 @@
+.CCCC{
+  background:rgba(246,246,246,1);
+  padding-bottom: 100rpx;
+}
+.TW{
+  width: 750rpx;
+  height: 250rpx;
+  position: relative;
+}
+.TW .BG{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 750rpx;
+  height: 250rpx; 
+}
+.TW .W{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 750rpx;
+  height: 250rpx; 
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.TW .W .t{
+  font-size:36rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(241,211,174,1);
+  margin-bottom: 50rpx;
+}
+.TW .W .CW{
+  display: flex;
+  justify-content: space-around;
+}
+.TW .W .CW .item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:rgba(207,185,159,1);
+}
+.TW .W .CW .item .r{
+  font-size:24rpx;
+  font-family:PingFang-SC-Regular,PingFang-SC;
+  margin-bottom: 10rpx;
+}
+.TW .W .CW .item .c{
+  font-size:40rpx;
+  font-family:DINPro-Medium,DINPro;
+  font-weight:500;
+}
+.priceWrapper{
+  display: flex;
+  align-items: center;
+  height: 156rpx;
+  margin-bottom: 20rpx;
+  justify-content: center;
+  background: #fff;
+}
+.priceWrapper .item{
+  width: 236rpx;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+.priceWrapper .item .t{
+  font-size:24rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(173,173,173,1);
+  margin-bottom: 12rpx;
+}
+.priceWrapper .item .p{
+  font-size:40rpx;
+  font-family:DINPro-Medium,DINPro;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.priceWrapper .icon{
+  width: 24rpx;
+}

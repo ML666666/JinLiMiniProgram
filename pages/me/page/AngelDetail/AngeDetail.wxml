@@ -1,0 +1,77 @@
+<wxs src="./toF.wxs" module="tools" />
+
+<popup show="{{isGetUserInfo}}">
+  <getUserInfo AgentObj="{{AgentObj}}" bind:cancel="cancel"></getUserInfo>
+</popup>
+<TopBar title="推广中心"></TopBar>
+<view class="header">
+</view>
+<view class="content">
+  <view class="header">
+    <view class="one">
+      <view class="zs">
+        <image src="{{PromotionObj.currentUser.UserIcon}}" class="header_c"></image>
+        <view class="user">
+          <view>
+            <text class="name">{{PromotionObj.currentUser.NickName}}</text>
+            <image class="ts" src="./image/ts.png"></image>
+          </view>
+          <view class="ws" catchtap="changeIsGetUserInfo">完善会员资料</view>
+        </view>
+      </view>
+      <view bindtap="toRule" class="rule">天使会员规则</view>
+    </view>
+    <view class="two"  bindtap="PromotionRewards">
+      <view class="gWrapper">
+        <image class="g" src="./image/g.png"></image>
+        <text>天使会员伯乐奖：{{tools.toF(PromotionObj.RewardInfo.totalReward)}}</text>
+      </view>
+      <image class="arrow" src="./image/arrow_2.png"></image>
+    </view>
+  </view>
+
+  <view class="my_team">
+        <view class="my-team-head" bindtap="toMyTeam">
+            <text>我的团队</text>
+            <view class="we"><text>明细</text><image src="./image/arrow.png"></image></view>
+        </view>
+        <view class="my-team-content">
+          <view class="item"><view>{{MyTeam.TotalsPeople}}</view><text>团队总数</text></view>
+          <view class="item"><view>{{MyTeam.TotalsDirectly}}</view><text>我的直属</text></view>
+          <view class="item"><view>{{MyTeam.DirectlyAgent}}</view><text>直属代理</text></view>
+        </view>
+  </view>
+  
+  <view class="my_team">
+        <view class="my-team-head" bindtap="toMyEarnings">
+            <text>佣金收入</text>
+            <view class="we"><text>明细</text><image src="./image/arrow.png"></image></view>
+        </view>
+        <view class="my-team-content">
+          <view class="item"><view>{{PromotionObj.Profit}}</view><text>累计收益</text></view>
+          <view class="item"><view>{{PromotionObj.LastWeekActualBillingAmount}}</view><text>上周收益</text></view>
+          <view class="item"><view>{{PromotionObj.ToBeCreditedTotalsCommission}}</view><text>本周收益</text></view>
+        </view>
+  </view>
+
+  <image bindtap="yaoqing" class="ad" src="{{PromotionObj.AgentCenterAd[0].Src}}"></image>
+
+  <view class="buttomWrapper">
+      <view bindtap="toMaterialCircle" class="item">
+        <image src="./image/one.png"></image>
+        <text>素材圈</text>
+      </view>
+      <view bindtap="yaoqing"  class="item">
+        <image src="./image/two.png"></image>
+        <text>邀请有礼</text>
+      </view>
+      <view bindtap="HtmlApp" data-Good_id="grouphelpUrl" class="item">
+        <image src="./image/three.png"></image>
+        <text>入群辅导</text>
+      </view>
+      <view bindtap="HtmlApp" data-Good_id="problemsUrl" class="item">
+        <image src="./image/four.png"></image>
+        <text>常见问题</text>
+      </view>
+  </view>
+</view>

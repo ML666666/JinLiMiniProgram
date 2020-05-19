@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "bar": "../component/bar/bar",
+    "InputWrppaer":"../component/InputWrppaer/InputWrppaer",
+    "InputTips":"../component/InputTips/InputTips"
+  }
+}

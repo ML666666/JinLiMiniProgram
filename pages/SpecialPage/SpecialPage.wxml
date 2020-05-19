@@ -1,0 +1,86 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}">
+  <view style="min-height:{{windowHeight}}px;background: #f5f5f5;">
+
+    <TopBar title="{{name?name:SpecialObj.Name}}"></TopBar>
+
+    <!-- style="position: fixed;top:{{navHeight}}px;" -->
+    <view wx:if="{{SpecialObj.ImgSrc && !isfromS && !fromSearch}}" class="TopImgBanner">
+      
+      <image class="share" bindtap="shareWrapper" src="./image/share.png"></image>
+      <view class="time" wx:if="{{isShowData && CountDownTimestamp>=0}}">
+        <view class="radius">{{Hours}}</view>
+        <view class="m">:</view>
+        <view class="radius">{{Minutes}}</view>
+        <view class="m">:</view>
+        <view class="radius">{{Seconds}}</view>
+        <view class="m">:</view>
+        <image class="radius t" src="./image/num.gif"></image>
+      </view>
+      
+      <image class="banner" src="{{SpecialObj.ImgSrc}}"></image>
+
+    </view>
+
+    <view id="brand-tabbar" style="{{activeTop?'position: fixed;left:0rpx;right:0rpx;':''}}top:{{navHeight}}px;">
+        <brandTabbar bind:getStatus='getStatus'></brandTabbar>
+    </view>
+    
+    <view wx:if="{{activeTop}}" style="height:{{100}}rpx"></view>
+    <view class="goodList">
+      <view wx:for="{{SpecialObj.Pro}}" class="good" data-Id="{{item.Id}}" bindtap="toDetail">
+            <view class="imageWrapper">
+              <image mode="widthFix" src="{{item.ProductImg}}"></image>
+            </view>
+            <view class="detail">
+                <view class="title">
+                    {{item.ProductTitle}}
+                </view>
+                <KDTag price='{{item.ShoppingBi}}'></KDTag>
+                <view class="sales-price">
+                  <view class="price">￥{{item.SalePrice}}</view>
+                  <view class="sales">￥{{item.MarketPrice}}</view>
+                </view>
+        </view>
+    </view>
+    </view>
+    
+    <!-- <l-status-show type="data" show="{{SpecialObj.Pro.length==0}}"></l-status-show> -->
+    <nothingStatus wx:if='{{SpecialObj.Pro.length==0}}'></nothingStatus>
+  </view>
+
+</PageLoadingWrapper>
+
+<view class="OederMask {{activeMaks?'activeMaks':''}}">
+  <view bindtap="hide"  class="vMask">
+  </view>
+  <view class="contant">
+    <image class="close" bindtap="hide" src="./image/close.png"></image>
+    <view class="title">转发锦鲤</view>
+    <image src="{{ImgSrc}}" class="goodImg"></image>
+    <view>
+      <textarea style="height: 93rpx;" 
+                maxlength="26" 
+                data-name="CustomTitle" 
+                bindinput="input" 
+                value="{{CustomTitle}}" 
+                class="text"></textarea>
+      <view class="num">{{CustomTitle.length}}/26</view>
+    </view>
+    <view>
+      <textarea style="height: 120rpx"
+                maxlength="56"
+                bindinput="input" 
+                data-name="CustomText"
+                value="{{CustomText}}"
+                class="text"></textarea>
+      <view class="num">{{CustomText.length}}/56</view>
+    </view>
+    <button open-type="share" class="btn">
+      转发锦鲤
+    </button>
+  </view>
+</view>  

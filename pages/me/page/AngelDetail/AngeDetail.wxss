@@ -1,0 +1,184 @@
+.header{
+  width: 100%;
+  height: 266rpx;
+  background: linear-gradient(90deg,#f02b22,#fc2d59);
+}
+.content{
+  position: relative;
+  top: -184rpx;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 12rpx;
+}
+.content .two{
+  display: flex;
+  justify-content: space-between;
+}
+.content .two .arrow{
+  width: 32rpx;
+  height: 32rpx;
+}
+.content .gWrapper{
+  display: flex;
+  align-items: center;
+  color: #fcc488;
+  font-size: 26rpx;
+}
+.content .g{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+.content .one{
+  width: 726rpx;
+  font-size: 26rpx;
+  margin-top: 4rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 40rpx 0 40rpx 40rpx;
+  box-sizing: border-box;
+  align-items: center;
+}
+.content .one .zs{
+  display: flex;
+  align-items: center;
+}
+.content .one .ts{
+  width: 142rpx;
+  height: 32rpx;
+}
+.content .one .header_c{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.content .one .ws{
+  display: inline-block;
+  color: #e4b27a;
+  border: 2rpx solid #b28850;
+  border-radius: 8rpx;
+  padding: 4rpx 12rpx;
+  margin-top: 10rpx;
+}
+.content .one .rule{
+  background: linear-gradient(90deg,#f1c18f,#8c6d46);
+  border-top-left-radius:16rpx;
+  border-bottom-left-radius:16rpx;
+  height:44rpx;
+  line-height: 44rpx;
+  width: 144rpx;
+  font-size: 22rpx;
+  transform-origin: center left;
+  text-align: center;
+}
+.content .one  .name{
+  color: #fcc488;
+  font-size: 32rpx;
+  margin-right: 10rpx;
+}
+.content .header{
+  background: url("http://h5.huizhisuo.com/static/img/angel-user-bg.298169f.png") no-repeat center center;
+  background-size: cover;
+  width: 726rpx;
+  height: 310rpx;
+  margin-bottom: 44rpx;
+}
+.content .two{
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 48rpx 40rpx 40rpx 60rpx;
+  box-sizing: border-box;
+}
+.my_team{
+  width: 688rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  box-shadow: 0 4rpx 20rpx #ddd;
+  margin-bottom: 40rpx;
+}
+.my-team-head{
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #eee; 
+  box-sizing: border-box;
+  font-size: 26rpx; 
+  color: #2c3e50;
+}
+.my-team-head image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.my-team-head .we{
+  display: flex;
+  align-items: center;
+}
+.my-team-content{
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-around;
+  padding: 32rpx 72rpx;
+  text-align: center;
+  box-sizing: border-box
+}
+.my-team-content .item{
+  flex: 1;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+}
+.my-team-content .item view{
+  font-size: 36rpx;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 24rpx;
+}
+.my-team-content .item text{
+  font-size: 26rpx;
+  color: #888;
+}
+
+.ad{
+  width: 686rpx;
+  height: 207.6rpx;
+}
+
+.buttomWrapper{
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 40rpx;
+  text-align: center;
+  color: #888;
+}
+
+.buttomWrapper .item{
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.buttomWrapper image{
+  width:40rpx;
+  height:40rpx;
+}
+
+.buttomWrapper text{
+  font-size: 26rpx;
+  margin-top: 4rpx;
+  color: #888;
+}

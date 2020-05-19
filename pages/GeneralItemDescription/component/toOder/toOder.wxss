@@ -1,0 +1,249 @@
+/* pages/GeneralItemDescription/component/toOder/toOder.wxss */
+.OederMask{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  transform: translateY(200%);
+  transition: 0.4s;
+  transition-timing-function:ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.OederMask .vMask{position: absolute;height: 100%;width: 100%;top: 0px;left: 0px;right: 0px;}
+.activeMaks{
+  transform: translateY(0%);
+}
+.OederMask .contant{
+  background: #fff;
+  z-index: 200;
+  border-radius:30rpx 30rpx 0px 0px;
+  position: relative;
+}
+.OederMask .contant .closePng{
+  position: absolute;
+  top: 34rpx;
+  right: 34rpx;
+  width: 23rpx;
+  height: 23rpx;
+}
+.contant .disabled{
+  background: rgba(246,246,246,1) !important;
+  color:rgba(153,153,153,1)  !important;
+  border-color: rgba(246,246,246,1) !important;
+}
+.OederMask .contant .c{
+  padding-top: 36rpx;padding-left: 20rpx;padding-right: 20rpx;box-sizing: border-box;width: 100%;
+}
+.OederMask .contant .top{
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0rpx 18rpx;
+  margin-bottom: 48rpx;
+}
+.OederMask .contant .top image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.contant .top .wrapper{
+  margin-left: 36rpx;
+}
+.contant .top .wrapper .item_1{
+  font-size:34rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(255,51,51,1);
+}
+.contant .top .wrapper .item_1 .text{
+  font-size: 22rpx;
+}
+.contant .top .wrapper .item_2{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  margin: 19rpx 0rpx 29rpx 0rpx;
+}
+.contant .top .wrapper .item_3{   
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+
+.contant  .listItem{
+    margin: 10rpx 0rpx;
+}
+.contant  .listItem .title{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:48rpx;
+}
+.contant  .listItem  .list{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.contant  .listItem  .list .item{
+    background:rgba(246,246,246,1);
+    border-radius:10rpx;
+    border: 2rpx solid rgba(246,246,246,1);
+    padding: 15rpx 19rpx;
+    border-radius: 10rpx;
+    margin: 20rpx;
+    color:rgba(51,51,51,1);
+    font-size: 28rpx;
+}
+.contant  .listItem  .list .active{
+    border: 2rpx solid #FF3333;
+    color: #FF3333;
+    background: transparent;
+}
+.contant .num{
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+.contant .num .k{
+  color: #2c3e50;
+  font-size: 30rpx;
+}
+.contant .num .n{
+  width: 200rpx;
+  height: 60rpx;
+  display: flex;
+}
+.contant .num .n .t{width: 25%;text-align: center;line-height: 60rpx;font-weight: 700;color: #666;letter-spacing: 0;
+background-color: #fafafa;font-size: 26rpx}
+.contant .num .n .tc{width: 50%;font-weight: 700;color: #666;letter-spacing: 0;line-height: 60rpx;height: 60rpx;
+background-color: #fafafa;font-size: 26rpx;text-align: center;}
+.contant .btn{
+    height: 100rpx;
+    line-height: 100rpx;
+    background: linear-gradient(90deg,#f02b22,#fc2d59);
+    color: #fff;
+    font-size: 36rpx;
+    /* z-index: ; */
+    text-align: center;
+}
+.contant .btnWrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.contant .btnWrapper .btn{
+  flex: 1;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}
+.contant .btnWrapper .one{
+  background:rgba(0,0,0,1);
+}
+.contant .btnWrapper .OrderingTwo{
+   background: linear-gradient(90deg,rgba(241,48,39,0.8) 0%,rgba(237,69,60,0.8) 100%);
+}
+.contant .btnWrapper .two{
+  background: linear-gradient(90deg,rgba(241,48,39,1) 0%,rgba(237,69,60,1) 100%);
+}
+.contant .btnWrapper .l-btn{background: transparent !important;}
+.listItemWrapper{
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 0rpx 33rpx 0rpx 33rpx;
+  box-sizing: border-box;
+}
+.listItemWrapper ._listItemWrapper{
+  padding-bottom: 10rpx;
+  padding-top: 28rpx;
+  border-bottom:2rpx  solid rgba(246,246,246,1);
+}
+.listItemWrapper .titletips{
+  height: 91rpx;
+  line-height: 91rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 26rpx;
+}
+.listItemWrapper .titletips .tips{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-right: 39rpx;
+}
+.listItemWrapper .titletips image{
+  width: 11rpx;
+  height: 20rpx;
+  margin-left: 24rpx;
+}
+.RuleMask .contant{
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.RuleMask .contant .ruleTitle{
+  text-align: center;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  margin-bottom: 37rpx;
+}
+.RuleMask .ruleWrapper{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 50rpx;
+}
+.RuleMask .ruleWrapper .title{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-bottom: 23rpx;
+  position: relative;
+}
+.RuleMask .ruleWrapper .title image{
+  width: 32rpx;
+  position: absolute;
+  left: -48rpx;
+  top:50%;
+  transform: translateY(-50%);
+}
+.RuleMask .ruleWrapper ._contant{
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  margin-bottom: 48rpx;
+}
+.RuleMask .btn{
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(229,41,32,1) 0%,rgba(237,69,60,1) 100%);
+  border-radius:43rpx;
+  line-height: 80rpx;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height: 88rpx;
+}
+.listItemWrapperKey{
+  max-height: 700rpx;
+  overflow-x:scroll; 
+}

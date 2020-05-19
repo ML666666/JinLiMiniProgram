@@ -1,0 +1,28 @@
+
+  <!-- 顶部 -->
+  <TopBar
+        custom="{{true}}"
+        isShowArror="{{false}}" 
+        titleColor="{{isSpecialSellBgColor?'#ffffff':'#000000'}}" 
+        bgColor="{{isSpecialSellBgColor?specialSellBgColor:'#ffffff'}}"  
+        title="{{'锦鲤团'}}">
+          <slot></slot>
+        </TopBar>
+  <view style='height:70rpx;'></view>
+
+  <!-- 顶部导航栏 -->
+  <!-- +" !important" -->
+  <!-- <view 
+        style='background: {{specialSellBgColor}}; top:{{top}}px;' 
+        class='tabsContainer {{isSpecialSellBgColor?"":"barFontColor"}} isTabsContainetSticky'>
+        <van-tabs 
+                 background="{{specialSellBgColor}}"
+                 bind:getActiveObj="getActiveObj"    
+                 active="{{ targetIndex }}">
+          <van-tab 
+                  wx:for="{{category}}" 
+                  wx:key="key" 
+                  RecommendType="{{item.RecommendType}}" 
+                  title="{{item.CateName}}"></van-tab>
+        </van-tabs>
+  </view> -->

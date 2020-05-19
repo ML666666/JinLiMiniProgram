@@ -1,0 +1,26 @@
+
+.goodList .item image{
+  width: 100%;
+  height: 350rpx;
+}
+.goodList .item .wrapper{
+  padding: 20rpx 40rpx 40rpx;
+  box-sizing: border-box; 
+}
+.goodList .item .wrapper .title{
+  font-size: 28rpx;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+  color: #2c3e50;
+}
+.goodList .item .wrapper .c{display: flex;justify-content: space-between;align-items: center;}
+.goodList .item .wrapper .c .w{display: flex;align-items: baseline;}
+.goodList .item .wrapper .c .w view{color: #ff273b;font-size: 26rpx;font-weight: 700;}
+.goodList .item .wrapper .c .w  text{color: #888;font-size: 20rpx;margin-left: 10rpx;}
+.goodList .item .wrapper .c .btn{
+    background: linear-gradient(90deg,#f32c21,#ff2e5c);
+    border-radius: 30rpx;
+    color: #fff;
+    padding: 10rpx 20rpx;
+    font-size: 24rpx;
+}

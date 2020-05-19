@@ -1,0 +1,12 @@
+<TopBar title="{{'企业供应商'}}"></TopBar>
+<bar active="{{1}}"></bar>
+
+<InputWrppaer>
+  <InputTips tipsText="{{'公司名称'}}"></InputTips>
+  <input placeholder="请输入公司名称" placeholder-class="placeholder" class="inputClass"></input>
+  <InputTips tipsText="{{'公司名称'}}"></InputTips>
+  <view class="inputWrapper">
+    <input placeholder="请输入公司名称" placeholder-class="placeholder" disabled="true" class="inputClass"></input>
+    <image mode="widthFix" class="arrow" src="../image/arrow.png"></image>
+  </view>
+</InputWrppaer>

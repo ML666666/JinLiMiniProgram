@@ -1,0 +1,8 @@
+/* pages/GeneralItemDescription/component/top/top.wxss */
+.GeneraTop{
+  width: 100%;
+  background: #ffffff;
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+}

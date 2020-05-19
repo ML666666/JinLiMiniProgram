@@ -1,0 +1,12 @@
+<view wx:if="{{isShowMask}}" class="mask">
+  <view class="ws">
+    <image bindtap="toDetail" src="{{pop.PicUrl[0]}}" style="width:100%;" mode="widthFix" ></image>
+    <image bindtap="hide" src="./image/x.png" class="x"></image>
+  </view>
+</view>
+<view wx:if="{{isShowMsMaks}}" class="mask">
+  <view class="ws" style="width:100%;">
+    <image bindtap="toMS" src="{{MSMaks}}" style="width:100%;" mode="widthFix" ></image>
+    <image bindtap="hideMS" src="./image/x.png" class="x"></image>
+  </view>
+</view>

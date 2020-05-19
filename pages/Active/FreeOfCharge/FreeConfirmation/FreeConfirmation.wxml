@@ -1,0 +1,23 @@
+<view class="wrapper" style="height:{{windowHeight}}px">
+  <TopBar title="成功下单"></TopBar>
+  <view class="iconWrapper">
+    <image class="s" src="./image/s.png"></image>
+    <text class="t">下单成功</text>
+    <button plain="true" open-type="share"  class="share">
+      <image src="./image/btn.png" class="btn"></image>
+    </button>
+    <text class="z"><text>单笔最高可得{{getCoins}}购物币</text>,<text class="u">查看我的商品</text></text>
+  </view>
+
+  <view class="listWrapper">
+    <view class="title">相关商品</view>
+    <view class="listW">
+      <view bindtap="todetail" data-Id="{{item.Id}}" wx:for="{{rows}}" class="item">
+          <image src="{{item.ProductImg}}"></image>
+          <p class="t">{{item.ProductTitle}}</p>
+          <p class="w">{{item.SubTitle}}</p>
+          <p class="p">￥{{item.SalePrice}}</p>
+      </view>
+    </view>
+  </view>
+</view>

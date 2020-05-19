@@ -1,0 +1,53 @@
+<popup data-OrderId="{{$state.SocketObj.Data.OrderId}}" bind:lintap="CanCelStatus" content-align="center" show="{{$state.SocketObj.Code==1003}}">
+    <view class="MDWrapper">
+      
+      <view class="userWapper">
+        <image class="start o" src="./image/start.png"></image>
+        <image class="start t" src="./image/start.png"></image>
+        <image class="start f" src="./image/start.png"></image>
+        <view wx:for="{{$state.SocketObj.Data.list}}" wx:for-index="index" class="item">
+          <view class="headerWrapper {{index==0?'one':'two'}}">
+            <image src="{{item.UserIcon}}"></image>
+            <view class="text">{{item.UserName}}</view>
+            <image wx:if="{{index==0}}" class="pz" src="./image/PZ.png"></image>
+          </view>
+        </view>
+      </view>
+      
+      <image class="banner" src="./image/PT.png"></image>
+      
+      <view class="tips">
+        <view class="line"></view>
+        <view class="center">开奖结果</view>
+        <view class="line"></view>
+      </view>
+      
+      <view class="tips_2">{{$state.SocketObj.Data.TipMsg}}</view>
+      
+      <!-- $state.SocketObj.Data.WinStatus==0 未中奖 -->
+      <view class="tips_3" wx:if="{{!$state.SocketObj.Data.WinStatus}}"> 
+        (幸运免单用户，<text style="color:#FF455E">{{$state.SocketObj.Data.WinUserName}}</text>)
+      </view>
+      <view class="tips_3" wx:else>
+        (请领取你的免单款<text style="color:#FF455E">￥{{$state.SocketObj.Data.BuyPrice}}</text>)
+      </view>
+
+      <view data-OrderId="{{$state.SocketObj.Data.OrderId}}" bindtap="toDetail" class="good_Item" data-id="{{$state.SocketObj.Data.list[0].ProductId}}">
+        <image src="{{$state.SocketObj.Data.ProductImg}}"></image>
+        <view class="wrapper">
+          <view class="title">{{$state.SocketObj.Data.ProductTitle}}</view>
+          <view class="e">
+            <text class="i">￥{{$state.SocketObj.Data.BuyPrice}}</text>
+            <text class="w">￥{{$state.SocketObj.Data.MarketPrice}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view bindtap="toOrderPage" data-OrderId="{{$state.SocketObj.Data.OrderId}}" data-type="{{$state.SocketObj.Data.WinStatus}}" class="btn">
+        <!-- $state.SocketObj.Data.WinStatus==0 未中奖 -->
+        <text wx:if="{{!$state.SocketObj.Data.WinStatus}}">获得新的免单机会</text>
+        <text wx:else>立即领取</text>
+      </view>
+
+    </view>
+</popup> 

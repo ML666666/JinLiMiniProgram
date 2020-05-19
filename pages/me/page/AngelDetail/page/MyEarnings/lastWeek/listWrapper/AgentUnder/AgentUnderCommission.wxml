@@ -1,0 +1,13 @@
+
+<view class="itemWrapper">
+  <view class="item" wx:for="{{list}}">
+    <view class="MemberInfo">
+      <image class="MemberPic" src="{{item.UserIcon}}"></image>
+      <view class="MemberName">{{item.NickName}}</view>
+    </view>
+    <view class="detail">
+      <view class="title">本周业绩</view>
+      <view class="num">{{item.TotalsCommission}}</view>
+    </view>
+  </view>
+</view>

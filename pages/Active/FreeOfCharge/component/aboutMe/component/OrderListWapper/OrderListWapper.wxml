@@ -1,0 +1,41 @@
+<view class="OrderListWapper">
+  <view wx:for="{{OrderListObj.OrderList}}" class="item">
+    <view class="order-detail">
+      <view class="w">订单编号:{{item.OrderNumber}}</view>
+      <view class="r">{{item.OrderStatusStr}}</view>
+    </view>
+    <view data-OrderId="{{item.OrderId}}" bindtap="toOrderDetail" class="itemWrapper">
+        <view wx:for="{{item.LstProduct}}" class="good_item">
+          <image src="{{item.ProductImg}}"></image>
+          <view class="wrapper">
+            <view class="title">
+              {{item.ProductTitle}}
+            </view>
+            <view class="c">
+              <view class="p">购物币:{{item.BuyPrice}}</view>
+              <view class="w">{{item.BuyWay}}x{{item.BuyNumber}}</view>
+            </view>
+          </view>
+        </view>
+    </view>
+    
+    <button plain="true" open-type="share"  class="share">
+      <view>
+        <image src="../image/toShare.png" class="s"></image>
+        <text class="w">分享得购物币 / <text class="z">单笔最高可得{{item.OrderAmount}}</text></text>
+      </view>
+      <image src="../image/arrow.png" class="arrow"></image>
+    </button>
+    
+    <OrderStatus
+        payTypelist="{{payTypelist}}" 
+        bind:reSetData="reSetData" 
+        wx:if="{{item.OrderStatus==0}}" 
+        isSP="{{false}}" 
+        item="{{item}}" 
+        OrderId="{{item.OrderId}}"></OrderStatus>
+  </view>
+  <Loading 
+            show="{{OrderListObj.isLoading || OrderListObj.isOver}}" 
+            type="{{OrderListObj.isOver?'end':'loading'}}" ></Loading>
+</view>

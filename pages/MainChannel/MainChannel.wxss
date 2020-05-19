@@ -1,0 +1,31 @@
+.fullWrapper{position: relative; background: #F9F9F9;padding-bottom: 50rpx;}
+.tabsContainer{
+border: none;
+width: 100%;display: flex;
+height: 70rpx;
+transition: 0.2s;
+transition-timing-function:linear;margin-top: 20rpx;}
+.tabsContainer van-tabs{width: 100% !important; transition: 0.3s;}
+.tabsContainer .van-tabs__wrap{background-color:transparent !important;}
+.tabsContainer .van-hairline--top-bottom:after{border: 0rpx !important;}
+.tabsContainer .van-tab__title{color: #fff;}
+.tabsContainer .van-tabs__line{background: #fff;}
+
+.tabsContainer .van-tab--active .van-tab__title{
+  font-size: 32rpx !important;
+}
+
+.tabsContainer .van-tabs--line{padding-top:60rpx;}
+.tabsContainer .van-tabs--line .van-tabs__wrap{height:60rpx;}
+.tabsContainer .van-tab{min-width:0;padding:0 10rpx;font-size:28rpx;line-height:60rpx;color:#7d7e80;text-align:center;cursor:pointer;box-sizing:border-box;-webkit-flex:1;flex:1}
+
+.isSpecialSellBgColor .van-tab__title{color: rgb(0, 0, 0);}
+.isSpecialSellBgColor .van-tabs__line{background: rgb(0, 0, 0);}
+/* 非特卖状态到航栏 */
+.barFontColor .van-tab__title{color: #000 !important;}
+/* .barFontColor .van-tabs__line{background: #ff273b !important;} */
+
+.cannelWrapper{margin-top: -170rpx;width: 100%;display: flex;flex-direction: column;align-items: center;}
+.tabsContainer .tab-active-class{
+  font-size: 30rpx  !important;
+}

@@ -1,0 +1,83 @@
+.CCCC{
+  background:rgba(246,246,246,1);
+  padding-bottom: 100rpx;
+}
+.TW{
+  width: 750rpx;
+  height: 250rpx;
+  position: relative;
+}
+.TW .BG{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 750rpx;
+  height: 250rpx; 
+}
+.TW .W{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 750rpx;
+  height: 250rpx; 
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.TW .W .t{
+  font-size:36rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(255,249,242,1);
+  margin-bottom: 50rpx;
+}
+.TW .W .CW{
+  display: flex;
+  justify-content: space-around;
+}
+.TW .W .CW .item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:rgba(255,249,242,1);
+}
+.TW .W .CW .item .r{
+  font-size:24rpx;
+  font-family:PingFang-SC-Regular,PingFang-SC;
+  margin-bottom: 10rpx;
+}
+.TW .W .CW .item .c{
+  font-size:40rpx;
+  font-family:DINPro-Medium,DINPro;
+  font-weight:500;
+}
+.SY .item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 118rpx;
+}
+.SY .H{
+  display: flex;
+  align-items: center;
+  font-size:30rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.SY .H image{
+  width: 50rpx;
+  margin: 0 30rpx;
+}
+.SY .B{
+  font-size:40rpx;
+  font-family:DINPro-Medium,DINPro;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-right: 51rpx;
+}
+.Wr{
+  margin-bottom: 20rpx;
+  background: #fff;
+}

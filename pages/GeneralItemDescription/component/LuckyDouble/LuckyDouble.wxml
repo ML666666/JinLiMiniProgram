@@ -1,0 +1,109 @@
+<view wx:if="{{list.length}}" class="LuckyDouble">
+  <view class="title">
+    <view>{{detail.TowGroup.total}}人在拼单，可直接参与</view>
+    <view bindtap="showAll" wx:if="{{list.length}}" class="arrow">
+      <view>查看更多</view>
+      <image src="./image/arrow.png"></image>
+    </view>
+  </view>
+  <swiper autoplay="{{true}}" vertical="{{true}}"  class="container">
+    <swiper-item wx:for="{{allarray}}" wx:for-index='index'  class="container">
+      <view class="item" wx:for="{{allarray[index]}}"  wx:for-index='index'>
+    
+          <view class="one">
+            <image class="header" src="{{list[item].UserIcon}}"></image>
+            <view class="timeWrapper">
+              <text>{{list[item].UserName}}</text>
+              <view>{{list[item].EndTimeStr}}</view>
+            </view>
+          </view>
+          <view class="two">
+            <view class="w">
+              <view>还差<text style="color:red">1人</text>成团</view>
+                <!-- <view>{{item.EndTimeStr}}</view> -->
+            </view>
+            <view data-type="1" 
+                  data-GroupNo="{{list[item].GroupNo}}" 
+                  data-index="{{index}}" 
+                  bindtap="toGetToge" class="btn">去参团</view>
+          </view>
+    
+      </view>
+    </swiper-item>
+  </swiper>
+  <scroll-view scroll-y="true" wx:if="{{false}}" class="container">
+
+    <view class="item" wx:for="{{list}}" wx:for-index='index'>
+    
+      <view class="one">
+        <image class="header" src="{{item.UserIcon}}"></image>
+        <view class="timeWrapper">
+          <text>{{item.UserName}}</text>
+          <view>{{item.EndTimeStr}}</view>
+        </view>
+      </view>
+      <view class="two">
+        <view class="w">
+          <view>还差<text style="color:red">1人</text>成团</view>
+            <!-- <view>{{item.EndTimeStr}}</view> -->
+        </view>
+        <view data-type="1" data-GroupNo="{{item.GroupNo}}" data-index="{{index}}" bindtap="toGetToge" class="btn">去参团</view>
+      </view>
+    
+    </view>
+  
+  </scroll-view>
+</view>
+
+<l-popup bind:lintap="showAll" show="{{isShowAll}}">
+  <view class="_CW">
+      <view class="titleWrapper">
+          正在拼单 
+          <image bindtap="showAll" src="./image/close.png"></image>
+      </view>
+      <scroll-view scroll-y="true" class="wrapper container">
+        <view class="item" wx:for="{{list}}" wx:for-index='index'>
+    
+          <view class="one">
+            <image class="header" src="{{item.UserIcon}}"></image>
+            <view class="timeWrapper">
+              <text>{{item.UserName}}</text>
+              <view>{{item.EndTimeStr}}</view>
+            </view>
+          </view>
+          <view class="two">
+            <view class="w">
+              <view>还差<text style="color:red">1人</text>成团</view>
+              <!-- <view>{{item.EndTimeStr}}</view> -->
+            </view>
+            <view data-type="1" 
+                  data-GroupNo="{{item.GroupNo}}" 
+                  data-index="{{index}}" 
+                  bindtap="toGetToge" 
+                  class="btn">去参团</view>
+          </view>
+    
+        </view>
+      </scroll-view>
+  </view>
+</l-popup>
+
+<l-popup show='{{isShowMakeSure}}'>
+  <view class="makeSureMask">
+    <image bindtap="isToShowMakeSure" class="isToShowMakeSure" src="./image/close.png"></image>
+    <view class="title">参与{{list[targetIndex].UserName}}的幸运双拼</view>
+    <view class="timeWrapper">仅剩1个名额，{{list[targetIndex].EndTimeStr}}后结束</view>
+    <view class="imageWrapper">
+        <view class="border">
+          <image src="./image/p.png" class="p"></image>
+          <image class="user" src="{{list[targetIndex].UserIcon}}"></image>
+        </view>
+        <view class="border" style="border:none;">
+          <image class="user" src="./image/user.png"></image>
+        </view>
+    </view>
+    <view bindtap="toBd" class="btn">
+      参与拼单
+    </view>
+  </view>
+</l-popup>

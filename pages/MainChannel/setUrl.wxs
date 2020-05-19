@@ -1,0 +1,28 @@
+function setUrl(url, imgDomain, imgVersion){
+  return url.indexOf('http')>-1 ? url : imgDomain + url + '?imgVersion=' + imgVersion;
+}
+function isOpenTime(NowData,StartTime,EndTime){
+  StartTime = StartTime == null ? "" : StartTime;
+  EndTime = EndTime == null ? "" : EndTime;
+  if (StartTime == "" && EndTime == "") {
+    return true
+  }
+  if (StartTime == "" && EndTime !=""){
+    return NowData < Date.parse(EndTime);
+  }
+  if (StartTime != "" && EndTime != ""){
+    return NowData > Date.parse(StartTime) && NowData < Date.parse(EndTime);
+  }
+  if (StartTime != "" && EndTime == ""){
+    return NowData > Date.parse(StartTime);
+  }
+
+  // if (NowData > Date.parse(StartTime) && EndTime==""){
+  //   return true;
+  // }
+  
+}
+module.exports = {
+  setUrl: setUrl,
+  isOpenTime: isOpenTime
+}

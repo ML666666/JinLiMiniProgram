@@ -1,0 +1,4 @@
+<view class="tips">
+  <text>{{tipsText}}</text>
+  <view>*</view>
+</view>

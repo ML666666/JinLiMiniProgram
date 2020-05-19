@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "top":"./component/top/top",
+    "l-slide-view":"/miniprogram_npm/lin-ui/slide-view/index",
+    "van-stepper": "/miniprogram_npm/vant-weapp/stepper/index",
+    "reSetGoodList":"./component/reSetGoodList/reSetGoodList",
+    "youlike": "../../gob/gobComponent/youlike/youlike",
+    "nothingStatus":"./component/nothingStatus/nothingStatus",
+    "changeAttr":"./component/toOder/toOder",
+    "OrderStatus":"./component/OrderStatus/OrderStatus"
+  }
+}

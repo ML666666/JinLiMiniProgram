@@ -1,0 +1,62 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+  <view  class="sp">
+    <!-- <view class="rule">双拼规则</view> -->
+
+    <view class="textSwiper">
+            <swiper
+              interval="{{3000}}" 
+              duration="{{800}}"
+              indicator-dots="{{false}}"
+              autoplay="{{true}}">
+              <swiper-item wx:for="{{TwoPersonChipTopData.WinnerUser}}">
+                 <image src="{{item.UserIcon}}"></image> <text>恭喜{{item.UserName}}获得免单</text>
+              </swiper-item>
+            </swiper>
+    </view>
+
+
+
+    <TopBar title="幸运双拼"></TopBar>
+    <image src="{{TwoPersonChipTopData.banner[0].Src}}" class="banner"></image>
+    <view class="title">{{TwoPersonChipTopData.JRBTLstName}}</view>
+
+    <scroll-view class="productsList" scroll-x="true">
+            <view wx:for="{{TwoPersonChipTopData.JRBTLst}}" class="goodItem" data-goodtype="2" data-Id="{{item.Id}}" bindtap="toGoodDetail">
+              <view class="wrapper">
+                <image src="{{item.ProductImg}}"></image>
+                <view class="t_1">{{item.ProductTitle}}</view>
+                <view class="t_Wrapper">
+                  <view class="t_2">￥{{item.SalePrice}}</view>
+                  <view class="t_3">已团{{item.SaleCount}}</view>
+                </view>
+              </view>
+            </view>
+     </scroll-view>
+
+     <list_bar
+            goodtype="2"
+            bind:changeTab="changeTab" 
+            fixedTop="420" 
+            isRenderingPage="{{isRenderingPage}}" 
+            currentTop="{{currentTop}}"  
+            solitaireTopData="{{TwoPersonChipTopData}}"></list_bar>
+
+    <goodList 
+            goodtype="2"
+            Label="已团"
+            BtnLabel="立即开团" 
+            rows="{{currentRows.rows}}"></goodList>
+    
+    <Loading 
+            show="{{(isLoading&&currentRows.rows.length>pagesize) || currentRows.isOver}}" 
+            type="{{currentRows.isOver?'end':'loading'}}" ></Loading>
+
+  </view>
+
+</PageLoadingWrapper>

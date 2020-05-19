@@ -1,0 +1,20 @@
+<view wx:for="{{obj.LstProduct}}" bindtap="toGoodDetail" data-ProductId="{{item.ProductId}}" class="OrderList">
+          <image src="{{item.ProductImg}}"></image>
+          <view class="c">
+            <view class="q">{{item.ProductTitle}}</view>
+            <view class="w">{{item.OrderItemStatusStr}}</view>
+            <!-- <text class="e">积分奖励 {{item.Integral}}</text> -->
+          </view>
+          <view class="p">
+            <view class="q">￥{{item.SalePrice || item.BuyPrice}}</view>
+            <view class="w" style="padding-left:7rpx">x{{item.BuyNumber}}</view>
+            <view 
+                  data-ProductId="{{item.ProductId}}"
+                  data-OrderItemId="{{item.OrderItemId}}"
+                  data-OrderId="{{obj.OrderId}}"
+                  catchtap="getBackMoney" 
+                  class="btn" 
+                  wx:if="{{obj.OrderStatus == 2 && item.OrderItemStatus==0}}">申请退货</view>
+            <view class="btn" wx:if="{{item.OrderItemStatus==1}}">退货中</view>
+          </view>
+</view>

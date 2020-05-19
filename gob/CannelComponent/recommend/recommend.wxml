@@ -1,0 +1,51 @@
+<wxs src="../setUrl.wxs" module="tools" />
+
+<view class="cannelOneWrapper" style="margin-bottom:20rpx;">
+  <view class="cannelOne" wx:if="{{type==0}}">
+    <block 
+        wx:for="{{list}}" 
+        wx:for-index="index">
+        <view class="item" 
+              data-index="{{index}}" 
+              bindtap="click"
+              wx:if="{{tools.isOpenTime(NowData,item.start_time,item.end_time)}}">
+          <view class="title">{{item.title}}</view>
+          <view class="subTitle" style="color:{{item.subtitle_color}}">
+            {{item.subtitle}}
+          </view>
+          <view class="goodWrapper">
+            <image src="{{tools.setUrl(item.pic_url_left,imgDomain,imgVersion)}}"></image>
+            <image src="{{tools.setUrl(item.pic_url_right,imgDomain,imgVersion)}}"></image>
+          </view>
+        </view>
+        <view 
+             wx:if="{{(index+1)%2==0&&(index+1)!=list.length&&list.length>2}}" 
+             style="top:{{100/(list.length/2)*((index+1)/2)}}%" 
+             class="spiltLine_x"></view>
+    </block>
+    <view class="spiltLine_y"></view>
+  </view>
+
+  <view class="cannelTwo" wx:if="{{type==1}}">
+    <image mode="widthFix" 
+           wx:for="{{list}}"  
+           wx:for-index="index"  
+           data-index="{{index}}" 
+           bindtap="click"
+           wx:if="{{tools.isOpenTime(NowData,item.start_time,item.end_time)}}"  
+           src="{{tools.setUrl(item.pic_url,imgDomain,imgVersion)}}"></image>
+  </view>
+
+  <view wx:if="{{type==2}}">
+    <view><image style="width:700rpx;" mode="widthFix" src="{{tools.setUrl(topBanner.pic_url,imgDomain,imgVersion)}}"></image></view>
+    <view class="type_2Wrapper">
+      <image mode="widthFix" 
+             wx:for="{{list}}"  
+             wx:for-index="index"  
+             data-index="{{index}}" 
+             bindtap="click"
+             wx:if="{{tools.isOpenTime(NowData,item.start_time,item.end_time)}}"  
+             src="{{tools.setUrl(item.pic_url,imgDomain,imgVersion)}}"></image>
+    </view>  
+  </view>
+</view>

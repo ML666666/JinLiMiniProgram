@@ -1,0 +1,33 @@
+
+
+
+<TopBar title='锦鲤团'></TopBar>
+
+<i_dialog />
+
+<view class="zf">
+  <image class="zhifu" mode="widthFix" src="./imgae/zhifu.png"></image>
+  <view class="title">提现到支付宝</view>
+  <view class="TheContent">
+      <view class="item">
+        <view class="c">
+          <image style="width:40rpx;height:42rpx;" src="./imgae/header.png"></image>
+          <input value="{{DrawRealName}}" data-name="DrawRealName" bindinput="input" placeholder="请输入你的名字" type="text"></input>
+        </view>
+      </view>
+      <view class="item">
+        <view class="c">
+          <image style="width:40rpx;height:28rpx;" src="./imgae/header_1.png"></image>
+          <input value="{{DrawAccount}}" data-name="DrawAccount" bindinput="input" placeholder="请输入支付宝账号"  type="number"></input>
+        </view>
+      </view>
+  </view>
+  <view bindtap="toBuy" class="btn red">
+    立即提现
+  </view>
+  <view bindtap="back"  class="btn t">
+    稍后再说
+  </view>
+  <text class="tips">请填写本人姓名和支付宝账号，实名信息绑定后无法修改</text>
+</view>
+

@@ -1,0 +1,1 @@
+.cannelWrapper{width: 100%;display: flex;flex-direction: column;align-items: center;background: #f6f6f6;}

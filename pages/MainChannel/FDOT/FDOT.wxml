@@ -1,0 +1,3 @@
+<view bindtap="toDetail" wx:if="dotObj" class="dotObj">
+  <image style="width:100%;" mode="widthFix" src="{{dotObj.Imgs}}"></image>
+</view>

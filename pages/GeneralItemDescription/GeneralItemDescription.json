@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "TopBar": "../../gob/gobComponent/TopBar/TopBar",
+    "t_swiper": "./component/swiper/swiper",
+    "LuckyDouble": "./component/LuckyDouble/LuckyDouble",
+    "Good_Detail":"./component/Good_Detail/Good_Detail",
+    "specifications":"./component/specifications/specifications",
+    "comment": "./component/comment/comment",
+    "GoodsDirectly": "./component/GoodsDirectly/GoodsDirectly",
+    "order": "./component/order/order",
+    "top": "./component/top/top",
+    "van-popup": "../../miniprogram_npm/vant-weapp/popup/index",
+    "toOder":"./component/toOder/toOder",
+    "ShareWrapper":"./component/ShareWrapper/ShareWrapper",
+    "youlike":"../../gob/gobComponent/youlike/youlike",
+    "ShopRecommendation":"./component/ShopRecommendation/ShopRecommendation"
+  }
+}

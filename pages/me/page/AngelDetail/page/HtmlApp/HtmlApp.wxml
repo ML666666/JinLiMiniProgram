@@ -1,0 +1,4 @@
+<TopBar title="{{Obj.title}}"></TopBar>
+<view class="wrapper">
+   <rich-text style="width:100%;" nodes="{{Obj.html}}"></rich-text>
+</view>

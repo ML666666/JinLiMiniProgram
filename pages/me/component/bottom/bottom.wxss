@@ -1,0 +1,62 @@
+.listWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.wrapper{
+  width: 700rpx;
+  height: 240rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 2rpx 2rpx 2rpx #ddd;
+  position: relative;
+}
+.wrapper .bg{
+  width: 700rpx;
+  height: 240rpx;
+  position: absolute;
+}
+.wrapper .container{
+  width: 700rpx;
+  height: 240rpx;
+  position: absolute;
+}
+.wrapper .container .titleTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26rpx 30rpx; 
+  box-sizing: border-box;
+  margin-bottom: 37rpx;
+  padding-bottom: 0rpx;
+}
+.wrapper .container .titleTop .title{
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}
+.wrapper .list{
+  display: flex;
+}
+.wrapper .list .item{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .list .item .t{
+  font-size:24rpx;
+  font-family:PingFang-SC-Regular,PingFang-SC;
+  font-weight:400;
+  color:rgba(221,221,221,1);
+  margin-bottom: 16rpx;
+}
+.wrapper .list .item .num{
+  font-size:40rpx;
+  font-family:DINPro-Medium,DINPro;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}

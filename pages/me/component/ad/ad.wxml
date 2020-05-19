@@ -1,0 +1,5 @@
+<swiper wx:if="{{list.length}}" autoplay="{{list.length>1?true:false}}" class="adWrapper">
+  <swiper-item wx:for="{{list}}">
+    <image data-jump_address="{{item.JumpContent}}" data-jump_type="{{item.JumpType}}"  bindtap="getBeClickCannelObj" src="{{item.PicUrl[0]}}"></image>
+  </swiper-item>
+</swiper>

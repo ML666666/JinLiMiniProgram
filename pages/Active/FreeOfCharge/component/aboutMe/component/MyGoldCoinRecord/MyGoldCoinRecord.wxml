@@ -1,0 +1,15 @@
+<view class="MyGoldCoinRecord">
+  <view class="item" wx:for="{{MyGoldCoin.OrderList}}">
+      <view class="a">
+        <view class="b">{{item.CoinStatusDesc}}</view>
+        <view class="c">{{item.createTime}}</view>
+      </view>
+      <view class="d">
+        <view class="e">{{item.GoldCoin}}</view>
+        <view class="f">{{item.CoinStatusDesc}}</view>
+      </view>
+  </view>
+  <Loading 
+            show="{{MyGoldCoin.isLoading || MyGoldCoin.isOver}}" 
+            type="{{MyGoldCoin.isOver?'end':'loading'}}" ></Loading>
+</view>

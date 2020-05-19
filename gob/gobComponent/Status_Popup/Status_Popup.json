@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "popup": "/miniprogram_npm/lin-ui/popup/index",
+    "SpStatus":"./component/SpStatus/SpStatus"
+  }
+}

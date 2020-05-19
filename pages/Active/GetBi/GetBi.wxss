@@ -1,0 +1,13 @@
+.bg{
+  width: 750rpx;
+  background: #7E0000;
+  position: relative;
+}
+.btn{
+  width: 347rpx;
+  height: 161rpx;
+  position: absolute;
+  top: 1105rpx;
+  left: 50%;
+  transform: translate(-50%);
+}

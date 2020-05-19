@@ -1,0 +1,22 @@
+<view wx:if="{{false}}" class="Low">
+  <title>门店库存管理</title>
+  <view class="stock">
+      <view class="title">
+        <view class="item_1 item">商品名称</view>
+        <view class="item_2 item">剩余库存</view>
+        <view class="item_2 item">销售总量</view>
+      </view>
+      <view class="wrapper">
+          <view class="item_1 item">
+            <image src="" class="imageHeader"></image>
+            <view class="title">蓝月亮洗衣液机洗专用洗衣液4瓶装 家庭大包装6kg…蓝月亮洗衣液机洗专用洗衣液4瓶装 家庭大包装6kg…</view>
+          </view>
+          <view class="item_2 item">
+            45630
+          </view>
+          <view class="item_2 item">
+            45630
+          </view>
+      </view>
+  </view>
+</view>

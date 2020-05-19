@@ -1,0 +1,25 @@
+<!--pages/me/page/orderList/Comment/Comment.wxml-->
+<TopBar title="评论"></TopBar>
+<view class="CommentWrapper">
+  <view class="item" wx:for="{{rows.LstProduct}}">
+    <image src="{{item.ProductImg}}"></image>
+    <view>{{item.ProductTitle}}</view>
+  </view>
+</view>  
+<view class="Comment_t">评论</view>
+<view class="textArea">
+  <textarea 
+    value="{{Comment}}" 
+    bindinput="onlnput" 
+    maxlength="{{200}}" 
+    placeholder="亲，不写点什么吗?" 
+    placeholder-class="wx"></textarea>
+    <view class="b">
+    <view>
+      <image wx:for="{{imgList}}" src="{{item}}"></image>
+      <image bindtap="addImg" src="./image/add.png"></image>
+    </view>
+    <view class="l">{{Comment?Comment.length:0}}/200</view>
+  </view>
+</view>
+<view class="btn" bindtap="makeSure">发布</view>

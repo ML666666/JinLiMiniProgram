@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "OrderStatus":"/pages/me/page/orderList/component/OrderStatus/OrderStatus"
+  }
+}

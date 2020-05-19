@@ -1,0 +1,2 @@
+<TopBar title="免单规则"></TopBar>
+<rich-text nodes="{{html}}"></rich-text>

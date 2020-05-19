@@ -1,0 +1,22 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+    <TopBar title='我的余额'></TopBar>
+    <view class="banlanceCenter">
+      <view bindtap="tixian" class="item border">
+        <view class="t">账户余额</view>
+        <view class="r">￥{{balance}}</view>
+        <view class="btn">提现</view>
+      </view>
+      <view bindtap="checkPrice" class="item">
+        <view class="t">冻结金额</view>
+        <view class="r">￥{{AgentFrozenBalance}}</view>
+        <view class="btn">查看</view>
+      </view>
+    </view>
+    <view bindtap="checkDetail" class="rw">查看余额明细</view>
+
+</PageLoadingWrapper>

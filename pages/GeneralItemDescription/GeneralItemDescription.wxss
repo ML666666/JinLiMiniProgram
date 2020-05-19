@@ -1,0 +1,102 @@
+/* pages/GeneralItemDescription/GeneralItemDescription.wxss */
+.goodDetail{display: flex;flex-direction: column;justify-content: center;width: 100%;background: #f3f3f3;
+}
+.goodDetail .changeStatus{border: 2rpx solid rgb(160, 160, 160);border-radius: 10rpx;width: 180rpx;height: 56rpx;display: flex;justify-content: space-between;}
+.goodDetail .changeStatus .item{text-align: center;line-height: 56rpx;flex: 1;color: #888;}
+.goodDetail .changeStatus .active{
+  background: #a0a0a0;
+  color: #fff;
+}
+.goodDetail swiper{width:100%;height: 750rpx;}
+.goodDetail swiper image{width: 750rpx;height: 750rpx;}
+rich-text{
+  margin-bottom: 100rpx;
+}
+.newTop{
+  display: flex;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  flex-direction: columnl;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 90;
+  transition: 0.4s;
+}
+.newTop .statusBar{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.newTop .statusBar .back{
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: 25rpx;
+}
+.newTop .cardNumWrapper{
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin-left: 30rpx;
+  background:rgba(242,242,242,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.newTop .cardNumWrapper image{
+  width: 40rpx;
+  height: 37rpx;
+}
+.newTop .cardNumWrapper .num{
+  position: absolute;
+  top: 25rpx;
+  right: 20rpx;
+  transform: translate(50%,-50%) scale(0.7);
+  background: #f42c36;
+  color: #fff;
+  padding: 2rpx 10rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+}
+.activeBar{
+  background: #fff;
+}
+.newTop .status_bar{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+}
+.newTop .status_bar .m{
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+.newTop .status_bar .item{
+  position: relative;
+  margin:0 20rpx;
+}
+.newTop .status_bar .line{
+  position: absolute;
+  width: 100%;
+  height:4rpx;
+  background:#333333;
+  top:50rpx;
+  opacity: 0;
+  transition: 0.4s;
+}
+.newTop .status_bar .active{
+  color: #E52920;
+}
+.newTop .status_bar .active .line{
+  background:#E52920;
+  opacity: 1;
+}

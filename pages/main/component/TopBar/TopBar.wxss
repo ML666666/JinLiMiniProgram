@@ -1,0 +1,30 @@
+.container {
+   box-sizing: border-box;
+}
+.swiperContainer{width: 710rpx !important;}
+.swiperContainer .slide-image{width: 100%;height: 95%;border-radius: 20rpx;}
+/* 顶部横向导航栏 */
+
+.recommendTitle{
+  width: 100%;
+}
+
+.tabsWrapper{width: 100%;}
+.isTabsContainetSticky{position: fixed;top: 0px;z-index: 200;}
+.tabsContainer{
+width: 100%;display: flex;
+height: 70rpx;
+transition: 0.2s;
+transition-timing-function:linear;}
+.tabsContainer van-tabs{width: 100% !important;}
+.tabsContainer .van-tabs__wrap{background-color:transparent !important;}
+.tabsContainer .van-hairline--top-bottom:after{border: 0rpx !important;}
+.tabsContainer .van-tab__title{color: #fff;}
+.tabsContainer .van-tabs__line{background: #fff;}
+.tabsContainer .van-tabs--line{padding-top:60rpx !important;}
+.tabsContainer .van-tabs--line .van-tabs__wrap{height:60rpx !important;margin-bottom: 10rpx;}
+.tabsContainer .van-tab{min-width:0;padding:0 10rpx;font-size:28rpx;line-height:60rpx;color:#7d7e80;text-align:center;cursor:pointer;box-sizing:border-box;-webkit-flex:1;flex:1}
+
+/* 非特卖状态到航栏 */
+.barFontColor .van-tab__title{color: #000 !important;}
+.barFontColor .van-tabs__line{background: #ff273b !important;}

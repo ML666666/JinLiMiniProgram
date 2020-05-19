@@ -1,0 +1,18 @@
+<view class="Wrapper">
+  <view class="titleWrapper">
+    <view class="title">店铺推荐</view>
+    <view class="arrow" bindtap="togoodeList"><text>查看全部</text><image src="./image/arrow.png"></image></view>
+  </view>
+  <view class="goodWrapper">
+    <view class="good" wx:for='{{rows}}' wx:for-index='index' style="{{index==1?'margin:0 14rpx;':''}}" data-Id="{{item.Id}}" bindtap="tod">
+      <image class="goodImage" src="{{item.ProductImg}}"></image>
+      <view class="title">
+        {{item.ProductTitle}}
+      </view>
+      <view class="priceWrapper">
+        <view class="left">￥{{item.SalePrice}}</view>
+        <view class="right">￥{{item.MarketPrice}}</view>
+      </view>
+    </view>
+  </view>
+</view>

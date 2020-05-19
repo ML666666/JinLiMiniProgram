@@ -1,0 +1,38 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .topBanner{
+  width: 682rpx;
+  height: 118rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+.canvasImage{
+  width: 750rpx;
+  height: 1010rpx;
+}
+.btn{
+  width:640rpx;
+  height:86rpx;
+  background:linear-gradient(90deg,rgba(237,69,60,1) 0%,rgba(229,41,32,1) 100%);
+  border-radius:50px;
+  font-size:34rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  margin-top: 27rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+  line-height: 86rpx;
+}
+
+.type_1{
+  width: 750rpx;
+  height: 1010rpx;
+  position: fixed;
+  top: -1000rpx;
+  left: -1000rpx;
+}

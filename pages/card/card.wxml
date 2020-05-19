@@ -1,0 +1,140 @@
+
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+    <view style="min-height:{{windowHeight}}px;" class='card'>
+
+      <TopBar 
+          title="{{'购物车'}}" 
+          titleColor="{{'#ffffff'}}" 
+          bgColor="{{'linear-gradient(270deg,#fd4068,#f23e35);'}}" 
+          custom="{{true}}">
+            <view wx:if="{{isLogin}}">
+              <image style="width:40rpx;height:46rpx;"    
+                    bindtap="edit" 
+                    src='./image/gou.png' 
+                    mode="widthFix"  
+                    wx:if="{{isEdit}}"></image>
+              <view wx:if="{{!isEdit}}" bindtap="edit" class="edit">编辑</view>
+            </view>
+            <view wx:else>
+              <view wx:if="{{!isEdit}}" bindtap="toLogin" class="edit">登录</view>
+            </view>
+      </TopBar>
+
+      <view class="Wrapper">
+          
+          <view style="width:100%" class="listWrapper" wx:if="{{cardData.length}}">
+            <view wx:for='{{cardData}}' 
+                  wx:for-index="key" 
+                  wx:key="unique" 
+                  class="itemWrapper">
+              
+              <view class="title">
+                {{item.GroupTitle}}
+              </view>
+              <view class="cardList">
+
+                <view class="item" 
+                      wx:for-index="Li_key" 
+                      wx:key="unique_2"  
+                      wx:for="{{item.LstProduct}}">
+
+                    <van-checkbox
+                          data-Id="{{item.Id}}" 
+                          data-key="{{key}}"
+                          data-Li_key="{{Li_key}}"
+                          value="{{item.IsCheck}}" 
+                          checked-color="#ff1d26" 
+                          bind:change="onChange"></van-checkbox>
+
+                    
+                    <image
+                          data-ProductId="{{item.ProductId}}" bindtap="toGoodDetail"
+                          lazy-load="{{true}}" 
+                          mode="widthFix" 
+                          src="{{item.ProductImg}}"></image>
+
+                    <view class="detail">
+
+                      <view class="t" 
+                            data-ProductId="{{item.ProductId}}" 
+                            bindtap="toGoodDetail">{{item.ProductTitle}}</view>
+                      <view class="s" 
+                            data-ProductId="{{item.ProductId}}" 
+                            bindtap="toGoodDetail">{{item.AttValueName?item.AttValueName:''}}</view>
+                      <view class="price">
+                        <view wx:if="{{!isEdit}}" class="p">
+                          <text style="margin-right:10rpx">￥{{item.SalePrice}}</text>
+                          <!-- <text>赠{{item.Integral}}积分</text>   -->
+                        </view>
+                        <view wx:else></view>
+                        <view  wx:if="{{!isEdit}}" class="numWrapper">
+
+                          <view 
+                                data-Id="{{item.Id}}" 
+                                catchtap="changeNum"
+                                data-type="{{0}}"
+                                data-key="{{key}}"
+                                data-Li_key="{{Li_key}}">-</view>
+                        
+                          <input 
+                                data-key="{{key}}"
+                                data-Li_key="{{Li_key}}"
+                                type="number" 
+                                value="{{item.BuyNum}}"></input>
+                        
+                          <view 
+                                catchtap="changeNum"
+                                data-type="{{1}}"
+                                data-key="{{key}}"
+                                data-Li_key="{{Li_key}}">+</view>
+                        
+                        </view>
+                        
+                        <view 
+                            wx:else  
+                            class="deleteItem"
+                            data-Id="{{item.Id}}" 
+                            data-key="{{key}}"
+                            data-Li_key="{{Li_key}}" 
+                            catchtap="isDelete">
+                            <image src='./image/ton.png'></image>
+                        </view>
+
+                      </view>
+                    </view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <view wx:if="{{!cardData.length}}" class="NothingWrapper">
+            <image mode="widthFix" src="{{cardUrl}}"></image>
+            <view class="tips">购物车空空如也，快来挑好货吧！</view>
+            <view bindtap="toTypeList" class="btn">去逛逛</view>
+          </view>
+
+      </view>
+      <view class="buttomCard" wx:if="{{cardData.length}}">
+        <view class="t">
+          <view wx:if="{{!isEdit}}">
+            合计:<text style="font-weight: 700;">￥{{total}}</text>
+          </view>
+          <view class="discountAbout" wx:if="{{total!='0.00' && IsAngel && !isEdit}}">
+            <view style="margin-right:20rpx">总额:￥{{SalePriceTotal}}</view>
+            <view>平台优惠:￥{{discount}}</view>
+          </view>
+        </view>
+        <view wx:if="{{!isEdit}}" bindtap="makesureBuy" class='btn'>结算</view>
+        <view wx:else class='btn disable'>结算</view>
+      </view>
+    </view>
+
+    <!-- <dialog /> -->
+
+</PageLoadingWrapper>

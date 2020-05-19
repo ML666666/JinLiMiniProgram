@@ -1,0 +1,21 @@
+    <view class="reSetGoodList" wx:if="{{ShoppingCartExpireGoods.length}}">
+      <view class="t">以下商品重新加入才能继续购买</view>
+      <block  wx:for="{{ShoppingCartExpireGoods}}" wx:for-index='index'>
+        <view class="d_wrapper" bindtap="toDetail" data-ProductId="{{item.ProductId}}">
+          <image class="goodImage" 
+                 src="{{item.ProductImg}}"></image>
+          <view class="titleWrapper">
+              <view class="title S_S">{{item.ProductTitle}}</view>
+              <view class="btn" data-Id="{{item.Id}}" catchtap="reget" >重新购买</view>
+          </view>
+          <view class="price" style="height:100%">
+              <view class="price" style="height:50%">
+                <view class="title">￥{{item.SalePrice}}</view>
+                <view class="del">￥{{item.MarketPrice}}</view>
+              </view>
+              <image src="./image/close.png" data-Id="{{item.Id}}" catchtap="delete" class="close"></image>
+          </view>
+        </view>
+        <view class="line_2" wx:if="{{(index+1)!=ShoppingCartExpireGoods.length}}"></view>
+      </block>
+    </view>

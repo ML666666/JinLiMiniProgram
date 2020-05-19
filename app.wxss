@@ -1,0 +1,4 @@
+/**app.wxss**/ 
+image{
+  transition: 0.25s;
+} 

@@ -1,0 +1,6 @@
+<view class="status_success">
+  <view class="tips">恭喜您成为锦鲤团商户</view>
+  <image 
+      src="http://h5.huizhisuo.com/upload/Picture/comment/201910/6b0d8521c0534773bbe4b3c4dbeea0c7.png?v=1.0.41">
+  </image>
+</view>

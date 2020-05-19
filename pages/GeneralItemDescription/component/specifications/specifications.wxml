@@ -1,0 +1,6 @@
+<!--pages/GeneralItemDescription/component/specifications/specifications.wxml-->
+<!-- <view bindtap="toOrder" class="setSpecifications"> -->
+  <!-- <view class="t">
+    <view style="color:#ccc">规格</view><view style="margin:0 10rpx">选择</view><view>{{detail.LstAtt[0].AttName}}分类</view>
+  </view> -->
+<!-- </view> -->

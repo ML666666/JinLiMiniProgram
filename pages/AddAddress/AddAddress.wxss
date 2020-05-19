@@ -1,0 +1,30 @@
+/* pages/AddAddress/AddAddress.wxss */
+.AddAddress{
+  background-color: #f5f5f5;
+}
+.AddAddress .nothing{flex-direction: column; display: flex;justify-content: center;align-items: center;}
+.AddAddress .nothing image{width: 160rpx;height: 160rpx;margin-bottom: 20rpx;}
+.AddAddress .nothing view{color: #2c3e50; font-size: 24rpx;display: flex;flex-direction: column;align-items: center;justify-content: center;}
+.AddAddress .item{border-top:2rpx solid #ececec; border-bottom:2rpx solid #ececec;margin: 20rpx 0rpx;background: #fff;}
+.AddAddress .item .top{display: flex;box-sizing: border-box;padding: 0rpx 20rpx;align-items: center;font-size: 28rpx; color: #2c3e50;height: 100rpx;align-items: center;line-height: 100rpx;}
+.AddAddress .item  .detial{padding: 0 20rpx;font-size: 24rpx;}
+.AddAddress .item  .s{justify-content: space-between;}
+.AddAddress .item  .s .isDeafult .van-checkbox{width: 40rpx;height: 40rpx;}
+.AddAddress .item  .s .isDeafult{
+  display: flex;
+  align-items: center;
+}
+.AddAddress .item  .s .t{display: flex;}
+.AddAddress .item  .s .t view{margin-right: 20rpx;}
+.AddAddress .btn{
+    width: 650rpx;
+    color: #fff;
+    font-size: 26rpx;
+    border: none;
+    border-radius: 6rpx;
+    background: #ff1d26;
+    padding: 20rpx;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30rpx;
+}

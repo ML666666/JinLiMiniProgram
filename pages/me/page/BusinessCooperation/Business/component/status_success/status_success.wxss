@@ -1,0 +1,18 @@
+.status_success{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.status_success .tips{
+  font-size:40rpx;
+  font-family:PingFangSC-Semibold,PingFangSC;
+  font-weight:600;
+  color:rgba(229,41,32,1);
+  margin-top: 70rpx;
+  margin-bottom: 74rpx;
+}
+.status_success image{
+  width: 453rpx;
+  height: 426rpx;
+}

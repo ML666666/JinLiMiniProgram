@@ -1,0 +1,24 @@
+
+
+    <TopBar title='提现记录'></TopBar>
+    <view class="withDrawalRecord">
+      
+      <view class="countWrapper">
+        <view class="count">{{obj.totalAmount}}</view>
+        <view class="t">总收益(元)</view>
+      </view>
+
+      <view class="wrapper">
+          <view class="titleWrapper">
+            <view>时间</view>
+            <view>金额</view>
+            <view>提现状态</view>
+          </view>
+          <view wx:for="{{obj.list}}" class="item_list">
+            <view class="t">{{item.CreateTime}}</view>
+            <view style="color: red;" class="p">￥{{item.DrawAmount}}</view>
+            <view class="w">{{item.DrawStatusDesc}}</view>
+          </view>
+      </view>
+
+    </view>    

@@ -1,0 +1,11 @@
+<TopBar title="锦鲤团"></TopBar>
+<view class="wrapper">
+  <view class="title">
+    {{ArtucleObj.Title}}
+  </view>
+  <view class="provenance">
+    <text>{{ArtucleObj.Author}}</text> <text>{{ArtucleObj.CreateTime}}</text>
+  </view>
+
+  <rich-text style="width:100%;" nodes="{{ArtucleObj.ArticleContent}}"></rich-text>
+</view>

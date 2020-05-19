@@ -1,0 +1,16 @@
+<view wx:if="{{isFixedTop}}" class="list_bar">
+</view>
+<scroll-view id="list_bar" class="list_bar {{isFixedTop?'isF':''}} W_E_F" style="top:{{navHeight}}px" scroll-x="true">
+  <view wx:for="{{solitaireTopData.cataLst}}"  
+        bindtap="changeIndex"
+        data-CategoryId="{{item.CategoryId}}"
+        data-index="{{index}}" 
+        wx:for-index="index"
+        class="item">
+    <view class="wrapper">
+        <image class="{{currentIndex==index?'':'hide'}}" src="{{item.CateIconSelected}}"></image>
+        <image class="{{currentIndex==index?'hide':''}}" src="{{item.CateIcon}}"></image>
+        <view class="{{currentIndex==index?'active':''}}">{{item.CateName}}</view>
+    </view>
+  </view>
+</scroll-view>

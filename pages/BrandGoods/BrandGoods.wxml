@@ -1,0 +1,33 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+  <TopBar title="{{name}}"></TopBar>
+  <view id="brand-tabbar" style="{{activeTop?'position: fixed;left:0rpx;right:0rpx;z-index:200;':''}}top:{{navHeight}}px;">
+      <brandTabbar bind:getStatus='getStatus'></brandTabbar>
+  </view>
+  <view wx:if="{{activeTop}}" style="height:{{100}}rpx"></view>
+  <view class="goodList">
+        <view wx:for="{{rows}}" class="good" data-Id="{{item.Id}}" bindtap="toDetail">
+              <view class="imageWrapper">
+                <image mode="widthFix" src="{{item.ProductImg}}"></image>
+              </view>
+              <view class="detail">
+                  <view class="title">
+                      {{item.ProductTitle}}
+                  </view>
+                  <KDTag price='{{item.ShoppingBi}}'></KDTag>
+                  <view class="sales-price">
+                    <view class="price">￥{{item.SalePrice}}</view>
+                    <view class="sales">￥{{item.MarketPrice}}</view>
+                  </view>
+          </view>
+  </view>
+  <l-status-show wx:if="{{!rows.length}}" type="data" show="{{true}}"></l-status-show>
+  <view class="DeadLineWrapper">
+    <DeadLine wx:if="{{isOver}}"></DeadLine>
+  </view>
+  </view>
+</PageLoadingWrapper>

@@ -1,0 +1,17 @@
+.nothing{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nothing image{
+  width: 264rpx;
+  height: 204rpx;
+}
+.nothing view{
+  margin-top: 40rpx;
+  font-size: 30rpx;
+  color: #45526b;
+
+}

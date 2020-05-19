@@ -1,0 +1,12 @@
+<TopBar title="{{name}}"></TopBar>
+<view style="min-height:{{windowHeight}}px" class="listWrapper">
+  <view class="item" wx:for="{{list}}" data-id="{{item.Id}}" bindtap="toDetail">
+    <view class="time">{{item.SendTime}}</view>
+    <view class="container">
+      <view class="t">{{item.Title}}</view>
+      <view class="c">{{item.Content}}</view>
+      <view class="dot" wx:if="{{!item.IsRead}}">
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,70 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+    <dialog></dialog>
+    <view class="fullWrapper" wx:if="{{!isRenderingPage}}">
+
+      <_TopBar
+        top="{{top}}"
+        isSpecialSellBgColor="{{isSpecialSellBgColor}}"
+        specialSellBgColor="{{specialSellBgColor}}"
+        category="{{category}}"
+        targetIndex="{{targetIndex}}">
+        <view bindtap="toMsg" class="toMsg {{isSpecialSellBgColor?'':'toMsgB'}}">
+          <view wx:if="{{MsgNum}}" class="dot">{{MsgNum}}</view>
+          <image src="{{isSpecialSellBgColor?'./image/msgW.png':'./image/msgB.png'}}"></image>
+          <text>消息</text>
+        </view>
+      </_TopBar>
+      
+      <view 
+            style='background: {{isSpecialSellBgColor?specialSellBgColor:"#fff"}}; top:{{top}}px;' 
+            class='tabsContainer {{isSpecialSellBgColor?"":"barFontColor"}} isTabsContainetSticky'>
+            <van-tabs 
+                    background="{{specialSellBgColor}}"
+                    bind:getActiveObj="getActiveObj"    
+                    active="{{ targetIndex }}">
+              <van-tab 
+                      wx:for="{{category}}" 
+                      wx:key="key" 
+                      RecommendType="{{item.RecommendType}}" 
+                      title="{{item.CateName}}"></van-tab>
+            </van-tabs>
+      </view>
+
+      <!-- 特卖页 -->
+      <van-transition 
+            name='fade-left'  
+            show="{{ targetIndex==0 }}">
+      <specialSellContainer
+        bind:getActiveTop="getActiveTop"
+        bind:swiperChange="specialSellSwiperChange" 
+        cannalObj="{{allData[0].topData}}" 
+        list="{{allData[0].list}}" 
+        isAutoPlay="{{true}}"></specialSellContainer>
+      </van-transition>
+
+      <!-- 非特卖页 -->
+      <van-transition 
+            name='fade-right'  
+            show="{{ targetIndex!=0 }}">
+            <hotSell 
+              orderCannal="{{allData[targetIndex].topData}}" 
+              orderCannal_2="{{allData[targetIndex].bodyData}}">
+            </hotSell>
+      </van-transition>
+
+      <Loading 
+                show="{{isLoading || allData[targetIndex].isOver}}" 
+                type="{{allData[targetIndex].isOver?'end':'loading'}}" ></Loading>
+
+
+    
+    </view>
+
+
+</PageLoadingWrapper>

@@ -1,0 +1,39 @@
+<view class="header {{isSpecialSellBgColor?'tBG':'wBg'}}">
+  
+  <TopBar
+        custom="{{true}}"
+        isShowArror="{{false}}" 
+        titleColor="{{isSpecialSellBgColor?'#ffffff':'#000000'}}" 
+        bgColor="{{isSpecialSellBgColor?'rgba(229,41,32,1)':'#f5f5f5'}}"  
+        title="{{'锦鲤团'}}">
+  </TopBar>
+  
+  <dialog></dialog>
+
+  <view id="wrapper" class="wrapper" style="top:{{navHeight}}px;background:{{isSpecialSellBgColor?'rgba(229,41,32,1)':'#f5f5f5'}};height:{{95+81}}rpx;">
+    <view class="top">
+      <view bindtap="toMsg" class="msg btn">
+          <view class="dot {{isSpecialSellBgColor?'':'red'}}" wx:if="{{noReadNum}}">{{noReadNum}}</view>
+          <image wx:if="{{isSpecialSellBgColor}}" src="./image/msgw.png"></image>
+          <image wx:if="{{!isSpecialSellBgColor}}" src="./image/msgb.png"></image>
+          <view class="text {{isSpecialSellBgColor?'':'b'}}">消息</view>
+      </view>
+      <view bindtap="toSearch" class="search">
+        <image src="./image/search.png"></image>
+        <swiper autoplay="{{true}}" interval="{{4500}}"  vertical="true">
+          <swiper-item wx:for="{{hotKeyWord}}">
+            <view>{{item.KeyWords}}</view>
+          </swiper-item>
+        </swiper>
+      </view>
+      <button class="contact btn" open-type="contact">
+        <image wx:if="{{isSpecialSellBgColor}}" src="./image/kfw.png"></image>
+        <image wx:if="{{!isSpecialSellBgColor}}" src="./image/kfb.png"></image>
+        <view class="text {{isSpecialSellBgColor?'':'b'}}">客服</view>
+      </button>
+    </view>
+    <slot></slot>
+  </view>
+
+  <view style="height:{{95+70}}rpx;"></view>
+</view>

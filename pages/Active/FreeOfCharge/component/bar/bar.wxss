@@ -1,0 +1,5 @@
+.FCBottom{position: fixed;bottom: 0;left: 0;width: 100%;height: 100rpx;line-height: 100rpx;display: -ms-flexbox;display: flex;background: #fff;}
+.FCBottom .item{flex: 1;height: 100rpx;display: flex;justify-content: center;align-items: center;}
+.FCBottom .item text{font-size: 30rpx;font-weight: 700;color: #888;margin-left: 8rpx;}
+.FCBottom .active text{color: #ff273b !important;}
+.FCBottom .hide{display: none}

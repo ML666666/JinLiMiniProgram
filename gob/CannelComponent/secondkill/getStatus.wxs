@@ -1,0 +1,22 @@
+
+function getStatus(nowdata, startdata, enddata, todayEnd){
+  var today = 1;
+  var isB = isB || false;
+  if (nowdata < Date.parse(startdata)){
+    if (Date.parse(startdata) > todayEnd){
+      return "明日开抢"
+    }
+    return "即将开抢"
+  }else if (nowdata > Date.parse(enddata)) {
+    return "已结束"
+  }else{
+    return "抢购中"
+  }
+
+  // if (nowdata > Date.parse(startdata) && NowData < Date.parse(enddata)){
+   
+  // }
+}
+module.exports = {
+  getStatus: getStatus,
+}

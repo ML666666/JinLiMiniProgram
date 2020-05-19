@@ -1,0 +1,7 @@
+function toFixed(target){
+  return target.toFixed(2)
+}
+
+module.exports = {
+  toFixed: toFixed
+};

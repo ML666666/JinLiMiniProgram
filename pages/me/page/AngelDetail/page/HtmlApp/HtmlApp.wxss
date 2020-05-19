@@ -1,0 +1,5 @@
+/* pages/me/page/AngelDetail/page/HtmlApp/HtmlApp.wxss */
+.wrapper{
+  padding: 24rpx;
+  box-sizing: border-box;
+}

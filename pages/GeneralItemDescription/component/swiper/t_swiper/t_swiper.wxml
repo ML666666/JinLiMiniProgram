@@ -1,0 +1,32 @@
+<view  class="swiperWrapper">
+    <swiper 
+        current="{{current}}"
+        bindchange='swiperChange' 
+        indicator-dots="{{false}}"
+        autoplay="{{false}}" 
+        interval="{{3500}}" 
+        indicator-color="{{'rgba(0,0,0,0.2)'}}" 
+        indicator-active-color="{{'rgba(255,255,255,1'}}"
+        duration="{{1000}}">
+            <swiper-item  wx:if="{{VideoAddress}}">       
+              <view  class="videoWrapper">
+                <video
+                  poster="{{list[0].ImgUrl}}" 
+                  id="video"
+                  autoplay="{{isAutoplay}}"
+                  src="{{VideoAddress}}"></video>
+              </view>
+            </swiper-item>
+            <swiper-item wx:for="{{list}}" wx:key="key"  wx:for-item="item">
+              <image onload="onloadImg" src="{{item.ImgUrl}}" class="slide-image"/>
+            </swiper-item>
+    </swiper>
+    <view class="count" wx:if="{{!VideoAddress}}">
+      <!-- {{current+1}}/{{list.length}} -->
+      <view wx:for="{{list.length}}" wx:for-index="index" class="radius {{index==(current)?'active':''}}" ></view>
+    </view>
+    <view class="count" wx:if="{{VideoAddress}}">
+      <!-- {{current}}/{{list.length}} -->
+      <view wx:for="{{list.length}}" wx:for-index="index" class="radius {{index==(current)?'active':''}}" ></view>
+    </view>
+</view>

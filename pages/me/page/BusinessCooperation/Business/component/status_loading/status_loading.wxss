@@ -1,0 +1,26 @@
+.status_loading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.status_loading .tips{
+  font-size:40rpx;
+  font-family:PingFangSC-Semibold,PingFangSC;
+  font-weight:600;
+  color:rgba(229,41,32,1);
+  margin-top: 74rpx;
+  margin-bottom: 126rpx;
+}
+.status_loading .btn{
+  width:220rpx;
+  height:72rpx;
+  background:linear-gradient(90deg,rgba(237,69,60,1) 0%,rgba(229,41,32,1) 100%);
+  border-radius:50rpx;
+  font-size:32rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 72rpx;
+}

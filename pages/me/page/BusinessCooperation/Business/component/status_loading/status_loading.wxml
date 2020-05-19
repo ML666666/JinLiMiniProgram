@@ -1,0 +1,6 @@
+<view class="status_loading">
+  <view class="tips">您的资料已提交到平台审核</view>
+  <view bindtap="refresh" class="btn">
+    刷新
+  </view>
+</view>

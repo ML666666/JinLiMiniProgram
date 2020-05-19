@@ -1,0 +1,42 @@
+<!-- <PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+</PageLoadingWrapper> -->
+
+<TopBar title="{{'评论详情'}}"></TopBar>
+<view class="wrapper">
+
+  <view class="userObj">
+    <image class="header" src="{{UserObj.UserIcon}}"></image>
+    <view class="NickName">{{UserObj.NickName}}</view>
+    <view class="tips">给你推荐了一件 心动好物</view>
+  </view>
+
+  <view data-Id="{{ProObj.Id}}" bindtap="toDetail" class="ProObj">
+    <image src="{{ImgUrl}}" class="image"></image>
+    <view class="detail">
+      <view class="title">{{ProObj.ProductTitle}}</view>
+      <view  class="priceWrapper">
+        <view class="price">
+            <text style="color:#666666">限时价</text>￥<text style="font-size:34rpx;">{{ProObj.SalePrice}}</text>
+        </view>
+        <view class="btn">
+          立即购买
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="commend">
+      {{CommendObj.Comment}}
+  </view>
+  
+</view> 
+<view class="imageWrapper">
+    <image wx:for="{{CommendObj.ImgShow}}" src="{{item?item:item.AttachPath}}"></image>
+</view>
+<youlike CateId="{{ProObj.CateId}}" isReactBottom="{{ReachBottom}}"></youlike>

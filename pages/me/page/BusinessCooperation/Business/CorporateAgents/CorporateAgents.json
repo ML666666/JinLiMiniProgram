@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "bar": "../component/bar_2/bar",
+    "InputWrppaer": "../component/InputWrppaer/InputWrppaer",
+    "InputTips": "../component/InputTips/InputTips",
+    "getPhoneCode": "../component/getPhoneCode/getPhoneCode",
+    "makeSureBtn": "../component/makeSureBtn/makeSureBtn",
+    "uploadCard": "../component/uploadCard/uploadCard",
+    "uploadImage": "../component/uploadImage/uploadImage",
+    "uploadmoreImage": "../component/uploadmoreImage/uploadmoreImage",
+    "status_success": "../component/status_success/status_success",
+    "status_loading": "../component/status_loading/status_loading"
+  }
+}

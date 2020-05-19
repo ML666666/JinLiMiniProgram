@@ -1,0 +1,57 @@
+.bar{
+  width: 750rpx;
+  height: 170rpx;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30rpx;
+}
+.bar .wrapper{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bar .wrapper .radius{
+  width:46rpx;
+  height:46rpx;
+  background:rgba(255,255,255,1);
+  border:2rpx solid rgba(102,102,102,1);
+  text-align: center;
+  line-height: 46rpx;
+  font-size:34rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  border-radius: 50%;
+  position: relative;
+}
+.bar .wrapper .radius .tips{
+  position: absolute;
+  font-size:26rpx;
+  font-family:PingFangSC-Regular,PingFangSC;
+  font-weight:400;
+  color:#666666;
+  width: 200rpx;
+  text-align: center;
+  bottom: -50rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.active_{
+  background:rgba(237,69,60,1) !important;
+  border:2rpx solid rgba(250,70,70,1) !important;
+  color:rgba(255,255,255,1) !important;
+}
+.active{
+  width:56rpx !important;
+  height:56rpx !important;
+  background:rgba(237,69,60,1) !important;
+  border:2rpx solid rgba(250,70,70,1) !important;
+  line-height: 56rpx !important;
+  font-size:40rpx !important;
+  color:rgba(255,255,255,1) !important;
+}
+.bar .line{
+  width:250rpx;
+  height:4rpx;
+  background:rgba(237,69,60,0.5);
+}

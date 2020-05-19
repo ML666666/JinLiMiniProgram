@@ -1,0 +1,50 @@
+.wrapper{
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.wrapper .title{
+  height:28rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.wrapper .tips{
+  height:27rpx;
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  margin-top: 24rpx;
+  margin-bottom: 39rpx;
+}
+.wrapper .imageWrapper{
+  margin-left: 16rpx;
+  width: 310rpx;
+  height: 220rpx;
+  overflow: hidden;
+}
+
+.mask{
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  background:rgba(0,0,0,0.5);
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  transition: 0.4s;
+}
+.showMask{
+  transform: translateY(0%);
+}
+
+.canvas{
+  position: fixed;
+  top: 0rpx;
+  transform: translateY(-1000%);
+}

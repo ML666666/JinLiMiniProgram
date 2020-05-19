@@ -1,0 +1,57 @@
+<TopBar title="{{'企业供应商'}}"></TopBar>
+<bar active="{{1}}"></bar>
+
+<InputWrppaer>
+  <InputTips tipsText="{{'公司名称'}}"></InputTips>
+  <input placeholder="请输入公司名称" placeholder-class="placeholder" class="inputClass"></input>
+
+  <InputTips tipsText="{{'公司名称'}}"></InputTips>
+  <view class="inputWrapper">
+    <input placeholder="请输入公司名称" placeholder-class="placeholder" disabled="true" class="inputClass"></input>
+    <image mode="widthFix" class="arrow" src="../image/arrow.png"></image>
+  </view>
+  
+  <InputTips tipsText="{{'公司经营地址'}}"></InputTips>
+  <input placeholder="请填写具体地址" placeholder-class="placeholder" class="inputClass"></input>
+
+  <InputTips tipsText="{{'公司介绍'}}"></InputTips>
+  <input placeholder="请填写公司介绍" placeholder-class="placeholder" class="inputClass"></input>
+
+  <InputTips tipsText="{{'法人姓名'}}"></InputTips>
+  <input placeholder="请填写法人姓名" placeholder-class="placeholder" class="inputClass"></input>
+
+  <InputTips tipsText="{{'法人证件类型'}}"></InputTips>
+  <view class="inputWrapper">
+    <input placeholder="请选择法人证件类型" placeholder-class="placeholder" disabled="true" class="inputClass"></input>
+    <image mode="widthFix" class="arrow" src="../image/arrow.png"></image>
+  </view>
+
+  <InputTips tipsText="{{'法人证件号码'}}"></InputTips>
+  <input placeholder="请填写法人证件号码" placeholder-class="placeholder" class="inputClass"></input>
+
+  <InputTips tipsText="{{'是否三证合一'}}"></InputTips>
+  <view class="inputClass">
+    <view class="select">
+      <image src="../image/select.png"></image>
+      <text>是</text>
+    </view>
+    <view class="select">
+      <image src="../image/selectActive.png"></image>
+      <text>是</text>
+    </view>
+  </view>
+
+  <InputTips tipsText="{{'社会统一信用代码'}}"></InputTips>
+  <input placeholder="请填写社会统一信用代码" placeholder-class="placeholder" class="inputClass"></input>
+
+  <InputTips tipsText="{{'手机号码'}}"></InputTips>
+  <input placeholder="请填写手机号码" placeholder-class="placeholder" class="inputClass"></input>
+
+  <InputTips tipsText="{{'手机验证码'}}"></InputTips>
+  <view class="inputWrapper">
+    <input placeholder="请填写手机验证码" placeholder-class="placeholder" class="inputClass"></input>
+    <getPhoneCode></getPhoneCode>
+  </view>
+
+</InputWrppaer>
+<makeSureBtn></makeSureBtn>

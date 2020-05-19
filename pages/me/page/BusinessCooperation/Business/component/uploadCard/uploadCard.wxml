@@ -1,0 +1,26 @@
+<view class="wrapper">
+  
+  <view class="itemWrapper">
+    <label data-index="zm" wx:if="{{!zm}}"  bindtap="addImg" class="item">
+      <image class="bg" src="./image/z.png"></image>
+      <image class="c" src="./image/c.png"></image>
+    </label>
+    <view  wx:else class="imagewrapper">
+      <image data-index="zm" bindtap="close" class="close" src="./image/close.png"></image>
+      <image class="item" src="{{zm}}" ></image>
+    </view> 
+    <view class="tips">法人身份证正面</view>
+  </view>
+
+  <view class="itemWrapper">
+    <label data-index="fm"  wx:if="{{!fm}}"  bindtap="addImg" class="item">
+      <image class="bg" src="./image/f.png"></image>
+      <image class="c" src="./image/c.png"></image>
+    </label>
+    <view wx:else class="imagewrapper">
+      <image data-index="fm" bindtap="close" class="close" src="./image/close.png"></image>
+      <image class="item" src="{{fm}}"></image>
+    </view>
+    <view class="tips">法人身份证反面</view>
+  </view>
+</view>

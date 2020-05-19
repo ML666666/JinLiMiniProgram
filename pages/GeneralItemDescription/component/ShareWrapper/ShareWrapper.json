@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Tloading": "/miniprogram_npm/lin-ui/loading/index",
+    "status": "/miniprogram_npm/lin-ui/status-show/index"
+  }
+}

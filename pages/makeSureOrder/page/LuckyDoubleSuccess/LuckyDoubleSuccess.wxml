@@ -1,0 +1,26 @@
+ 
+
+  <TopBar title="{{'拼单成功'}}"></TopBar>
+
+  <view class="wrapper">
+    <image class="successIcon" src="./image/success.png"></image>
+    <view class="zc">
+      <view class="item">
+        <image class="bg" src="./image/bg.png"></image>
+        <view class="wrapper_1">
+            <image src="{{rows.TowGroup.list[1].UserIcon}}" class="header"></image>
+            <view class="name">{{rows.TowGroup.list[1].UserName}}</view>
+        </view>
+      </view>
+      <view class="item">
+        <image class="bg"  src="./image/bg.png"></image>
+        <view class="wrapper_1">
+            <image src="{{rows.TowGroup.list[0].UserIcon}}" class="header"></image>
+            <view class="name">{{rows.TowGroup.list[0].UserName}}</view>
+        </view>
+      </view>
+    </view>
+    <view bindtap="toMain" class="btn">
+      返回首页
+    </view>
+  </view>

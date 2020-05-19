@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "scroll-x-List":"./component/productsList/productsList",
+    "list_bar":"../component/list_bar/list_bar",
+    "goodList": "../component/goodList/goodList",
+    "aboutMe": "./component/aboutMe/aboutMe",
+    "bar":"./component/bar/bar"
+  }
+}

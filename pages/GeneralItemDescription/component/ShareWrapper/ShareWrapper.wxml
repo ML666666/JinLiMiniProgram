@@ -1,0 +1,64 @@
+<image style="top:{{navHeight+5}}px" class="iconWrapper" bindtap="toShare" src="./image/share.png"></image>
+
+<view class="OederMask {{isShow?'activeMaks':''}}">
+  <view bindtap="hide"  class="vMask">
+  </view>
+  <view class="contant">
+      <view wx:if="{{isRender}}" class="Mask">
+        <block wx:if="{{isLogin}}">
+              <Tloading show="{{true}}" type="change"></Tloading>
+              <view style="margin-top:5rpx;">自定义转发样式加载中....</view>
+        </block>
+        <block wx:else>
+              <image class="error" mode="widthFix" src="./image/error.png"></image>
+              <view bindtap="toLogin" class="error-btn">请登录后再转发吧</view>
+        </block>
+      </view>
+
+      <image class="closePng" bindtap="hide"  src="./image/close.png"></image>
+      <view class="title">请选择转发样式</view>
+      <view class="tips">描述文字已复制，可长按粘贴</view>
+      <view class="swiperWrapper">
+        <swiper bindchange="change" current="{{active}}">
+          <swiper-item> 
+            <canvas canvas-id='type_1'  class="type_1"></canvas>
+            <image style="width:342rpx" mode="widthFix" src="{{path_1}}"></image>
+          </swiper-item>
+          <swiper-item>
+            <canvas canvas-id='type_2'  class="type_1"></canvas>
+            <image style="width:342rpx" mode="widthFix" src="{{path_2}}"></image>
+          </swiper-item>
+          <swiper-item wx:if="{{list.length>=5}}">
+            <canvas canvas-id='type_3'  class="type_3"></canvas>
+            <canvas canvas-id='type_4'  class="type_4"></canvas>
+            <canvas canvas-id='type_5'  class="type_4"></canvas>
+            <image style="width:520rpx" mode="widthFix" src="{{path_3}}"></image>
+          </swiper-item>
+        </swiper>
+        <image class="btn left" bindtap="left" wx:if="{{active != 0}}" src="./image/leftA.png"></image>
+        <image class="btn left" wx:if="{{active == 0}}" src="./image/left.png"></image>
+        <image class="btn right" bindtap="right" wx:if="{{active != (list.length>=5?2:1)}}" src="./image/rightA.png"></image>
+        <image class="btn right"  wx:if="{{active == (list.length>=5?2:1)}}" src="./image/right.png"></image>
+      </view>
+
+      <view class="btnWrapper">
+        <view data-index="0" bindtap="setIndex" class="btn {{active==0?'active':''}}">
+          <view>合成图</view>
+          <view>突出商品图</view>
+        </view>
+        <view data-index="1" bindtap="setIndex" class="btn {{active==1?'active':''}}">
+          <view>单张图</view>
+          <view>商品首图</view>
+        </view>
+        <view data-index="2" wx:if="{{list.length>=5}}" bindtap="setIndex" class="btn {{active==2?'active':''}}">
+          <view>六宫格</view>
+          <view>朋友圈首选</view>
+        </view>
+      </view>
+      <view class="shareWrapper">
+        <view bindtap="saveCanvas" class="btn1">保存图片</view>
+        <button open-type="share" class="btn2">转发锦鲤</button>
+      </view>
+
+  </view>
+</view>

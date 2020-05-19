@@ -1,0 +1,54 @@
+<bg>
+    <view class="CCCC">
+
+    <TopBar title="特约合伙人"></TopBar>
+    <view class="TW">
+      <image src="{{SPURL}}" class="BG"></image>
+      <view class="W">
+        <view class="t">{{RegionalPartner.SpecialAreaName}}</view>
+        <view class="CW">
+          <view class="item">
+            <view class="r">今日收款(元)</view>
+            <view class="c"><TF num="{{AgentOrderInCome.SpecialInCome.DayAmount}}"></TF></view>
+          </view>
+          <view class="item">
+            <view class="r">今日订单</view>
+            <view class="c">{{AgentOrderInCome.SpecialInCome.OrderNum}}</view>
+          </view>
+          <view class="item">
+            <view class="r">今日返佣(元)</view>
+            <view class="c"><TF num="{{AgentOrderInCome.SpecialInCome.DayCommission}}"></TF></view>
+          </view>
+          <view class="item">
+            <view class="r">本周收益(元)</view>
+            <view class="c"><TF num="{{AgentOrderInCome.SpecialInCome.WeekAmount}}"></TF></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="priceWrapper">
+      <view class="item">
+          <view class="t">今日收益(元)</view>
+          <view class="p" style="color:rgba(238,89,0,1);">
+            <TF num="{{AgentOrderInCome.SpecialInCome.DayAmount+AgentOrderInCome.SpecialInCome.DayCommission}}"></TF></view>
+      </view>
+      <image mode="widthFix" class="icon" src="{{Dyu}}"></image>
+      <view class="item">
+          <view class="t">今日收款(元)</view>
+          <view class="p"><TF num="{{AgentOrderInCome.SpecialInCome.DayAmount}}"></TF></view>
+      </view>
+      <image mode="widthFix" class="icon" src="{{AddUrl}}"></image>
+      <view class="item">
+          <view class="t">今日返佣(元)</view>
+          <view class="p"><TF num="{{AgentOrderInCome.SpecialInCome.DayCommission}}"></TF></view>
+      </view>
+    </view>
+
+
+    <LowLevelOrder type="{{4}}" RegionalPartner="{{RegionalPartner}}"></LowLevelOrder>
+
+    <aboutStock></aboutStock>
+
+    </view>
+</bg>

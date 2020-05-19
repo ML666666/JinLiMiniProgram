@@ -1,0 +1,23 @@
+<wxs src="../setUrl.wxs" module="tools" />
+
+<view class="newPeople" wx:if="{{!isOver}}">
+    <!-- <view class="TopBanner"> -->
+      <image
+          bindtap="clickTop"
+          class="banner"  
+          lazy-load="true"
+          mode="widthFix"
+          wx:if="{{tools.isOpenTime(NowData,TopBanner.start_time,TopBanner.end_time)}}"
+          src="{{tools.setUrl(TopBanner.pic_url,imgDomain,imgVersion)}}"></image>
+    <!-- </view> -->
+    <view class="GoodListWrapper">
+        <image wx:for="{{GoodList}}"
+                  wx:for-index="index"
+                  data-index="{{index}}"
+                  bindtap="click"
+                  lazy-load="true" 
+                  class="goodImg"
+                  wx:if="{{tools.isOpenTime(NowData,item.start_time,item.end_time)}}"
+                  src="{{tools.setUrl(item.pic_url,imgDomain,imgVersion)}}"></image>
+    </view>
+</view>

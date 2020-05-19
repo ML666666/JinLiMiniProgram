@@ -1,0 +1,26 @@
+<wxs module="tool">
+var toF = function(num) {
+  var _num = (num*10)
+  return _num.toFixed(1);
+}
+module.exports.toF = toF;
+</wxs>
+<view class='product_good_item'>
+  <image  src='{{item.ProductImg}}'></image>
+      <view class='content'>
+          <view class='item_title'>
+                {{item.ProductTitle}}
+          </view>
+          <view class='detail'>
+              <view class='price_info'>
+                  <view class='price_info_top'>
+                      <view wx:if="{{item.SalePrice}}" class='price'>￥{{item.SalePrice}}</view>
+                      <view wx:if="{{item.MarketPrice}}"  class='price_1'>￥{{item.MarketPrice}}<view class='del'></view></view>
+                      <view class='count'>{{tool.toF(item.SalePrice/item.MarketPrice)}}折</view>
+                  </view>
+                  <view class='num'>{{item.SaleCount}}人已付款</view>  
+              </view>
+              <view class='btn'>立即购买</view>
+          </view>
+       </view>
+</view>

@@ -1,0 +1,63 @@
+.myLike{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.myLike .top{
+  width: 209rpx;
+  height: 30rpx;
+  margin-bottom: 27rpx;
+  margin-top: 10rpx;
+}
+.myLike .goodListWrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 700rpx;
+}
+.myLike .goodListWrapper .good{
+  width: 344rpx;
+  background: #fff;
+  margin-bottom: 16rpx;
+  border-radius:8rpx;
+  overflow: hidden;
+}
+.myLike .goodListWrapper .good image{
+  width:344rpx;
+  height:342rpx;
+  border-radius:8rpx 8rpx 0rpx 0rpx;
+}
+.myLike .goodListWrapper .good .goodDetail{
+  padding: 23rpx;
+  box-sizing: border-box;
+}
+.goodDetail .title{
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 72rpx;
+  line-height: 36rpx;
+  margin-bottom:4rpx;
+  font-size:24rpx;
+}
+.goodDetail .price{
+  display: flex;
+  align-items: center;
+}
+.goodDetail .price .left{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:800;
+  color:rgba(230,47,38,1);
+  margin-right: 34rpx;
+}
+.goodDetail .price .right{
+  font-size:24rpx;
+font-family:PingFang SC;
+font-weight:800;
+text-decoration:line-through;
+color:rgba(170,170,170,1);
+}

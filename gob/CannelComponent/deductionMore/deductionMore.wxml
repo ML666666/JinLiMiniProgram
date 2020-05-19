@@ -1,0 +1,57 @@
+<wxs src="../setUrl.wxs" module="tools" />
+<view class="deductionMore">
+  <view class="top">
+    <!-- <view class="tips">{{title}}</view>
+    <view bindtap="toMore" class="more">
+      <text>查看更多</text>
+      <image src="./image/arrow.png"></image>  
+    </view> -->
+    <image bindtap="toMore" src="{{pic_url}}" style="width:100%;" mode="widthFix"></image>
+  </view>
+  <view class="btnWrapper">
+    <view bindtap="changeActive" data-index="0" data-gwb="" class="btn all {{active==0?'active':''}}">
+      <text>全部</text>
+    </view>
+    <view bindtap="changeActive" data-index="1" data-gwb="0-10" class="btn {{active==1?'active':''}}">
+      <view class="t">0-10</view>
+      <view>购物币</view>
+    </view>
+    <view bindtap="changeActive" data-index="2" data-gwb="11-99" class="btn {{active==2?'active':''}}">
+      <view class="t">11-99</view>
+      <view>购物币</view>
+    </view>
+    <view bindtap="changeActive" data-index="3" data-gwb="100+" class="btn {{active==3?'active':''}}">
+      <view class="t">100+</view>
+      <view>购物币</view>
+    </view>
+  </view>
+  <view class="list">
+    <block wx:for="{{list}}" wx:for-index="index">
+      <view class="item" data-Id="{{item.Id}}" bindtap="toDetial">
+          <image class="ProductImg" src="{{item.ProductImg}}"></image>
+          <view class="detail">
+            <view class="title">{{item.ProductTitle}}</view>
+            <view class="priceWrapper">
+              <view class="price">
+                <text style="font-size: 24rpx;">￥</text>
+                {{item.SalePrice}}
+              </view>
+              <view class="dq">可抵扣￥{{item.ShoppingBi}}</view>
+            </view>
+            <view class="barWrapper">
+              <view class="left">
+                <view class="_tips">仅剩{{item.DeductionLeftPercent}}%</view>
+                <view class="barBox">
+                  <view class="bar" style="width:{{item.DeductionLeftPercent}}%"></view>
+                </view>
+              </view>
+              <view class="_btn">
+                我要抢
+              </view>
+            </view>
+          </view>
+      </view>
+      <view wx:if="{{index != list.length-1}}" class="line"></view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+      <view  class="brand-tabbar">
+        <view class="item {{sort==0?'active':''}}" data-sort="0" bindtap="tap">
+          <view>综合</view>
+        </view>
+        <view class="item {{sort==1?'active':''}}" data-sort="1" bindtap="tap">
+          <view>销量</view>
+        </view>
+        <view class="item {{sort==2?'active':''}}" data-sort="2" bindtap="tap">
+          <view>价格</view>
+            <image wx:if="{{sort!=2}}" src="./image/d.png"></image>
+            <image wx:if="{{sort==2&&sortDirection}}" src="./image/up.png"></image>
+            <image wx:if="{{sort==2&&!sortDirection}}" src="./image/down.png"></image>
+          </view>
+        <view class="item {{sort==3?'active':''}}" data-sort="3" bindtap="tap">
+          <view>可抵扣</view>
+          <image wx:if="{{sort!=3}}" style="width:26rpx;" mode="widthFix" src="./image/unActive.png"></image>
+          <image wx:else style="width:26rpx;" mode="widthFix"  src="./image/active.png"></image>
+          <view style="display:{{isShowList?'block':'none'}}" class="list">
+            <view data-index="1"  data-gwb="" catchtap="select" class="i {{activeIndex==1?'t':''}}">全部</view>
+            <view data-index="2" data-gwb="0-10" catchtap="select"  class="i {{activeIndex==2?'t':''}}">0-10购物币</view>
+            <view data-index="3" data-gwb="11-99" catchtap="select"  class="i {{activeIndex==3?'t':''}}">11-99购物币</view>
+            <view data-index="4" data-gwb="100+" catchtap="select"  class="i {{activeIndex==4?'t':''}}">100+购物币</view>
+          </view>
+        </view>
+      </view>

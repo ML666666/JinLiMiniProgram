@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-transition": "../../../miniprogram_npm/vant-weapp/transition/index",
+    "TopBar": "../../../gob/gobComponent/TopBar/TopBar"
+  },
+  "navigationBarTitleText": "锦鲤团",
+  "navigationBarTextStyle": "black"
+}

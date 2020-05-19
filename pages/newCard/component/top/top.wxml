@@ -1,0 +1,30 @@
+<view style="height:{{navHeight}}px;"></view>
+
+<view class="top" style="height:{{navHeight}}px;">
+  <view style="height:{{statusBar}}px;" class="statusBar">
+      <image class="Arrow" bindtap="back" wx:if="{{isShowArror}}" bindtap="isShowMaskFn" src="./image/black.png"></image>
+      <view class="t">购物车</view>
+      <view class="w" wx:if="{{EndTime>0}}">{{Minutes<10?'0':''}}{{Minutes}}:{{Seconds<10?'0':''}}{{Seconds}}</view>
+  </view>
+</view>
+
+<popup show="{{isShowMask}}" bind:lintap="isShowMaskFn" wx:if="{{cardData.length}}">
+    <view class="status">
+      <view class="title">温馨提示</view>
+      <view class="p">您的购物车内商品很抢手，请尽快下单</view>
+      <view class="btnWrapper">
+        <view class="btn" bindtap="backC">去意已决</view>
+        <view class="btn btn_1" bindtap="isShowMaskFn">我再想想</view>
+      </view>
+    </view>
+</popup>
+
+<popup show="{{isShowMask}}" bind:lintap="isShowMaskFn" wx:else>
+    <view class="status">
+      <view class="title">温馨提示</view>
+      <view class="p">省即是赚，商城逛得越多赚得越多</view>
+      <view class="btnWrapper">
+        <view class="btn btn_1" bindtap="toHome">去省钱赚金</view>
+      </view>
+    </view>
+</popup>

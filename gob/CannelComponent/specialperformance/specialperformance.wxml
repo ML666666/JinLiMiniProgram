@@ -1,0 +1,34 @@
+<wxs src="../setUrl.wxs" module="tools" />
+
+<van-transition show="{{!isOver}}">
+  <view class="wrapper" bindtap="click">
+    <view class="banner">
+        <image class="bannerImage" mode="widthfix" src="{{tools.setUrl(DataObj.ImgSrc,imgDomain,imgVersion)}}"></image>
+        <view class="tag" style="background:{{param.corner_color}}">{{param.corner_marker}}</view>
+        <view class="tag_2">{{DataObj.totalcount}}款</view>
+        <view class="timeWrapper" wx:if="{{param.count_down!=0}}">
+            <view class="radius">{{Hours}}</view>
+            <view class="c">:</view>
+            <view class="radius">{{Minutes}}</view>
+            <view class="c">:</view>
+            <view class="radius">{{Seconds}}</view>
+            <view class="c">:</view>
+            <image class="radius" src="./image/num.gif"></image>
+        </view>
+    </view>
+    <view class="goodWrapper">
+      <view wx:for="{{DataObj.Pro}}" wx:key="key"  wo:for-item='item' wx:for-index="index"data-index="{{index}}" data-Id="{{item.Id}}"   class="item">
+        <image src="{{tools.setUrl(item.ProductImg,imgDomain,imgVersion)}}"></image>
+        <view class="price">
+          <view class="left"><text style="font-size:24rpx;font-weight:400">￥</text>{{item.SalePrice}}</view>
+          <view class="right">￥{{item.MarketPrice}}</view>
+        </view>
+        <image src="./image/b.png" class="tagBg"></image>
+        <view class="tag">
+          <text>可抵扣</text><br/>
+          <text style="font-size:14rpx;">￥{{item.ShoppingBi}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</van-transition>

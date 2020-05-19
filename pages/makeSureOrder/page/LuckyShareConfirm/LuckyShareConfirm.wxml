@@ -1,0 +1,34 @@
+
+<pullDownRefresh
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}">
+  
+    <LoadingPage isShow="{{isRenderingPage}}"></LoadingPage>
+      
+    <van-transition show="{{!isRenderingPage}}">
+
+        <TopBar title="{{'成功下单'}}"></TopBar>
+        <view class="LuckyShareConfirmWrapper">
+          <image src="./image/successIcon.png" bindtap="w" class="successIcon"></image>
+          <view class="order-success">下单成功</view>
+          <button  open-type="share" class="btn">
+            <image src="./image/successBtn.png"></image>
+          </button>  
+          <view class="w">
+            拼单成功，一人免单
+          </view>
+        </view>
+        <view class="title_L">相关商品</view>
+        <view class="List_L_W">
+          <view  class="item" wx:for="{{rows}}"  bindtap="toDetail" data-goodtype="2" data-Id="{{item.Id}}">
+            <image class="ProductImg" src="{{item.ProductImg}}"></image>
+            <view class="t">{{item.ProductTitle}}</view>
+            <view class="s">{{item.SubTitle}}</view>
+            <view class="p">￥{{item.SalePrice}}</view>
+          </view> 
+        </view>
+    
+    </van-transition>  
+
+</pullDownRefresh>

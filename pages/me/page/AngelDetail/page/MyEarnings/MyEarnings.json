@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "thisWeek":"./thisWeek/thisWeek",
+    "lastWeek":"./lastWeek/lastWeek"
+  }
+}

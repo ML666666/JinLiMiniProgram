@@ -1,0 +1,64 @@
+<!--pages/AngelGiftBag/AngelGiftBag.wxml-->
+<!-- <pullDownRefresh
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+>
+<LoadingPage isShow="{{isRenderingPage}}"></LoadingPage> -->
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+  
+    <view class='AngelGift'>
+        <TopBar isHideHome="{{true}}"></TopBar>
+        <view class='top'>
+          <image 
+            class='banner' 
+            src='http://h5.huizhisuo.com/static/img/libao-bg1.6e847a2.png'></image>
+        </view>
+        <view class='container'>
+
+        <view class='enter'>
+          <image bindtap="toAngel" src='http://h5.huizhisuo.com/static/img/libaoquan100.bbbe8f7.png'></image>
+          <image bindtap="toAngel" src='http://h5.huizhisuo.com/static/img/libaoquan50.d62a239.png'></image>
+        </view>
+
+        
+        <!-- <view class='title'>
+          <image mode='widthFix' src='http://h5.taobaby.cn/static/img/angle-title.b42f086.png'></image>
+          <text class='sub_class'>成功购买即赠送天使会员权益</text>
+        </view> -->
+        <view class="itemFullWrapper">
+            <view class="list-title">
+              <image class="title" src="http://h5.huizhisuo.com/static/img/ChooseA.5a7a5ba.png"></image>
+              <view class="t">/成功购买即赠送天使会员权益/</view>
+            </view>
+            <view class='item_container'>
+              <view 
+                bindtap="toGoodDetail"
+                data-id="{{item.ProductId}}" 
+                class='item' 
+                wx:for="{{list}}">
+                <image mode='widthFix' src='{{item.LargePicture}}'></image>
+                <view class='detail'>
+                  <view class='titleDetail'>
+                    <view class="title">{{item.ProductTitle}}</view>
+                    <view class="price">售价￥{{item.SalePrice}}</view>
+                  </view>
+                  <view class='btn'>立即购买</view>
+                </view>
+              </view>
+            </view>
+
+            <view wx:if="{{isOver}}" class='isOver'>我是有底线的</view> 
+        </view>
+
+
+      </view>
+    </view>
+
+
+</PageLoadingWrapper>

@@ -1,0 +1,5 @@
+/* pages/GeneralItemDescription/component/specifications/specifications.wxss */
+.setSpecifications{width: 100%; display: flex;position: relative;padding-left: 24rpx;overflow: hidden;display: flex;flex-direction: row;justify-content: space-between;align-items: center;background: #fff;
+margin-bottom: 20rpx;}
+.setSpecifications .t{display: flex;width: 80%;}
+.setSpecifications .t view{font-size: 28rpx;color: #555;}

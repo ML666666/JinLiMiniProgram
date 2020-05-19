@@ -1,0 +1,5 @@
+<view class="newTop" style="height:{{navHeight}}px">
+        <view class="statusBar" style="height:{{statusBar}}px">
+          <image bindtap="back" class="back" src="./image/arrow.png"></image>
+        </view>
+</view>

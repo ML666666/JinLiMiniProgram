@@ -1,0 +1,6 @@
+<TopBar></TopBar>
+<image src="{{baseUrl}}" style="width:750rpx;margin-bottom:150rpx;height:2160rpx;" ></image>
+<view class="btn">
+  <view bindtap="toAddresss" style="margin-right:25rpx;"  class="b">附近赚币</view> 
+  <view bindtap="toback" class="b">线下赚币，线上兑换</view>
+</view>

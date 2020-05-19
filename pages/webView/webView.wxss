@@ -1,0 +1,9 @@
+/* pages/webView/webView.wxss */
+cover-view{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 80rpx;
+  background: #fff;
+  z-index: 100;
+}

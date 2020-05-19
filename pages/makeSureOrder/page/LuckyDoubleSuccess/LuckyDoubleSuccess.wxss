@@ -1,0 +1,66 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 145rpx 150rpx 0;
+}
+.wrapper .successIcon{
+  width: 136rpx;
+  height: 198rpx;
+  margin-bottom: 126rpx;
+}
+.wrapper .zc{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 172rpx;
+}
+.wrapper .zc .item{
+  width: 170rpx;
+  height: 170rpx;
+  position: relative;
+}
+.wrapper .zc .item .bg{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 170rpx;
+  height: 170rpx;
+}
+.wrapper .wrapper_1{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 170rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .wrapper_1 .header{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  margin-bottom: 42rpx;
+  margin-top: 20rpx;
+}
+.wrapper .wrapper_1 .name{
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #2c3e50;
+  font-size: 28rpx;
+}
+.btn{
+  line-height: 1;
+  padding: 28rpx 0;
+  width: 448rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  background: #f33;
+  border-radius: 42rpx;
+}

@@ -1,0 +1,8 @@
+<view style="min-height:{{windowHeight}}px;background-color: #f5f5f5;">
+  <TopBar title="{{'消息详情'}}"></TopBar>
+  <view class="wrapper">
+    <view class="one">{{model.Title}}</view>
+    <view class="two">{{model.SendTime}}</view>
+    <view class="three">{{model.Content}}</view>
+  </view>
+</view>

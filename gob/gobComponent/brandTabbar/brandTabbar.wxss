@@ -1,0 +1,48 @@
+.brand-tabbar{
+  left: 0;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 30rpx;
+  background: #fff;
+  z-index: 200; 
+}
+.brand-tabbar .item{
+  flex: 1;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  font-size: 30rpx;
+  position: relative;
+}
+.brand-tabbar .item image{
+  width: 16rpx;
+  height: 26rpx;
+  margin-left: 6rpx;
+}
+.brand-tabbar .active{
+  color: red;
+}
+.brand-tabbar  .list{
+  display: block;
+  width: 170rpx;
+  background-color: #fafafa;
+  position: absolute;
+  bottom: -214rpx;
+  right: 0rpx;
+}
+.brand-tabbar .list .i{
+  width: 100%;
+  height: 55rpx;
+  text-align: center;
+  line-height: 55rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.brand-tabbar .list .t{
+  color: #333333;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "_TopBar": "./component/TopBar/TopBar",
+    "specialSellContainer":"./component/specialSellContainer/specialSellContainer",
+    "hotSell":"/gob/gobComponent/hotSell/hotSell"
+  }
+}

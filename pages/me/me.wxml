@@ -1,0 +1,156 @@
+<!--pages/me/me.wxml-->
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+    <view style="min-height:{{windowHeight}}px;" class="aboutMe">
+      <header userObj="{{userObj}}"></header>
+
+      <view class="list_Wrapper">
+
+        <view class="item_Wrapper">
+            <view data-index="1" bindtap="toList" class="list_item">
+              <image src="./image/item_1.png"></image>
+              <text>待付款</text>
+              <view wx:if="{{orderNum.PendingPayment>0}}" class="dot">{{orderNum.PendingPayment}}</view>
+            </view>
+          
+            <view data-index="2" bindtap="toList"  class="list_item">
+              <image src="./image/item_2.png"></image>
+              <text>待发货</text>
+              <view wx:if="{{orderNum.PendingDelivery>0}}" class="dot">{{orderNum.PendingDelivery}}</view>
+            </view>
+            
+            <view data-index="3" bindtap="toList"  class="list_item">
+              <image src="./image/item_3.png"></image>
+              <text>待收货</text>
+              <view wx:if="{{orderNum.PendingReceived>0}}" class="dot">{{orderNum.PendingReceived}}</view>
+            </view>
+
+            <view data-index="4" bindtap="toList"  class="list_item">
+              <image src="./image/item_4.png"></image>
+              <text>待评价</text>
+              <view wx:if="{{orderNum.PendingEvaluated>0}}" class="dot">{{orderNum.PendingEvaluated}}</view>
+            </view>
+
+            <view data-index="5" bindtap="toList"  class="list_item">
+              <image src="./image/item_5.png"></image>
+              <text>售后</text>
+              <view wx:if="{{orderNum.AfterSale>0}}" class="dot">{{orderNum.AfterSale}}</view>
+            </view>
+
+            <view data-index="0" bindtap="toList"  class="list_item">
+              <image style="width: 125rpx;height: 133rpx;margin:0rpx;" src="./image/item_6.png"></image>
+            </view>
+        </view>
+
+        <view wx:if="{{GroupNoList.length}}" class="swiperWrapper">
+            <view class="title">
+              最新双拼
+            </view>
+            <swiper autoplay="true" vertical="true">
+              <swiper-item wx:for="{{GroupNoList}}">
+                <image class="header" src="{{item.ProductImg}}"></image>
+                <view class="detail">
+                  <view class="gou">
+                    <image src="./image/gou.png"></image>
+                    <view>邀请好友拼团</view>
+                  </view>
+                  <view class="tips">
+                    {{item.OrderTitle}}
+                  </view>
+                </view>
+              </swiper-item>
+            </swiper>
+        </view>
+      </view>
+      
+      <ad list="{{Adlst}}"></ad>
+
+      <view class="able_list">
+        <view class="title">实用工具</view>
+        <view class="Wrapper">
+          <view 
+            bindtap="toOrderPage" 
+            data-path="/pages/AddAddress/AddAddress" 
+            class="item">
+            <image src="./image/practical1.png"></image>
+            <text>收货地址</text>
+          </view>
+
+          <!-- <view 
+            bindtap="toOrderPage" 
+            data-path="{{false}}"
+            class="item">
+            <image src="./image/practical2.png"></image>
+            <text>优惠券</text>
+          </view> -->
+
+          <view 
+            bindtap="toOrderPage" 
+            data-path="{{false}}"
+            class="item">
+            <image src="./image/practical3.png"></image>
+            <text>锦鲤冒险</text>
+          </view>
+
+          <view 
+            bindtap="toOrderPage"
+            data-Type="" 
+            data-path="/pages/me/page/BusinessCooperation/Enter/Enter"
+            class="item">
+            <image src="./image/practical4.png"></image>
+            <text>商务合作</text>
+          </view>
+
+          <view 
+            bindtap="toOrderPage" 
+            data-Type="fuwuxieyi" 
+            data-path="/pages/me/page/HtmlRender/HtmlRender"
+            class="item">
+            <image src="./image/practical5.png"></image>
+            <text>服务协议</text>
+          </view>
+
+
+          <button class="item" open-type="contact">
+            <image src="./image/practical6.png"></image>
+            <text>客服</text>
+          </button>
+
+          <view 
+            bindtap="toOrderPage" 
+            data-path="/pages/me/page/help/help"
+            class="item">
+            <image src="./image/practical7.png"></image>
+            <text>帮助</text>
+          </view>
+
+          <view 
+            bindtap="toOrderPage" 
+            data-path="/pages/me/page/ShareQtCode/ShareQtCode"
+            class="item">
+            <image src="./image/practical8.png"></image>
+            <text>邀请有奖</text>
+          </view>
+
+          <!-- <view 
+            bindtap="toOrderPage" 
+            data-path="/pages/me/page/Collection/Collection"
+            class="item">
+            <image src="./image/practical9.png"></image>
+            <text>我的收藏</text>
+          </view> -->
+          <view class="item"></view>
+        </view>
+      </view>
+
+      <bottom BottomInfo='{{BottomInfo}}'></bottom>
+    
+    </view>
+
+</PageLoadingWrapper>
+

@@ -1,0 +1,56 @@
+      <view class="status_Wrapper_2" wx:if="{{obj.OrderType==3}}">
+          <view class="e">
+            <view style="font-size: 27rpx;color: #333 ;">双拼详情</view>
+            <view>
+              <view class="status_Wrapper_2_image_wrapper">
+                <view class="za" wx:for="{{obj.TowGroup.list}}">
+                  <image class="zw" src="../../image/q.png" wx:if="{{item.WinStatus == 1}}"></image>
+                  <image class="za_W" src="{{item.UserIcon}}"></image>
+                </view>
+                <view class="za" wx:if="{{obj.TowGroup.list.length==1}}">
+                  <image class="za_W"  src="../../image/nothing.png"></image>
+                </view>
+              </view>
+              <view class="tips" wx:if="{{obj.TowGroup.list.length==1}}">还剩<text>1</text>人双拼成功</view>
+              <view class="tips" wx:if="{{obj.TowGroup.list.length==2}}">幸运免单用户<text>{{winner.UserName}}</text></view>
+            </view>
+          </view>
+          <button wx:if="{{obj.TowGroup.list.length==1}}" plain="true" open-type="share" class="btn">邀请好友拼团</button>
+          <view wx:if="{{obj.TowGroup.list.length==2}}" class="ws">
+              <button  class="btn">双拼成功</button>
+              <view bindtap="showPopup" class="status_Wrapper_2_check_btn">
+                <image src="../../image/c.png"></image>
+                <text>中奖明细</text>
+              </view>
+          </view>  
+      </view>
+
+      <van-transition show="{{showPopup}}">
+        <view bindtap="showPopup" class="popupWrapper">
+          <view class="popup">
+            <view catchtap="showPopup" class="title">
+              中奖明细
+              <image class="close" src="./image/close.png"></image>
+            </view>
+            <view wx:for="{{obj.TowGroup.list}}" class="item_P">
+              <image src="{{item.UserIcon}}"></image>
+              <view class="flex">
+                <view>{{item.UserName}}</view>
+                <view>ID:{{item.MemberId}}</view>
+              </view>
+              <view class="flex">
+                <view>免单号</view>
+                <view>{{item.TIndex}}</view>
+              </view>
+              <view class="flex">
+                <view>下单时间</view>
+                <view class="t">{{item.OrderTime}}</view>
+              </view>
+            </view>
+            <view class="sufa">
+              <text class="t">算法:</text>(A+B)的下单秒数之和若为<text class="red">单数，1号</text>
+              用户享受免单若为<text class="red">双数，2号</text>用户享受免单
+            </view>
+          </view>
+        </view>
+      </van-transition>

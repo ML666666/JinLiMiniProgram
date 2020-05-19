@@ -1,0 +1,33 @@
+.MyGoldCoinRecord{
+  margin: 0 20rpx;
+  padding-bottom: 45rpx;
+}
+.MyGoldCoinRecord .item{
+  display: flex;
+  justify-content: space-between;
+}
+.MyGoldCoinRecord .item{
+  padding: 20rpx 30rpx;
+  border-bottom: 2rpx solid #f3f3f3;
+  box-sizing: border-box;
+}
+.MyGoldCoinRecord .item .b{
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-bottom:10rpx;
+  color: #2c3e50;
+}
+.MyGoldCoinRecord .item .c{
+  font-size: 26rpx;
+  color: #888;
+}
+.MyGoldCoinRecord .item .e{
+  font-size: 34rox;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10rpx;
+}
+.MyGoldCoinRecord .item .f{
+  color: #f82d45;
+  font-size: 26rpx;
+}

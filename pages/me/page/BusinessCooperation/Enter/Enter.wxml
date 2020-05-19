@@ -1,0 +1,78 @@
+<TopBar title="{{'商务合作'}}"></TopBar>
+<view style="min-height:{{windowHeight}}px;" class="BusinessCooperation">
+  <image class="topImage" src="./image/top.png"></image>
+  <view class="enterWrapper" wx:if="{{false}}">
+      <view class="titleWrapper">
+        <view class="left">
+            <image src="./image/J.png"></image>
+            <text>供应商入驻</text>
+        </view>
+        <view bindtap="isShowMask" class="right">
+          <text>联系方式</text>
+          <image mode="widthFix" src="./image/arrow.png"></image>
+        </view>
+      </view>
+      <view class="enter_1Wrapper">
+        <view class="enter" bindtap="toBusiness">
+          <image class="bg" src="./image/left_1.png"></image>
+          <view class="title">企业供应商</view>
+        </view>
+        <view class="enter">
+          <image class="bg" bindtap="toBusiness" src="./image/right_1.png"></image>
+          <view class="title">个人供应商</view>
+          <view class="tips">(仅限生鲜与农产品)</view>
+        </view>
+      </view>
+  </view>
+  <view class="enterWrapper">
+      <view class="titleWrapper">
+        <view class="left">
+            <image src="./image/J.png"></image>
+            <text>供应商入驻</text>
+        </view>
+        <view bindtap="isShowMask" class="right">
+          <text>联系方式</text>
+          <image mode="widthFix" src="./image/arrow.png"></image>
+        </view>
+      </view>
+      <view class="enter_2Wrapper">
+        <view 
+          data-url="/pages/me/page/BusinessCooperation/Business/individualbusiness/individualbusiness" 
+          bindtap="tothreeTab" class="e">
+          <image mode="widthFix" src="./image/tab_1.png"></image>
+          <view>个体工商户</view>
+        </view>
+        <view
+          data-url="/pages/me/page/BusinessCooperation/Business/CorporateAgents/CorporateAgents"
+          bindtap="tothreeTab" class="e">
+          <image mode="widthFix" src="./image/tab_2.png"></image>
+          <view>企业代理商</view>
+        </view>
+        <view 
+          data-url="/pages/me/page/BusinessCooperation/Business/PersonalStores/PersonalStores"
+          bindtap="tothreeTab" class="e">
+          <image mode="widthFix" src="./image/tab_3.png"></image>
+           <view>个人门店</view>
+        </view>
+      </view>
+  </view>
+  <view bindtap="toRowDetail" class="tips">申请进度查询</view>
+</view>
+
+
+<l-popup bind:lintap="isShowMask" show="{{isShowMask}}" z-index="{{1000}}">
+  <view class="lianxi">
+
+    <view class="title">线下门店合作</view>
+    
+    <block wx:for="{{contact}}">
+      <view class="title_2">
+        {{item.Position}}
+      </view>
+      <view bindtap="copyPhone" data-T="{{item.Telephone}}" style="margin-bottom:40rpx;" class="num">
+        <text style="margin-right:20rpx;">{{item.UserName}}</text>{{item.Telephone}}
+      </view>
+    </block>
+
+  </view>
+</l-popup>

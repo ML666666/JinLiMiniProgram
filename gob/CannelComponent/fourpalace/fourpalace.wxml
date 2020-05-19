@@ -1,0 +1,12 @@
+<wxs src="../setUrl.wxs" module="tools" />
+
+<view class="listWrapper">
+  <image 
+         wx:for-index="index"
+         data-index="{{index}}"
+         bindtap="toDetail"
+         wx:if="{{tools.isOpenTime(NowData,item.start_time,item.end_time)}}"
+         src="{{item.pic_url}}" 
+         class="item" 
+         wx:for="{{list}}"></image>
+</view>

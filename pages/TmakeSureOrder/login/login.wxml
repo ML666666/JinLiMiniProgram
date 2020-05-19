@@ -1,0 +1,30 @@
+  <view class="login">
+  <view class="van-popupW" data-name="popupW" wx:if="{{show}}">
+
+    <view class="closeMask" bindtap="onClose"></view>
+
+    <view class='loginWrapper' data-name="loginWrapper">
+      <view class='title'>
+        验证手机号
+      </view>
+
+      <view class='Wrapper'>
+        <view class='inputWrapper'>
+          <text class='title_T'>手机号:</text>
+          <input style='width:500rpx;' data-name='phone' bindinput='input' value='{{phone}}' type='text'></input>
+        </view>
+        <view class='inputWrapper'>
+          <text class='title_T'>短信验证码:</text>
+          <input style='width:260rpx;' data-name='code' bindinput='input' value='{{code}}' type='text'></input>
+          <view  bindtap='getCode' class='getCode'>
+            {{time==60?'获取验证码':time+'s'}}
+          </view>
+        </view>
+      </view>
+      
+      <view class='btn' bindtap='bindPhone'>
+        绑定
+      </view>
+    </view>
+  </view>
+  </view>

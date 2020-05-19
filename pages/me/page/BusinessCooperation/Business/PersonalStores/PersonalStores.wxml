@@ -1,0 +1,66 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+  <TopBar title="{{'个人门店'}}"></TopBar>
+  <bar title_1="{{'填写商户信息'}}" title_2="{{'平台审核'}}"  active="{{active==3?1:2}}"></bar>
+
+  <block wx:if="{{active==3}}">
+    <InputWrppaer>
+      <InputTips tipsText="{{'姓名'}}"></InputTips>
+      <input 
+          value="{{BusinessIdentityCardName}}"
+          data-name="BusinessIdentityCardName" 
+          bindinput="inputValue"
+          placeholder="请填写用户姓名" 
+          placeholder-class="placeholder" 
+          class="inputClass"></input>
+
+      <InputTips tipsText="{{'身份证号'}}"></InputTips>
+      <input
+          value="{{BusinessIdentityCardNumber}}"
+          data-name="BusinessIdentityCardNumber" 
+          bindinput="inputValue" 
+          placeholder="请填写身份证号" 
+          placeholder-class="placeholder" 
+          class="inputClass"></input>
+
+      <InputTips tipsText="{{'身份证正反面'}}"></InputTips>
+      <uploadCard 
+          front="{{BusinessIdentityCardImage_front}}" 
+          verso="{{BusinessIdentityCardImage_verso}}" 
+          bind:getCardImage='getImage'></uploadCard>
+
+      <InputTips tipsText="{{'银行卡号'}}"></InputTips>
+      <input
+          value="{{BankAccount}}"
+          data-name="BankAccount" 
+          bindinput="inputValue" 
+          placeholder="请填写银行卡号" 
+          placeholder-class="placeholder" 
+          class="inputClass"></input>
+
+      <InputTips tipsText="{{'银行卡开户行'}}"></InputTips>
+      <input
+          value="{{OpenBank}}"
+          data-name="OpenBank" 
+          bindinput="inputValue" 
+          placeholder="请填写银行卡开户行" 
+          placeholder-class="placeholder" 
+          class="inputClass"></input>
+
+    </InputWrppaer>
+      
+    <makeSureBtn wx:if="{{isEditData==true}}" bind:makeSure='makeSure' isDisabled="{{!isFillOut}}"></makeSureBtn>
+    <makeSureBtn wx:else bind:makeSure='makeSure' isDisabled="{{true}}"></makeSureBtn>
+  </block>
+
+  <block wx:else>
+      <status_success wx:if="{{active==1}}"></status_success>
+      <status_loading wx:if="{{active !=1 && active !=3}}" bind:toRefresh='toRefresh'></status_loading>
+  </block>
+
+</PageLoadingWrapper>

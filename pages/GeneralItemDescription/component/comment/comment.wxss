@@ -1,0 +1,35 @@
+/* pages/GeneralItemDescription/component/comment/comment.wxss */
+.comment{width: 100%;margin-bottom: 20rpx; background: #fff;margin-bottom: 20rpx;}
+.checkAll{display: flex;position: relative;padding-left: 24rpx;overflow: hidden;height: 100rpx;justify-content: space-between;}
+.checkAll .left,.checkAll .right{color: #525252;font-size: 24rpx;white-space: nowrap;line-height: 100rpx;}
+.checkAll .left{font-size:30rpx;font-family:PingFang SC;font-weight:500;color:rgba(51,51,51,1);}
+.checkAll .right{margin-right: 24rpx; display: flex;justify-content: flex-end;align-items: center;color: #FF3333;}
+.checkAll .right image{width: 11rpx;
+height: 20rpx;
+margin-left: 5rpx;}
+.comment  .commentDetail{display: flex;box-sizing: border-box; padding: 20rpx 48rpx;}
+.comment  .commentDetail .t{width: 100%;}
+.comment  .commentDetail .t .c{display: flex;align-items: center;}
+.comment  .commentDetail .t .c image{width: 60rpx;height: 60rpx;margin-right: 20rpx;border-radius: 50%;}
+.comment  .commentDetail .t .c  view{color: #2c3e50; font-size: 24rpx;}
+.comment  .commentDetail .t .v{
+    padding-right: 20rpx;
+    line-height:40rpx;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: auto;
+    white-space: normal;
+    word-wrap: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 24rpx;
+}
+.commentDetail .nothing{
+    height: 300rpx;
+    line-height: 300rpx;
+    width: 100%;
+    text-align: center;
+    font-size: 30rpx;
+    color: #888;
+}

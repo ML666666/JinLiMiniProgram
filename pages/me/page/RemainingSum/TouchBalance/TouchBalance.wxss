@@ -1,0 +1,22 @@
+.list .wrapper .item{
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20rpx 40rpx;
+  border-bottom: 1px solid #f3f3f3;
+}
+.list .wrapper .item .o{
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #2c3e50;
+}
+.list .wrapper .item .e{
+  font-size: 24rpx;
+  color: #2c3e50;
+}
+.list .wrapper .item .r{
+  font-size: 24rpx;
+  color: #ff6143!important;
+}

@@ -1,0 +1,12 @@
+.listWrapper{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 700rpx;
+  margin-bottom: 25rpx;
+}
+.listWrapper .item{
+  width: 340rpx;
+  height: 190rpx;
+  margin-bottom: 20rpx;
+}

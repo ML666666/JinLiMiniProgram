@@ -1,0 +1,4 @@
+<view class="nothing">
+  <image src="{{Url}}"></image>
+  <view>暂时还没有相关数据哦~~</view>
+</view>

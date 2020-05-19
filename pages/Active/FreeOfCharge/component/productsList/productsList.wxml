@@ -1,0 +1,18 @@
+<!--pages/Active/FreeOfCharge/component/productsList/productsList.wxml-->
+<scroll-view class="productsList" scroll-x="true">
+          <view wx:for="{{solitaireTopData.goldProducts}}" data-id="{{item.Id}}" bindtap="toGoodDetail" class="goodItem">
+            <image class="p" src="./image/w.png"></image>
+            <view class="wrapper">
+              <image src="{{item.ProductImg}}"></image>
+              <view>
+                <view class="t_1">{{item.ProductTitle}}</view>
+                <view class="t_2">{{item.SubTitle}}</view>
+                <view class="t_3">
+                  <view class="t_4">￥0</view>
+                  <view class="t_5">购物币{{item.SalePrice}}个</view>
+                </view>
+              </view>
+
+            </view>
+          </view>
+</scroll-view>

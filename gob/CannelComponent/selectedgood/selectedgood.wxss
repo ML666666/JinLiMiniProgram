@@ -1,0 +1,99 @@
+.listWrapper{
+  display: flex;
+  flex-direction: column;
+  border-radius:8rpx;
+  overflow: hidden;
+}
+.listWrapper{
+  width: 700rpx;
+  position: relative;
+}
+.listWrapper .item {
+  position: relative;
+  margin-bottom: 20rpx;
+  border-radius:8rpx;
+  overflow: hidden;
+  border-radius:0px 0px 8rpx 8rpx;
+}
+.listWrapper .item .Tag{
+  position: absolute;
+  width: 86rpx;
+  height: 76rpx;
+  top: 0rpx;
+  right: 55rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.listWrapper .item .bg{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100%;
+}
+.listWrapper .item .Tag .w{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.listWrapper .item .Tag .t{
+  font-size: 14rpx;
+  color: #FFE4B8;
+}
+.listWrapper .item .detail{
+  position: absolute;
+  bottom: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  height:78rpx;
+  background:linear-gradient(180deg,rgba(238,73,64,0.9) 0%,rgba(229,41,32,0.9) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listWrapper .item .detail .title{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 16rpx;
+  box-sizing: border-box;
+}
+.listWrapper .item .detail .title .one{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+}
+.listWrapper .item .detail .title .two{
+  font-size:20rpx; 
+  font-family:PingFang SC;
+  font-weight:500;
+}
+.listWrapper .item .price{
+  padding: 0 36rpx;
+  height:48rpx;
+  background:#fff;
+  border-radius:24rpx;
+  margin-right: 16rpx;
+  font-size:23rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(248,0,23,1);
+  text-align: center;
+  line-height: 48rpx;
+}
+.listWrapper .item .price .price_r{
+  font-size: 28rpx;
+}

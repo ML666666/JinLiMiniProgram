@@ -1,0 +1,14 @@
+/* gob/gobComponent/TopBar/TopBar.wxss */
+.gobTopBar{flex-direction: columnl;justify-content: center;align-items: flex-end;display: flex;
+transition:background 0.2s;transition-timing-function:linear; }
+.isFlex{position: fixed;top:0px;left: 0px;width: 100%;}
+.gobTopBar .bar{display: flex;width: 100%;align-items: center;position: relative;justify-content: flex-start;}
+.gobTopBar .bar .title{font-size: 32rpx; position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%);}
+.gobTopBar .bar .Arrow{width: 55rpx;height: 55rpx;padding-left: 20rpx;}
+.gobTopBar .bar .custom{padding-left: 30rpx;}
+.home{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+  z-index: 200;
+}

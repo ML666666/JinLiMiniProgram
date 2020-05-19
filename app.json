@@ -1,0 +1,167 @@
+{
+  "pages": [
+    "pages/MainChannel/MainChannel",
+    "pages/newCard/newCard",
+    "pages/me/me",
+    "pages/AddAddress/AddAddress",
+    "pages/KoiWelfare/KoiWelfare",
+    "pages/makeSureOrder/makeSureOrder",
+    "pages/TmakeSureOrder/TmakeSureOrder",
+    "pages/TheEvaluationList/TheEvaluationList",
+    "pages/menuThree/menuThree",
+    "pages/search/SearchResult/SearchResult",
+    "pages/search/search",
+    "pages/AngelGiftBag/AngelGiftBag",
+    "pages/webView/webView",
+    "pages/me/page/orderList/Comment/Comment",
+    "pages/me/page/orderList/GeneralOrderDetails/GeneralOrderDetails",
+    "pages/Active/FreeOfCharge/FreeOfCharge",
+    "pages/Active/LuckyDouble/LuckyDouble",
+    "pages/Active/NewExclusive/NewExclusive",
+    "pages/search/MessageQueue/MessageQueue",
+    "pages/AngelGiftBag/AboutAngel/AboutAngel",
+    "pages/me/page/RemainingSum/RemainingSum",
+    "pages/me/page/DeductMoney/DeductMoney",
+    "pages/me/page/BusinessCooperation/Enter/Enter",
+    "pages/me/page/BusinessCooperation/Business/enterprise_suppliers_step_1/step_1",
+    "pages/me/page/BusinessCooperation/Business/individualbusiness/individualbusiness",
+    "pages/me/page/BusinessCooperation/Business/CorporateAgents/CorporateAgents",
+    "pages/me/page/BusinessCooperation/Business/PersonalStores/PersonalStores",
+    "pages/me/page/BusinessCooperation/Business/ApplicationProgress/ApplicationProgress",
+    "pages/me/page/BusinessCooperation/Business/getMerchantCode/getMerchantCode",
+    "pages/menuThree/toCheckQualificationImg/toCheckQualificationImg",
+    "pages/newCard/TnewCard",
+    "pages/GeneralItemDescription/GeneralItemDescription",
+    "pages/me/page/AboutPartner/SpPartner/SpPartner",
+    "pages/me/page/AboutPartner/AreaPartner/AreaPartner",
+    "pages/me/page/AboutPartner/LowLevelOrder/LowLevelOrder",
+    "pages/me/page/AboutPartner/AboutShopping/AboutShopping",
+    "pages/Active/GetBi/GetBi",
+    "pages/me/page/RemainingSum/getBalance/getBalance",
+    "pages/me/page/RemainingSum/TheCoupleWithdrawal/TheCoupleWithdrawal",
+    "pages/me/page/RemainingSum/WithdrawalRecord/WithdrawalRecord",
+    "pages/me/page/RemainingSum/TouchBalance/TouchBalance",
+    "pages/me/page/orderList/SalesReturnApplyFor/SalesReturnApplyFor",
+    "pages/makeSureOrder/page/LuckyShareConfirm/LuckyShareConfirm",
+    "pages/me/page/AngelDetail/page/DirectMember/DirectMember",
+    "pages/search/MessageQueue/page/MessageList/MessageList",
+    "pages/search/MessageQueue/page/MessageDetail/MessageDetail",
+    "pages/search/MessageQueue/page/MessageDetail/aboutMsg/aboutMsg",
+    "pages/me/page/AngelDetail/page/MyEarnings/MyEarnings",
+    "pages/makeSureOrder/page/LuckyDoubleSuccess/LuckyDoubleSuccess",
+    "pages/Active/LuckyDouble/page/LuckyDoubleShare/LuckyDoubleShare",
+    "pages/Active/FreeOfCharge/JLHtml/JLHtml",
+    "pages/Active/FreeOfCharge/FreeConfirmation/FreeConfirmation",
+    "pages/search/BrandGoods/BrandGoods",
+    "pages/SpecialPage/SpecialPage",
+    "pages/TheEvaluationList/ShareEvaluationDetail/ShareEvaluationDetail",
+    "pages/me/page/AngelDetail/page/MaterialCircle/MaterialCircle",
+    "pages/me/page/AngelDetail/page/HtmlApp/HtmlApp",
+    "pages/me/page/AngelDetail/page/PromotionRewards/PromotionRewards",
+    "pages/me/page/AngelDetail/page/MaterialCircle/MaterialCircleArticle/MaterialCircleArticle",
+    "pages/me/page/AngelDetail/AngeDetail",
+    "pages/BrandGoods/BrandGoods",
+    "pages/KoiWelfare/WelfareDescription/WelfareDescription",
+    "pages/Login/Login",
+    "pages/orderDetail/orderDetail",
+    "pages/AddAddress/NewAddress/NewAddress",
+    "pages/me/page/orderList/orderList",
+    "pages/me/page/HtmlRender/HtmlRender",
+    "pages/me/page/ShareQtCode/ShareQtCode",
+    "pages/me/page/Collection/Collection",
+    "pages/me/page/help/help",
+    "pages/me/page/ShareQtCode/Invite/Invite",
+    "pages/TypeList/TypeList",
+    "pages/AndroidAndIosPay/AndroidAndIosPay"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "锦鲤团APP请求获取用户地理位置"
+    }
+  },
+  "subpackages": [
+    {
+      "root": "moduleA",
+      "pages": []
+    },
+    {
+      "root": "BusinessCooperation",
+      "pages": []
+    },
+    {
+      "root": "moduleB",
+      "pages": []
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "锦鲤团",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 300,
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#929292",
+    "selectedColor": "#e52b22",
+    "list": [
+      {
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/homeActive.png",
+        "pagePath": "pages/MainChannel/MainChannel",
+        "text": "首页"
+      },
+      {
+        "iconPath": "image/search.png",
+        "selectedIconPath": "image/searchActive.png",
+        "pagePath": "pages/search/search",
+        "text": "分类"
+      },
+      {
+        "iconPath": "image/member.png",
+        "selectedIconPath": "image/memberActive.png",
+        "pagePath": "pages/KoiWelfare/KoiWelfare",
+        "text": "超值抵扣"
+      },
+      {
+        "iconPath": "image/card.png",
+        "selectedIconPath": "image/cardActive.png",
+        "pagePath": "pages/newCard/newCard",
+        "text": "购物车"
+      },
+      {
+        "iconPath": "image/me.png",
+        "selectedIconPath": "image/meActive.png",
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 30000
+  },
+  "usingComponents": {
+    "bg": "/gob/gobComponent/bg/bg",
+    "TF": "/gob/gobComponent/TF/TF",
+    "TopBar": "/gob/gobComponent/TopBar/TopBar",
+    "DeadLine": "/gob/gobComponent/DeadLine/DeadLine",
+    "van-checkbox": "/miniprogram_npm/vant-weapp/checkbox/index",
+    "van-transition": "/miniprogram_npm/vant-weapp/transition/index",
+    "pullDownRefresh": "/gob/gobComponent/pullDownRefresh/pullDownRefresh",
+    "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index",
+    "Loading": "/miniprogram_npm/lin-ui/loadmore/index",
+    "LoadingPage": "/gob/gobComponent/LoadingPage/LoadingPage",
+    "l-status-show": "/miniprogram_npm/lin-ui/status-show/index",
+    "dialog": "/miniprogram_npm/lin-ui/dialog/index",
+    "PageLoadingWrapper": "/gob/gobComponent/PageLoadingWrapper/PageLoadingWrapper",
+    "popup": "/miniprogram_npm/lin-ui/popup/index",
+    "Status_Popup": "/gob/gobComponent/Status_Popup/Status_Popup",
+    "KDTag": "/gob/gobComponent/KDTag/KDTag",
+    "brandTabbar": "/gob/gobComponent/brandTabbar/brandTabbar",
+    "nothingStatus": "/gob/gobComponent/nothingStatus/nothingStatus"
+  },
+  "sitemapLocation": "sitemap.json"
+}

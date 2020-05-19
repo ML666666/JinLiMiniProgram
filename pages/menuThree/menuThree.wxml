@@ -1,0 +1,108 @@
+<!--pages/menuThree/menuThree.wxml-->
+<view class="menuThree">
+<!-- <TopBar 
+    title="{{'购物车'}}" 
+    titleColor="{{'#ffffff'}}" 
+    bgColor="{{'linear-gradient(270deg,#fd4068,#f23e35);'}}">
+</TopBar>     -->
+  <view class="navBar" style="height:{{navHeight}}px;background:{{isActive?'#fff':''}};">
+    <image class="share" style="top:{{navHeight}}px" bindtap="isShare" src="./image/share.png"></image>
+    <view style="height:{{statusBar}}px" class="statusBar">
+      <image class="arrow" bindtap="back" src="./image/{{isActive?'b_arrow':'arrow'}}.png"></image>
+      <view class="searchBar" style="background:{{isActive?'#fff':'rgba(204,204,204,0.5)'}});">
+        <image src="./image/{{isActive?'b_search':'search'}}.png"></image>
+        <input 
+              placeholder="搜索{{SupplierId?'店铺':'品牌列表'}}内商品" 
+              placeholder-class="{{isActive?'_placeholder':'placeholder'}}" 
+              type='text' 
+              value='{{keyword}}' 
+              focus="{{false}}" 
+              bindinput="input" 
+              bindconfirm="toSearch"
+              style="color:{{isActive?'#666666':''}}" 
+              data-name='keyword'></input>
+      </view>
+    </view>
+  </view>
+
+  <view class="bannerWrapper">
+      <view class="mask"></view>
+      <image class='banner' 
+         src="{{AdvertPicture}}"></image>
+      <image class="icon" src="{{topData.ShopIco?topData.ShopIco:brandInfo.Icon}}"></image>
+      <view class="title">
+        <text>{{topData.ShopName?topData.ShopName:brandInfo.BrandName}}</text>
+        <image 
+              bindtap="toCheckQualificationImg"
+              data-ShopId="{{topData.ShopId}}" 
+              wx:if="{{topData&&topData.IsEnterpriseQualification}}" 
+              src="./image/dp.png"></image>
+      </view>
+      <view class="num">共{{totalcount}}款</view>
+  </view>
+
+  <!-- 47 -->
+  <view 
+    wx:if="{{defaultDescribe.length || Describe.length}}" 
+    bindtap="isOpen" style="{{isOpen?'height: auto;':'height: 105rpx;'}}"
+    class="Describe {{defaultDescribe.length<limiteNum?'':isOpen?'':'NotShowAll'}}" >
+    <text>{{isOpen?defaultDescribe:Describe}}</text>
+    <image wx:if="{{defaultDescribe.length>=limiteNum && !isOpen}}" 
+           class="dowmArrow" 
+           src="./image/downArrow.png"></image>
+  </view>
+  
+  <brandTabbar bind:getStatus='getStatus'></brandTabbar>
+
+
+  <view class="listWrapper">
+
+    <view wx:for="{{rows}}" bindtap="toDetail" class="item" data-id="{{item.Id}}" >
+      <image mode='widthFix' src="{{item.ProductImg}}"></image>
+      <view class="title">{{item.ProductTitle}}</view>
+      <KDTag price='{{item.ShoppingBi}}'></KDTag>
+      <view class="Integral">
+        <view>￥{{item.SalePrice}}</view>
+        <text>￥{{item.MarketPrice}}</text>
+      </view>
+    </view>
+
+  </view>
+  
+
+  
+  <DeadLine wx:if="{{isOver}}"></DeadLine>
+  
+</view>
+
+
+<view class="OederMask {{activeMaks?'activeMaks':''}}">
+  <view bindtap="isShare"  class="vMask">
+  </view>
+  <view class="contant">
+    <image class="close" bindtap="isShare" src="./image/close.png"></image>
+    <view class="title">转发锦鲤</view>
+    <image src="{{ImgSrc}}" class="goodImg"></image>
+    <view>
+      <textarea style="height: 93rpx;" 
+                maxlength="26" 
+                data-name="CustomTitle" 
+                bindinput="input" 
+                value="{{CustomTitle}}" 
+                class="text"></textarea>
+      <view class="num">{{CustomTitle.length}}/26</view>
+    </view>
+    <view>
+      <textarea style="height: 120rpx"
+                maxlength="56"
+                bindinput="input" 
+                data-name="CustomText"
+                value="{{CustomText}}"
+                class="text"></textarea>
+      <view class="num">{{CustomText.length}}/56</view>
+    </view>
+    <button open-type="share" bindtap="isShare" class="btn">
+      转发锦鲤
+    </button>
+  </view>
+</view>  

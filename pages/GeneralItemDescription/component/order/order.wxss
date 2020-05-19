@@ -1,0 +1,47 @@
+/* pages/GeneralItemDescription/component/order/order.wxss */
+.order{position: fixed;display: flex;bottom:0px;left: 0px;right: 0px;height: 100rpx;background: #fff;justify-content: space-around;z-index: 100;}
+.order .item{display: flex;align-items: center;justify-content: center;}
+.order .item_1{width: 290rpx;}
+.order .item_2{background:rgba(0,0,0,1);flex: 1}
+.order .item_3{background:linear-gradient(90deg,rgba(229,41,32,1) 0%,rgba(237,69,60,1) 100%);flex: 1}
+.order .item .t{font-size:22rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(204,204,204,1);}
+.order .item_1 .c{flex: 1;display: flex;align-items: center;justify-content: center;flex-direction: column;padding: 0rpx;line-height: 1.45;}
+.order .item_1 .c{width: 100rpx;height: 65rpx;position: relative;}
+.order .item_1 .c image{width: 34rpx;}
+.order .item_1 .c text{font-size: 24rpx;color: #222;}
+.order .item_1 .c .num{
+    position: absolute;
+    top: 0;
+    right: 40rpx;
+    transform: translate(50%,-50%);
+    background: #f42c36;
+    color: #fff;
+    padding: 2rpx 10rpx;
+    text-align: center;
+    border-radius: 40rpx;
+    font-size: 24rpx;
+}
+.order .item_1 button{
+  border: none;
+  background: transparent;
+  background-color: transparent;
+}
+.order .item_1 button::after {
+  border: none;
+  background: transparent;
+  background-color: transparent;
+
+}
+.item .price{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  margin-bottom: 2rpx;
+}
+.item_p{
+  flex-direction: column;
+}

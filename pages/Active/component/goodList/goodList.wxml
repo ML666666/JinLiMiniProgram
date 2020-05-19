@@ -1,0 +1,15 @@
+<view class="goodList">
+  <view wx:for="{{rows}}" wx:for-index="index" data-id="{{item.Id}}" bindtap="toGoodDetail" class="item">
+    <image src="{{item.ProductThumbImg?item.ProductThumbImg:item.ProductImg}}"></image>
+    <view class="wrapper">
+      <view class="title">{{item.ProductTitle}}</view>
+      <view class="c">
+        <view class="w">
+          <view>￥{{item.SalePrice}}</view>
+          <text>{{Label}}{{item.SaleCount}}</text>
+        </view>
+        <view class="btn">{{BtnLabel}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "TopBar":"../../gob/gobComponent/TopBar/TopBar",
+    "van-checkbox": "../../miniprogram_npm/vant-weapp/checkbox/index"
+  }
+}

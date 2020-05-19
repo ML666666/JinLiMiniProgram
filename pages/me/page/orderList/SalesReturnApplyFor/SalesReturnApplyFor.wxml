@@ -1,0 +1,69 @@
+
+
+<view class="backAddress">
+  <TopBar title="退货申请"></TopBar>
+  <view class="detailWrapper">
+    <view>收货人：{{AddressObj.address.SysReceiver}}</view>
+    <view>联系方式：{{AddressObj.address.SysPhone}}</view>
+    <view>退货地址：{{AddressObj.address.SysAddress}}</view>
+    <view>退货附言：{{AddressObj.address.SysReceiver}}</view>
+    <view>快递公司：{{orderExpressCode.length?ActiveAddressObj.value:'未选择'}}</view>
+    <view>快递单号：{{orderExpressCode.length?orderExpressCode:'未填写'}} </view>
+  </view>
+
+  <view wx:if="{{isSetExpressDetail}}" bindtap="makeSureExpressDetail" class="btn">
+    确认
+  </view>
+  <view wx:if="{{!isSetExpressDetail}}" bindtap="setExpressDetail" class="btn">
+    {{orderExpressCode.length?'修改':'填写物流单号'}}
+  </view>
+
+  <view wx:if="{{isSetExpressDetail}}" class="inputWrapper">
+    <text>快递公司:</text>
+    <input placeholder="请选择快递公司" value="{{ActiveAddressObj.value}}" type="text" bindtap="showPopup" disabled="true"></input>
+  </view>
+  <view wx:if="{{isSetExpressDetail}}" class="inputWrapper">
+    <text>快递单号:</text>
+    <input 
+        placeholder="请填写快递单号" 
+        bindinput="input" 
+        value="{{orderExpressCode}}" 
+        data-name="orderExpressCode" 
+        type="text" ></input>
+  </view>
+
+
+</view>
+
+<van-popup show="{{isPopupShow}}" bind:click-overlay="hidePopup" position="bottom">
+  <view style="padding:20rpx;">
+    <view bindtap="makeSure" bindtap="hidePopup" style="color:#1989fa;text-align:right;">确定</view>
+  </view>
+  <van-picker bind:change="onChangeAddressList"  columns="{{ addressList }}"></van-picker>
+</van-popup>
+
+
+<view class="SalesGroupText">
+  <view>退款信息</view>
+  <view wx:for="{{LstProduct}}"> 
+    <view class="o">
+      <image class="o_1" src="{{item.ProductImg}}"></image>
+      <view >{{item.ProductTitle}}</view>
+    </view>
+    <view class="x_1">退款金额：￥{{item.BuyPrice}}</view>
+    <view class="x_1">申请件数：{{item.BuyNumber}}</view>
+    <view class="x_1">申请时间：{{rows.rows.CreateTime}}</view>
+  </view>
+</view>
+
+<view class="SalesGroupText_1">
+  <textarea  data-name="reason" bindinput="input" maxlength="50" placeholder="请输入您的退款原因">
+  </textarea>
+  <view>{{reason.length?reason.length:0}}/50</view>
+</view>
+
+<view class="center">
+  <view bindtap="makeSureSubmit" class="btn">
+    确认提交
+  </view>
+</view>

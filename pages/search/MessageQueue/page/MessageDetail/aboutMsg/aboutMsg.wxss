@@ -1,0 +1,15 @@
+.wrapper{
+  padding:40rpx;
+  box-sizing: border-box;
+  color: #2c3e50;
+}
+.wrapper .one{
+  font-size: 30rpx;
+}
+.wrapper .two{
+  font-size: 30rpx;
+  margin: 12rpx 0;
+}
+.wrapper .three{
+  font-size: 28rpx;
+}

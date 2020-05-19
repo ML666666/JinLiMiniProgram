@@ -1,0 +1,12 @@
+.mask{
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  background: #fff;
+  z-index: 220;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

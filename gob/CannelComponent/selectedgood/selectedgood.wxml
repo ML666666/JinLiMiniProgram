@@ -1,0 +1,33 @@
+<wxs src="../setUrl.wxs" module="tools" />
+
+<view class="listWrapper">
+  <view 
+      wx:for="{{param.list}}" 
+      wx:for-index="index" 
+      data-index="{{index}}" 
+      bindtap="click"
+      wx:if="{{tools.isOpenTime(NowData,item.start_time,item.end_time)}}"  
+      class="item">
+      <image
+          lazy-load="true"
+          mode="widthFix" 
+          style="width:700rpx;"
+          src="{{tools.setUrl(item.pic_url,imgDomain,imgVersion)}}"></image>
+      <view class="Tag">
+        <image src="./image/bg.png" class="bg"></image>
+        <view class="w">
+          <view class="t">最高可抵扣</view>
+          <view class="t">{{item.ShoppingBi}}元</view>
+        </view>
+      </view>
+      <view class="detail">
+          <view class="title">
+            <view class="one">{{item.title}}</view>
+            <view class="two">{{item.subtitle}}</view>  
+          </view>
+          <view class="price">
+            抢购价：￥<text class="price_r">{{item.price}}</text>
+          </view>
+      </view>
+  </view>
+</view>

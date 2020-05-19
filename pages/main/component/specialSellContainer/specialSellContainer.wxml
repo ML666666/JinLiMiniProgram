@@ -1,0 +1,129 @@
+<view class='specialSellContainer'>
+          <!-- 渐变背景 -->
+          <view class="textSwiper">
+            <swiper
+              interval="{{3000}}" 
+              duration="{{800}}"
+              indicator-dots="{{false}}"
+              autoplay="{{true}}">
+              <swiper-item wx:for="{{cannalObj.expressNews}}">
+                一分钟前<text>{{item.NickName}}</text>获得<text>{{item.OrderAmount}}</text>元免单
+              </swiper-item>
+            </swiper>
+          </view>
+
+          <view style='background: {{specialSellBgColor}}' class='bg'></view>
+          <!-- 轮播 -->
+          <view class='swiperContainer'>
+                <swiper 
+                      bindchange='swiperChange' 
+                      indicator-dots="{{true}}"
+                      autoplay="{{isAutoPlay}}" 
+                      indicator-active-color="{{'rgba(255,255,255,1)'}}"	 
+                      indicator-color="{{'rgba(255,255,255,0.4)'}}" 
+                      interval="{{3000}}" duration="{{800}}">
+                      <block wx:for="{{cannalObj.broadcastAd}}" wx:key="key" wx:for-item="item">
+                        <swiper-item
+                          data-Type="{{item.Type}}"
+                          data-Title="{{item.Title}}" 
+                          data-CategoryID="{{item.CategoryID}}"
+                          data-SpecialAreaType="{{item.SpecialAreaType}}"
+                          bindtap="navigation" 
+                          >
+                          <image src="{{item.Src}}" class="slide-image"/>
+                        </swiper-item>
+                      </block>
+                </swiper>
+          </view>
+          <!-- 导航banner -->
+          <image
+                id="genuine_1" 
+                class='genuine genuine_1' 
+                src='{{cannalObj.genuine.Src}}'></image>
+
+          <!-- 活动入口Tab -->
+          <view class='navigationIcoAd'>
+              <view
+                  wx:for="{{cannalObj.navigationIcoAd}}" 
+                  data-Type="{{item.Type}}"
+                  data-Title="{{item.Title}}" 
+                  data-CategoryID="{{item.CategoryID}}"
+                  data-SpecialAreaType="{{item.SpecialAreaType}}"
+                  bindtap="navigation" 
+                  wx:for-item="item" 
+                  wx:key="key">
+                  <image src='{{item.Src}}'></image>
+                  <text>{{item.Title}}</text>
+              </view>
+          </view>
+
+          <!-- 活动入口2 -->
+          <block class='imgAdList'>
+            <view class='imgAdListWrapper' wx:for="{{cannalObj.imgAdList}}" wx:key="key" wx:for-item="item">
+              <image 
+                  wx:if="{{item[0].Src}}" 
+                  mode="widthFix" 
+                  class='imgAdList_Item'
+                  data-Type="{{item[0].Type}}"
+                  data-Title="{{item[0].Title}}" 
+                  data-CategoryID="{{item[0].CategoryID}}"
+                  data-SpecialAreaType="{{item[0].SpecialAreaType}}"
+                  bindtap="navigation"  
+                  src="{{item[0].Src}}"></image>
+            </view>
+          </block>
+
+          <!-- 今日特卖Top -->
+          <view class='products'>
+
+             <view class='productsAd'>
+                <image mode="widthFix" src='{{cannalObj.products.productsAd.Src}}'></image>
+                <text bindtap="toMore" >更多></text>
+              </view>
+              
+              <scroll-view class="productsList" scroll-x="true">
+
+                    <view class='goodItem' 
+                          wx:for="{{cannalObj.products.products}}" 
+                          wx:for-item="item"
+                          data-Id='{{item.Id}}' 
+                          bindtap="toGoodDetail" 
+                          wx:key="index"
+                          data-Id='{{item.Id}}' 
+                          bindtap="toGoodDetail"
+                          >
+                            <image wx:if="{{index == 0}}" 
+                                   class='tips'
+                                  src='./image/one.png'></image>
+                            <image wx:if="{{index == 1}}" 
+                                   class='tips' 
+                                   src='./image/two.png'></image>
+                            <image wx:if="{{index == 2}}" 
+                                   class='tips' 
+                                   src='./image/three.png'></image>
+                          <view class='itemWrapper'>
+                              <image src='{{item.ProductImg}}'></image>
+                              <text class='title'>{{item.ProductTitle}}</text>
+                              <text class='price'>￥{{item.SalePrice}}</text>
+                          </view>
+                    </view> 
+              </scroll-view>
+
+          </view>
+
+          <!-- 为你推荐标题 -->
+          <image 
+            mode='widthFix' 
+            class='recommendTitle' 
+            src='http://h5.taobaby.cn/static/img/recommend.ebfbeda.png'></image>
+
+          <view class='product_good'>
+            <block>
+              <view wx:for="{{list}}" wx:key="index">
+                  <good_item data-Id='{{item.Id}}' bindtap="toGoodDetail" item="{{item}}">
+                  </good_item>
+              </view>
+            </block>
+          </view>
+
+    </view>

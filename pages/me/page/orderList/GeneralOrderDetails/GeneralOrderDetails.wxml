@@ -1,0 +1,105 @@
+
+<pullDownRefresh
+  bind:refresh="refresh"
+  refreshing="{{refreshing}}"
+  refreshed='{{refreshed}}'>
+  
+  <van-transition show="{{!isRenderingPage}}">
+
+    <view style="min-height:{{windowHeight}}px;background:#f5f5f5;padding-bottom:100rpx;">
+
+      <dialog />
+      <TopBar title="订单详情"></TopBar>
+        <view class="top">
+          {{obj.OrderStatusStr}}
+        </view>
+        <view class="address">
+          <view class="imgWrapper">
+            <image src="./image/adress.png"></image>
+          </view>
+          <view class="addressText">
+            <view>{{obj.ShipTo}}{{obj.ShipPhone}}</view>
+            <view>{{obj.ShipAddress}}</view>
+          </view>
+
+        </view>
+
+
+        <!-- 商品列表 -->
+        <view style="background:#fff;">
+            <List obj="{{obj}}" isSp="{{isSp}}" isJL="{{isJL}}"></List>
+        
+            <view class="w_item_wrapper">
+            
+              <view wx:for="{{OrdersDiscountDetailJson}}" class="w_item">
+                  <view>{{item.Title}}</view>
+                  <view>
+                  <!-- {{item.DiscountDetailAmount>0?'':'-'}} -->
+                  -￥{{item.DiscountDetailAmount}}</view>
+              </view>
+              <view class="w_item" wx:if="{{isJL}}"><view>获得购物值：</view> <view>{{obj.OrderAmount}}</view></view>
+              <view class="w_item"><view>运费：</view><view>￥{{obj.ExpressAmount}}</view></view>
+              <view class="w_item"><view>商品总金额：</view><view>￥{{isJL?obj.ProductAmount:obj.TotalSalePrice}}</view></view>
+            </view>
+
+            <view class="w_item headerPrice">
+              <view>实付金额</view>
+              <view class="p">￥{{obj.OrderAmount}}</view>
+            </view>
+        
+        
+          <!-- 如为双拼订单则显示该模块 -->
+          <SpStatus wx:if="{{isSp}}" obj="{{obj}}" winner="{{winner}}"></SpStatus>
+
+          <!-- 免单接龙时显示的按钮 -->
+          <view wx:if="{{isJL}}" class="shareWrapper" style="padding-bottom:20rpx;">
+              <button plain="true" open-type="share"  class="share">
+                <view>
+                  <image src="./image/toShare.png" class="s"></image>
+                  <text class="w">分享得购物币 / <text class="z">单笔最高可得{{item.OrderAmount}}</text></text>
+                </view>
+                <image src="./image/arrow.png" class="arrow"></image>
+              </button>
+          </view>
+        </view>
+
+        <view class="detailWrapper">
+        <!-- TradeNo -->
+          <!-- <view>运费：￥{{obj.ExpressAmount}}</view> -->
+          <view>订单编号：{{obj.OrderNumber}}</view>
+          <view>下单时间：{{obj.CreateTime}}</view>
+          <view>支付方式：{{obj.PaymentType}}</view>
+          <!-- <view>商品总金额：￥{{obj.OrderAmount}}</view> -->
+          <!-- <view wx:if="{{isJL}}">获得购物值：{{obj.OrderAmount}}</view> -->
+        </view>
+
+        <view class="StatueWrapper">
+          <!-- isSp表示该订单为幸运双拼 -->
+          
+          <!-- 非免单接龙显示该状态 -->
+          
+          <OrderStatue
+              wx:if="{{!isJL}}"
+              isSP="{{isSp}}"   
+              OrderId="{{obj.OrderId}}" 
+              bind:reSetData='refresh' 
+              payTypelist="{{payTypelist}}" 
+              item="{{obj}}">
+            </OrderStatue>
+          
+          <!-- 免单接龙且订单未支付显示该状态 -->
+          <OrderStatue
+              wx:if="{{isJL && obj.OrderStatus==0}}"
+              isSP="{{isSp}}"   
+              OrderId="{{obj.OrderId}}" 
+              bind:reSetData='refresh' 
+              payTypelist="{{payTypelist}}" 
+              item="{{obj}}">
+            </OrderStatue>
+
+        </view>
+
+  </view>
+  </van-transition>
+  
+</pullDownRefresh>

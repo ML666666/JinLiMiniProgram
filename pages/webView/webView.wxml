@@ -1,0 +1,2 @@
+<!--pages/webView/webView.wxml-->
+<web-view wx:if="{{haveLoad}}" src='{{url}}'></web-view>

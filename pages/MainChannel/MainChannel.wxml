@@ -1,0 +1,135 @@
+<wxs src="./setUrl.wxs" module="tools" />
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+    <POP  bind:getBeClickCannelObj="getBeClickCannelObj"></POP>
+    <dialog></dialog>
+    <view style="min-height:{{windowHeight}}px; " class="fullWrapper" wx:if="{{!isRenderingPage}}">
+
+        <header hotKeyWord="{{hotKeyWord}}" GetChannelLst="{{GetChannelLst}}" isSpecialSellBgColor="{{isSpecialSellBgColor}}">
+          <view class="tabsContainer {{isSpecialSellBgColor?'':'isSpecialSellBgColor'}}">
+              <van-tabs 
+                    bind:getActiveObj="getActiveObj"    
+                    active="{{ targetIndex }}">
+                <van-tab 
+                      wx:for="{{GetChannelLst}}" 
+                      wx:key="key" 
+                      RecommendType="{{item.JumpValue}}" 
+                      title="{{item.Name}}">
+                </van-tab>
+              </van-tabs>
+          </view>
+        </header>
+
+        <view class="cannelWrapper">
+          <view wx:for="{{GetChannelObjLst[targetIndex].ChannelLstData.list}}" wx:key="key">
+
+              <fourpalace
+                  NowData="{{NowData}}"
+                  bind:getBeClickCannelObj="getBeClickCannelObj" 
+                  param="{{item.param}}" 
+                  imgDomain="{{imgDomain}}" 
+                  imgVersion="{{imgVersion}}"
+                  wx:if="{{item.type=='fourpalace' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}"
+                  ></fourpalace>
+
+              <deductionTwo
+                  NowData="{{NowData}}"
+                  bind:getBeClickCannelObj="getBeClickCannelObj" 
+                  param="{{item.param}}" 
+                  imgDomain="{{imgDomain}}" 
+                  imgVersion="{{imgVersion}}" 
+                  wx:if="{{item.type=='deductionTwo' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}"></deductionTwo>
+              <banner
+                  NowData="{{NowData}}"
+                  bind:getBeClickCannelObj="getBeClickCannelObj" 
+                  param="{{item.param}}" 
+                  imgDomain="{{imgDomain}}" 
+                  imgVersion="{{imgVersion}}" 
+                  wx:if="{{item.type=='banner' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}"></banner>
+
+              <secondkill
+                  NowData="{{NowData}}"
+                  bind:getBeClickCannelObj="getBeClickCannelObj" 
+                  param="{{item.param}}" 
+                  imgDomain="{{imgDomain}}" 
+                  imgVersion="{{imgVersion}}" 
+                  wx:if="{{item.type=='seckill' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}"></secondkill>
+                  
+              <nav
+                  NowData="{{NowData}}"
+                  bind:getBeClickCannelObj="getBeClickCannelObj" 
+                  param="{{item.param}}" 
+                  imgDomain="{{imgDomain}}" 
+                  imgVersion="{{imgVersion}}" 
+                  wx:if="{{item.type=='nav' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}"></nav>
+              <rubik
+                  NowData="{{NowData}}"
+                  bind:getBeClickCannelObj="getBeClickCannelObj" 
+                  param="{{item.param}}"
+                  imgDomain="{{imgDomain}}" 
+                  imgVersion="{{imgVersion}}"
+                  wx:if="{{item.type=='rubik' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}"></rubik>
+
+              
+              <newpeople
+                  NowData="{{NowData}}"
+                  bind:getBeClickCannelObj="getBeClickCannelObj"
+                  param="{{item.param}}" 
+                  imgDomain="{{imgDomain}}" 
+                  imgVersion="{{imgVersion}}" 
+                  wx:if="{{item.type=='newpeople' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}"></newpeople>
+              
+              <recommend
+                  NowData="{{NowData}}"
+                  bind:getBeClickCannelObj="getBeClickCannelObj"
+                  param="{{item.param}}" 
+                  imgDomain="{{imgDomain}}" 
+                  imgVersion="{{imgVersion}}" 
+                  wx:if="{{item.type=='recommend' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}"></recommend>
+            
+              <selectedgood
+                  NowData="{{NowData}}"
+                  param="{{item.param}}" 
+                  imgDomain="{{imgDomain}}" 
+                  imgVersion="{{imgVersion}}" 
+                  wx:if="{{item.type=='selectedgood' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}"></selectedgood>
+
+              <view wx:if="{{item.type=='specialperformance' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}">
+                  <specialperformance
+                    NowData="{{NowData}}"
+                    wx:for="{{item.param.list}}"
+                    param="{{item}}" 
+                    imgDomain="{{imgDomain}}" 
+                    imgVersion="{{imgVersion}}" 
+                    ></specialperformance>
+              </view>
+              
+              <youlike
+                  NowData="{{NowData}}"
+                  youlike="{{GetChannelObjLst[targetIndex].youlike}}" 
+                  param="{{item.param}}" 
+                  imgDomain="{{imgDomain}}" 
+                  imgVersion="{{imgVersion}}" 
+                  wx:if="{{item.type=='youlike' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}"></youlike> 
+              
+              <deductionMore
+                    bind:getBeClickCannelObj="getBeClickCannelObj"
+                    NowData="{{NowData}}"
+                    youlike="{{youlike}}" 
+                    param="{{item.param}}" 
+                    imgDomain="{{imgDomain}}" 
+                    imgVersion="{{imgVersion}}" 
+                    wx:if="{{item.type=='deductionMore' && tools.isOpenTime(NowData,item.param.start_time,item.param.end_time)}}">
+                    </deductionMore>
+              
+          </view>
+        </view>
+
+        <FDOT bind:getBeClickCannelObj="getBeClickCannelObj"></FDOT>
+       
+    </view>
+</PageLoadingWrapper>

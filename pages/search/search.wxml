@@ -1,0 +1,137 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+  <view class='searchWrapper'>
+      <TopBar isHideHome="{{true}}"></TopBar>
+      <searchTop></searchTop>
+      <view class='SearchContainer'>
+      
+        <leftBar 
+            bind:getData='getData' 
+            list="{{ListCannlObj}}"></leftBar>
+      
+        <view class='DetailWrapper'>
+
+          <!-- <image 
+              mode='widthFix'
+              bindtap="toJump" 
+              wx:if="{{ListCannlObj[activeindex].CateIcon}}"
+              data-JumpValue="{{ListCannlObj[activeindex].JumpValue}}"
+              data-JumpType="{{ListCannlObj[activeindex].JumpType}}"  
+              class='ad' 
+              src='{{ListCannlObj[activeindex].CateIcon}}'>
+          </image> -->
+
+      
+
+          <block wx:for="{{ListCannlObj[activeindex].Children}}">
+            
+            <view class='tips'>
+              <view class='tips_1'>{{item.CateName}}</view>
+              <!-- <view bindtap="toJump"
+                    data-JumpValue="{{item.JumpValue}}"
+                    data-JumpType="{{item.JumpType}}"  class='tips_2'>
+                <text>更多</text>
+                <image mode='widthFix' src='/pages/search/image/arror.png'></image>
+              </view> -->
+            </view>
+            <view class="item_sub_List">
+              <view
+                  bindtap="toJump"
+                  data-name="{{item.CateName}}"
+                  data-JumpValue="{{item.JumpValue}}"
+                  data-JumpType="{{item.JumpType}}"
+                  class="item" 
+                  wx:for="{{item.Children}}">
+                  <image src="{{item.CateIcon}}"></image>
+                  <text>{{item.CateName}}</text>
+              </view>
+            </view>
+          </block>
+
+
+          
+          <!-- <view
+            bindtap="toGoodList"
+            data-RecommendType="{{ListCannlObj.category.RecommendType}}"
+            data-CategoryId="{{ListCannlObj.category.CategoryId}}"
+            data-CateName="{{ListCannlObj.category.CateName}}"
+            wx:if="{{ListCannlObj.subCategory.length}}" class='tips'>
+            <view class='tips_1'>{{ListCannlObj.category.CateName}}</view>
+            <view class='tips_2'>
+              <text>更多</text>
+              <image mode='widthFix' src='/pages/search/image/arror.png'></image>
+            </view>
+          </view> -->
+
+          <!-- <view wx:if="{{ListCannlObj.subCategory.length}}" class="item_sub_List">
+            <view
+                bindtap="toGoodList"
+                data-RecommendType="{{item.RecommendType}}"
+                data-CategoryId="{{item.CategoryId}}"
+                data-CateName="{{item.CateName}}" 
+                class="item" wx:for="{{ListCannlObj.subCategory}}">
+                <image src="{{item.CateIcon}}"></image>
+                <text>{{item.CateName}}</text>
+            </view>
+          </view> -->
+
+          <!-- <view 
+            bindtap="toGoodList"
+            data-RecommendType="{{ListCannlObj.category.RecommendType}}"
+            data-CategoryId="{{ListCannlObj.category.CategoryId}}"
+            data-CateName="{{'畅销新品'}}"
+            wx:if="{{ListCannlObj.recommandProducts.length}}" class='tips'>
+            <view class='tips_1'>畅销新品</view>
+            <view class='tips_2'>
+              <text>更多</text>
+              <image mode='widthFix' src='/pages/search/image/arror.png'></image>
+            </view>
+          </view> -->
+
+          <!-- <view wx:if="{{ListCannlObj.recommandProducts.length}}" class='itemList'>
+
+              <view class='item' 
+                    wx:for="{{ListCannlObj.recommandProducts}}"
+                    data-Id='{{item.Id}}'
+                    bindtap="toGoodDetail">
+
+                    <image 
+                      mode='widthFix' 
+                      src='{{item.ProductImg}}'></image>
+                    <view class='about'>
+                      <view class='title'>{{item.ProductTitle}}</view>
+                        <view class='detail'>
+                          <view class='price'>￥ {{item.SalePrice}}</view>
+                          <view class='sell'>已销{{item.SaleCount}}件</view>
+                        </view>
+                    </view>
+
+              </view>
+          </view> -->
+          
+          <!-- <view class='tips'>
+            <view class='tips_1'>精选品牌</view>
+          </view>
+          
+          <view class="item_sub_List">
+            <view
+                bindtap="toJump"
+                data-jump_address="{{item.JumpValue}}"
+                data-jump_type="{{item.JumpType}}"
+                class="item" 
+                wx:for="{{ListCannlObj}}">
+                <image src="{{item.CateIcon}}"></image>
+                <text>{{item.CateName}}</text>
+            </view>
+          </view> -->
+
+        </view>
+      </view>
+
+  </view>
+
+</PageLoadingWrapper>

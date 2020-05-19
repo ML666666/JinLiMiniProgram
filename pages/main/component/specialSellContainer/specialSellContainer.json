@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "good_item":"./good_item/good_item",
+    "hotSell": "/gob/gobComponent/hotSell/hotSell"
+  }
+}

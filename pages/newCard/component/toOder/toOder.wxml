@@ -1,0 +1,116 @@
+<!--pages/GeneralItemDescription/component/toOder/toOder.wxml  activeMaks-->
+<!-- goodtype==0为普通商品 -->
+<!-- goodtype==1为天使会员 -->
+<!-- goodtype==2为幸运双拼 -->
+<!-- goodtype==3为免单接龙 -->
+<!-- detail.IsOnlyGoldPay是否只允许购物币购买 -->
+
+<!-- ProductType == 0 为普通商品/天使会员 -->
+<!-- ProductType == 1 为幸运双拼 -->
+<!-- ProductType == 2 为免单接龙 -->
+<!-- ProductType == 3 为免单接龙 -->
+<wxs src="./F.wxs" module="tools" />
+
+
+<view class="OederMask {{isShow?'activeMaks':''}}">
+
+  <view bindtap="hide"  class="vMask">
+  </view>
+  <view class="contant">
+      <image class="closePng" bindtap="hide"  src="./image/close.png"></image>
+
+      <view class="lodingMask" wx:if="{{loadingdata}}">
+        Loding...
+      </view>
+      <view class="c">
+      
+        <view class="top">
+          <image wx:if="{{_LstAtt.length==0}}" 
+                 src="{{detail.ProductImg[0].ImgUrl}}" ></image>
+          <image wx:if="{{_LstAtt.length==1}}" 
+                 src="{{CAry[OneIndex?OneIndex:0].ImgUrl}}" ></image>
+          <image wx:if="{{_LstAtt.length==2}}" 
+                 src="{{CAry[OneIndex?OneIndex:0][TwoIndex?TwoIndex:0].ImgUrl}}"    ></image>
+
+          <view class="wrapper">
+
+            <!-- 价格文案 -->
+            <view class="item_1">
+                <view>
+                  <block wx:if="{{(_LstAtt.length==0) || (_LstAtt.length==1 && OneIndex != null) || (_LstAtt.length==2 && OneIndex != null && TwoIndex != null)}}">
+                      <text class="text">{{detail.IsOnlyGoldPay?'购物币:':'￥'}}</text>
+                      <!-- <text wx:if="{{_LstAtt.length==0}}">{{detail.SalePrice}}</text> -->
+                      <text wx:if="{{_LstAtt.length==0}}">{{detail.PriceRange}}</text>
+                      <text wx:if="{{_LstAtt.length==1}}">{{tools.toF(CAry[OneIndex].SalePrice-CAry[OneIndex].ShoppingBi)}}</text>
+                      <text wx:if="{{_LstAtt.length==2}}">{{tools.toF(CAry[OneIndex][TwoIndex].SalePrice-CAry[OneIndex][TwoIndex].ShoppingBi)}}</text>
+                  </block>
+                  <block wx:else>
+                      <block wx:if="{{topPrice == lastPrice}}">
+                        <text class="text">{{detail.IsOnlyGoldPay?'购物币:':'￥'}}</text>
+                        <text>{{detail.PriceRange}}</text>
+                      </block>
+                      <block wx:else>
+                            <text class="text">{{detail.IsOnlyGoldPay?'购物币:':'￥'}}</text>
+                            <text>{{detail.PriceRange}}</text>
+                      </block>
+                  </block>
+                </view>
+              </view>
+
+            <!-- 库存文案 -->
+            <view class="item_2">库存
+              <text wx:if="{{_LstAtt.length==0}}">{{detail.ProductStock}}</text>
+              <text wx:if="{{_LstAtt.length==1}}">{{OneIndex?CAry[OneIndex].Stock:detail.ProductStock}}</text>
+              <text wx:if="{{_LstAtt.length==2}}">{{OneIndex&&TwoIndex?CAry[OneIndex][TwoIndex].Stock:detail.ProductStock}}</text>件
+            </view>
+            
+            <!-- 规格文案 -->
+            <view wx:if="{{detail.LstAtt.length}}" class="item_3">
+                   <text  wx:if="{{_LstAtt.length==1&&OneIndex!=null}}">
+                          {{_LstAtt[0].LstAttValue[OneIndex].AttValue}}</text>
+                   <text wx:if="{{_LstAtt.length==2&&OneIndex!=null&&TwoIndex!=null}}">已选择：{{_LstAtt[0].LstAttValue[OneIndex].AttValue}}:{{_LstAtt[1].LstAttValue[TwoIndex].AttValue}}</text>
+            </view>
+
+          </view>
+        </view>
+
+        <view class="KFCW" style="  max-height: 500rpx;overflow-x: scroll;">
+          <view wx:for='{{_LstAtt}}' wx:for-index='List_key' class="listItem">
+            <view class="title">{{item.AttName}}</view>
+            <view class="list">
+              <view wx:for='{{item.LstAttValue}}' wx:for-index='_key'>
+                <view
+                  data-AttId='{{_LstAtt[List_key].AttId}}'
+                  data-listkey="{{List_key}}"
+                  data-itemKey="{{_key}}" 
+                  data-id="{{item.AttValueId}}" 
+                  bindtap="pickItem"
+                  data-disabled="{{(_LstAtt.length==1&&CAry[_key].Stock==0)||(_LstAtt.length==2&&CAry[OneIndex][_key].Stock==0 && List_key)?true:false}}" 
+                  class="item {{item.activeIndex == _key?'active':''}} {{_LstAtt.length==2&&CAry[OneIndex][_key].Stock==0 && List_key?'disabled':''}} {{_LstAtt.length==1&&CAry[_key].Stock==0?'disabled':''}}">
+                    {{item.AttValue}}
+                  </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="num">
+          <view class="k">购买数量</view>
+          <view class="n">
+            <van-stepper value="{{num}}"  bind:change="onChangeNum"></van-stepper>
+            <!-- <view bindtap="changeNum" data-type="{{0}}" class="t">-</view>
+            <input bindinput="changeNum" type="number" data-type="{{2}}" value="{{num}}" class="tc"></input>
+            <view bindtap="changeNum" data-type="{{1}}"class="t">+</view> -->
+          </view>
+        </view>
+      </view>
+
+      <!-- <view bindtap="toMakeSureOrder" class="btn">
+          确定
+      </view> -->
+      <!-- <ibutton size="long" loading="{{isOrderIng}}" bindtap="toMakeSureOrder">确定</ibutton> -->
+      <view class="btnWrapper">
+        <view data-type="1" bindtap="toMakeSureOrder" class="btn">立即购买</view>
+      </view>
+  </view>
+</view>

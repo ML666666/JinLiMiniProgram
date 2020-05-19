@@ -1,0 +1,25 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+    <TopBar title='{{name}}'></TopBar>
+    <view class="list">
+      <view wx:if="{{list.length}}" class="wrapper">
+        <view wx:for="{{list}}" class="item">
+            <view>
+              <view class="o">{{item.Remark}}</view>
+              <view class="e">{{item.CreateTime}}</view>
+            </view>
+            <view class="r">
+              {{item.Money<0?item.Money:'+'+item.Money}}
+            </view>
+        </view>
+      </view>
+      <l-status-show wx:else type="data" show="{{true}}"></l-status-show>
+    </view>
+
+
+</PageLoadingWrapper>

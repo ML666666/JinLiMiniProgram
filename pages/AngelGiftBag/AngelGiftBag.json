@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "TopBar": "../../gob/gobComponent/TopBar/TopBar"
+  },
+  "navigationBarTitleText": "天使礼包",
+  "navigationBarTextStyle": "black"
+}

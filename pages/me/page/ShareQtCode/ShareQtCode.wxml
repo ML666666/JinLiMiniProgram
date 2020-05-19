@@ -1,0 +1,22 @@
+<!--pages/me/page/ShareQtCode/ShareQtCode.wxml-->
+<TopBar title="邀请好友"></TopBar>
+<swiper previous-margin='80px' next-margin='80px' bindchange="swiperChange" style='height:{{swiperH}};'>
+  <swiper-item wx:for='{{urls}}' wx:key=''>
+    <image class='le-img {{nowIdx==index?"le-active":""}}' bindload='getHeight' src='{{item}}' style='height:{{swiperH}};'></image>
+  </swiper-item>
+</swiper>
+<!-- <view bindtap="toRule" class="shareText">查看邀请规则</view> -->
+<view class="shareGround">
+  <view bindtap="share" class="item">
+    <image src="./image/one.png"></image>
+    <text>微信朋友圈</text>
+  </view>
+  <button plain="true" open-type="share" class="item">  
+    <image src="./image/two.png"></image>
+    <text>微信好友</text>
+  </button>
+  <view bindtap="savelocal" class="item">
+    <image src="./image/three.png"></image>
+    <text>保存到本地</text>  
+  </view>
+</view>

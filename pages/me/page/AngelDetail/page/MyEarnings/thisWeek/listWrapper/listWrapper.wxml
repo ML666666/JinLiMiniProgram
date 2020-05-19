@@ -1,0 +1,20 @@
+<view class="listWrapper">
+    <view class="flexbox">
+        <view class="flexboxNav {{active==1?'active':''}} one"  data-index="1" bindtap="setActive">
+          直推
+        </view>
+        <view class="flexboxNav {{active==2?'active':''}} two" data-index="2" bindtap="setActive">
+          代理收益
+        </view>
+    </view>
+</view>
+<view class="dataWrapper">
+  <view class="item">
+    <view class="num">0</view>
+    <view class="text">代理总业绩</view>
+  </view>
+  <view class="item">
+    <view class="num">0</view>
+    <view class="text">贡献总佣金</view>
+  </view>
+</view>

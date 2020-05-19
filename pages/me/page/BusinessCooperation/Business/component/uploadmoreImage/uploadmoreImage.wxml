@@ -1,0 +1,17 @@
+<view class="wrapper">
+  
+
+  <view wx:for="{{list}}" wx:for-index="index" class="imagewrapper _w">
+      <image data-index="{{index}}" bindtap="close" class="close" src="./image/close.png"></image>
+      <image class="item" src="{{item}}" ></image>
+  </view>
+
+  <view class="itemWrapper _w">
+    <label bindtap="addImg" class="item">
+      <image class="bg" src="./image/bg.png"></image>
+      <image class="c" src="./image/c.png"></image>
+    </label>
+  </view>
+
+
+</view>

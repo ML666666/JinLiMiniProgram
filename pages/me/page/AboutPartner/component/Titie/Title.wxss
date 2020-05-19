@@ -1,0 +1,37 @@
+.bar{
+  height: 106rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bar .C{
+  display: flex;
+  align-items: center;
+}
+.bar .r{
+  width:6rpx;
+  height:30rpx;
+  background:rgba(229,48,39,1);
+  margin-right: 30rpx;
+}
+.bar .t{
+  font-size:32rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(51,51,51,1);
+}
+.arrow{
+  display: flex;
+  align-items: center;
+}
+.arrow view{
+  font-size:24rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(173,173,173,1);
+}
+.arrow image{
+  margin-left: 10rpx;
+  width: 18rpx;
+  margin-right: 20rpx;
+}

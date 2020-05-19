@@ -1,0 +1,6 @@
+<!--pages/me/page/HtmlRender/HtmlRender.wxml-->
+<TopBar title="{{res.data.data.title}}"></TopBar>
+
+<view style="padding: 24rpx;  padding-bottom: 60rpx;">
+  <rich-text style="width:100%;" nodes="{{res.data.data.html}}"></rich-text>
+</view>

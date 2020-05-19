@@ -1,0 +1,3 @@
+<view class="bg" style="min-height:{{windowHeight+70}}px;width:100%;background:{{color}}">
+  <slot></slot>
+</view>

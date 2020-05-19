@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-popup": "../../miniprogram_npm/vant-weapp/popup/index",
+    "toast":"/miniprogram_npm/lin-ui/toast/index"
+  }
+}

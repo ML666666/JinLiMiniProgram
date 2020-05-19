@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Title": "../component/Titie/Title",
+    "LowLevelOrder": "../component/LowLevelOrder/LowLevelOrder",
+    "aboutStock": "../component/aboutStock/aboutStock"
+  }
+}

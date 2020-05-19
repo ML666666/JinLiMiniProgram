@@ -1,0 +1,55 @@
+<bg>
+    <view class="CCCC">
+
+    <TopBar title="区域合伙人"></TopBar>
+    <view class="TW">
+      <image src="{{AEURL}}" class="BG"></image>
+      <view class="W">
+        <view class="t">{{GetRegionalPartner.SpecialAreaName}}</view>
+        <view class="CW">
+          <view class="item">
+            <view class="r">今日结算(元)</view>
+            <view class="c"><TF num="{{RegionInCome.DayAmount}}"></TF></view>
+          </view>
+          <view class="item">
+            <view class="r">本月结算(元)</view>
+            <view class="c"><TF num="{{RegionInCome.MonthAmount}}"></TF></view>
+          </view>
+          <view class="item">
+            <view class="r">交易订单数</view>
+            <view class="c">{{RegionInCome.OrderNum}}</view>
+          </view>
+          <view class="item">
+            <view class="r">线下门店</view>
+            <view class="c">{{RegionInCome.ShopNum}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <LowLevelOrder RegionalPartner="{{GetRegionalPartner}}" type="{{AgentLevel}}"></LowLevelOrder>
+
+    <!-- <block> -->
+    <view class="Wr">
+      <Title t="{{Date}}" bind:Tclick='toMd'>门店购物币产出</Title>
+      <view class="SY">
+          <view class="item" wx:for="{{bandList}}" wx:for-index="index">
+              <view class="H">
+                  <block>
+                      <image mode="widthFix" wx:if="{{item.Ranking==1}}" src="{{t_0}}"></image>
+                      <image mode="widthFix" wx:if="{{item.Ranking==2}}" src="{{t_1}}"></image>
+                      <image mode="widthFix" wx:if="{{item.Ranking==3}}" src="{{t_2}}"></image>
+                  </block>
+                  {{item.ShopName}}
+              </view>
+              <view class="B">
+                {{item.ShoppingBi}}
+              </view>
+          </view>
+      </view>
+    </view>
+    <!-- </block> -->
+    <aboutStock></aboutStock>
+
+    </view>
+</bg>

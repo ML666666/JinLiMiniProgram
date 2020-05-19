@@ -1,0 +1,71 @@
+.OrderList{
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  box-sizing: border-box;
+   background: #fff;
+}
+.OrderList image{
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.OrderList .c{
+  width: 428rpx;
+}
+.OrderList .c .q{
+  font-size: 24rpx;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: auto;
+  white-space: normal;
+  word-wrap: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.OrderList .c .w{
+  width: 400rpx;
+  font-size: 20rpx;
+  color: #ccc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.OrderList .c .e{
+  background: #ffe1df;
+  color: #ea3f32;
+  padding: 2rpx 10rpx;
+  font-size: 20rpx;
+}
+.OrderList .p{
+  margin-left: 20rpx;
+}
+.OrderList .p .q{
+  color: #ea3f32;
+  font-size: 26rpx;
+  text-align: right;
+}
+.OrderList .p .btn{
+  height: 56rpx;
+  padding: 0 16rpx;
+  border: none;
+  border-radius: 40rpx;
+  outline: none;
+  font-size: 24rpx;
+  line-height: 56rpx;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #888;
+  color: #888;
+  width: 100rpx;
+}
+.OrderList .p .w{
+  color: #2c3e50;
+  font-size: 24rpx;
+  text-align: right;
+  margin-bottom: 10rpx;
+}
+.thz{
+  
+}

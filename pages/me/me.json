@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header":"/pages/me/component/header/header",
+    "bottom": "/pages/me/component/bottom/bottom",
+    "ad": "./component/ad/ad"
+  }
+}

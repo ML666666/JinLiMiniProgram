@@ -1,0 +1,16 @@
+.banner{
+  width: 700rpx;
+  height: 319rpx;
+  margin-bottom: 25rpx;
+  box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+}
+.banner swiper-item{
+  width: 700rpx;
+  height: 319rpx;
+  background: transparent;
+}
+.banner image{
+  width: 700rpx;
+  height: 319rpx;
+  border-radius: 7rpx;
+}

@@ -1,0 +1,30 @@
+<view class="userDataWrapper">
+  <view class="income">
+    <view class="MyEarningsTotal">
+      {{userData.TotalActualBillingAmount}}
+    </view>
+    <view class="EarningsText">累计收入</view>
+  </view>
+
+  <view class="performanceeBottom">
+    <view class="LastWeek">
+      <view class="num">{{userData.TotalsCommission}}</view>
+      <view class="LastWeekText">上周业绩</view>
+    </view>
+    <view class="LastWeek">
+      <view class="num">{{userData.ActualBillingAmount}}</view>
+      <view class="LastWeekText">上周收益</view>
+    </view>
+    <view class="LastWeek">
+      <view class="num">{{userData.LevelNameComm}}</view>
+      <view class="LastWeekText">上周级别</view>
+    </view>
+    <view class="LastWeek">
+      <view class="num">{{userData.Proportion}}%</view>
+      <view class="LastWeekText">佣金比例</view>
+    </view>
+  </view>
+
+</view>
+
+<listWrapper isReachBottom="{{isReachBottom}}" userData="{{userData}}"></listWrapper>

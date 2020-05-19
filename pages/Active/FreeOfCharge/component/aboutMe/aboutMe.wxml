@@ -1,0 +1,13 @@
+<TopBar title="我的免单"></TopBar>
+
+<userInfo member="{{member}}"></userInfo>
+
+<view class="tabs">
+  <view bindtap="changeTabs" data-index="1" class="tab {{active==1?'active':''}}">我的订单</view>
+  <view bindtap="changeTabs" data-index="2" class="tab {{active==2?'active':''}}">购物币明细</view>
+</view>
+
+<view class="listWrapper">
+  <OrderListWapper wx:if="{{active==1}}" bind:reSetData="reSetData" OrderListObj="{{OrderListObj}}"></OrderListWapper>
+  <MyGoldCoinRecord wx:if="{{active==2}}" MyGoldCoin="{{MyGoldCoinRecord}}"></MyGoldCoinRecord>
+</view>

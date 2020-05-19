@@ -1,0 +1,42 @@
+<view class="SwiperWrapper">
+
+  <!-- <view class="iconWrapper">
+      <van-icon 
+            bindtap="Favorite" 
+            data-FavoriteID="{{FavoriteID}}" 
+            wx:if="{{FavoriteID==0}}" 
+            name='like-o'></van-icon>
+      <van-icon 
+            bindtap="Favorite"
+            color='#f02b22' 
+            data-FavoriteID="{{FavoriteID}}" 
+            wx:if="{{FavoriteID>0}}" 
+            name='like'></van-icon>
+  </view> --> 
+  <!-- <image style="top:{{navHeight}}px" class="iconWrapper" bindtap="toShare" src="./image/share.png"></image> -->
+  
+  <view wx:if="{{VideoAddress}}" class="wrapper">
+      <t_swiper detail="{{detail}}" active="{{active}}" bind:swiperChange="swiperChange" VideoAddress="{{VideoAddress}}" list="{{list}}"></t_swiper>
+      <!-- <view class="selectWrapper">
+        <view bindtap="changeType" data-index="0" class="item {{current==0?'red':''}}">视频</view>
+        <view bindtap="changeType" data-index="1" class="item {{current>0?'red':''}}">图片</view>
+      </view> -->
+  </view>
+
+  <view wx:else class="swiperWrapper">
+          <t_swiper list="{{list}}"></t_swiper>
+  </view>
+  <dialog/>
+  <image wx:if="{{isSellOut}}" src="./image/sellOut.png" class="sellOutIcon"></image>
+  
+  <view bindtap="toD" wx:if="{{brandInfo.Id}}" style="{{VideoAddress?'bottom:90rpx':''}}" data-id="{{brandInfo.Id}}" class="brandInfo">
+    <image src="{{brandInfo.Icon}}"></image>
+    <view>{{brandInfo.BrandName}}</view>
+  </view>
+  
+  <view wx:if="{{detail.ProductType==7}}" class="SLBrand">
+      <image src="./image/2.png"></image>
+      <view class="tips">苏宁直供</view>
+  </view>
+  
+</view>

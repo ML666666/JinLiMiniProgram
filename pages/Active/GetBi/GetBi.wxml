@@ -1,0 +1,5 @@
+<TopBar></TopBar>
+<view style="height:{{windowHeight}}px" class="bg">
+  <image src="{{bgUrl}}" style="width:100%" mode="widthFix"></image>
+  <image class="btn" bindtap="Tap" src="{{btnUrl}}"></image>
+</view>

@@ -1,0 +1,22 @@
+<view class="QualificationImg">
+  <TopBar 
+    title="{{'企业资质'}}">
+  </TopBar> 
+  <view class="wrapper">
+    <view class="title">
+      锦鲤团网店经营者相关资质信息
+    </view>
+    <view class="tips">
+      根据相关法律法规要求，经营者相关资质信息公示如下:
+    </view>
+    <view bindtap="showImage" class="imageWrapper">
+      <image style="width:100%;" mode="widthFix" src="{{topData.QualificationImg}}"></image>
+    </view>
+  </view>   
+</view>
+
+<view class="mask {{isShowImage?'showMask':''}}" bindtap="showImage">
+  <image style="width:100%;" mode="widthFix" src="{{topData.QualificationImg}}"></image>
+</view>
+
+<canvas canvas-id="t" class="canvas"></canvas>

@@ -1,0 +1,9 @@
+<wxs src="../setUrl.wxs" module="tools" />
+  <image wx:for="{{param.list}}"
+         lazy-load="true"
+         mode="widthFix" 
+         style="width:700rpx;margin-bottom:20rpx;"
+         src="{{tools.setUrl(item.pic_url,imgDomain,imgVersion)}}"
+         wx:if="{{tools.isOpenTime(NowData,item.start_time,item.end_time)}}"
+         wx:for-index="index" data-index="{{index}}" bindtap="click">
+         </image>

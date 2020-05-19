@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "AgentList":"./AgentList/AgentList",
+    "AgentUnder":"./AgentUnder/AgentUnderCommission"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Dlist":"./listWrapper/Dlist/Dlist",
+    "ZTlist":"./listWrapper/ZTlist/ZTlist"
+  }
+}

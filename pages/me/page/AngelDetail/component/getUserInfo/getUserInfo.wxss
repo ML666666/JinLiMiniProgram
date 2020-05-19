@@ -1,0 +1,90 @@
+/* pages/me/page/AngelDetail/component/getUserInfo/getUserInfo.wxss */
+/* http://h5.huizhisuo.com/static/img/information-pupop-bg.ff15684.png */
+.userInfo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 614rpx;
+  height: 870rpx;
+  background-image: url('http://h5.huizhisuo.com/static/img/information-pupop-bg.ff15684.png');
+  background-size: 100% 100%;
+  padding: 210rpx 48rpx;
+  box-sizing: border-box;
+}
+.userInfo .wrapper{
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 20px #ddd;
+  width: 100%;
+}
+.userInfo .wrapper .ceil{
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: .28rem;
+  border-bottom: 1px dashed #ccc;
+  width: 100%;
+}
+.userInfo .wrapper .ceil .name{
+  min-width: 128rpx;
+  font-weight: 700;
+  padding-right: 16rpx;
+  text-align: justify;
+  text-align-last: justify;
+  font-size: 23rpx;
+}
+.userInfo .wrapper .ceil .input{
+  border: none;
+  height: 100rpx;
+  width: 100%;
+}
+.userInfo .wrapper .redact-content{
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 20rpx 20rpx;
+}
+.userInfo .wrapper .cell-qrcode{
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+}
+.userInfo .wrapper .cell-qrcode .title{
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+.ceil-img{
+  display: flex
+}
+.ceil-img image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.ceil-img .c{
+  margin-right: 10rpx;
+}
+.confirm-btn{
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.confirm-btn .btn{
+  width: 220rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1;
+  padding: 28rpx 0;
+  background: #f66;
+  color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 20rpx #999;
+  margin-top: 20rpx;
+}

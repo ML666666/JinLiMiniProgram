@@ -1,0 +1,2 @@
+<wxs src="./F.wxs" module="tools" />
+<text>{{tools.TF(num)}}</text>

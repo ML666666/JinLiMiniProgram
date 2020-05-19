@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationStyle": "default",
+  "animation":{
+    "duration":400
+  }
+}

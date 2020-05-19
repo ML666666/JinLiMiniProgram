@@ -1,0 +1,38 @@
+  
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+  <view>
+    <TopBar title="购物币"></TopBar>
+    <view class="wrapper">
+      <view class="c">购物币余额</view>
+      <view class="p">{{obj.DeductionBalance}}</view>
+    </view>
+    
+    <view class="item" wx:for="{{obj.list}}">
+      <view class="imageWrapper">
+        <view class="tips">{{item.Remark}}</view>
+        <image src="{{item.ProductImgs[0]}}"></image>
+      </view>
+      <view class="c">
+        <view class="title">{{item.Title}}</view>
+        <view class="time">{{item.CreateTime}}</view>
+      </view>
+      <view class="num">
+        {{item.DeductionBalance<0?item.DeductionBalance:'+'+item.DeductionBalance}} 
+      </view>
+    </view>
+
+
+    <Loading show="{{isLoading||isOver}}" type="{{isOver?'end':'loading'}}" />
+  </view>  
+
+
+
+
+</PageLoadingWrapper>
+

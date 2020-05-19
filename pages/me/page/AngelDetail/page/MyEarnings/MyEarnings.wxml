@@ -1,0 +1,18 @@
+
+<view style="min-height:{{windowHeight}}px; background: #f5f5f5;">
+  <TopBar title="团队收益"></TopBar>
+  <view class="tabs">
+    <view class="tab {{active==1?'active':''}}" data-index="1" bindtap="changeIndex">
+      <text>上周总收益</text>
+      <view class="line"></view>
+    </view>
+    <view class="tab {{active==2?'active':''}}" data-index="2" bindtap="changeIndex">
+      <text>本周收益</text>
+      <view class="line"></view>
+    </view>
+  </view>
+
+  <lastWeek isReachBottom="{{isReachBottom}}" wx:if="{{active==1}}"></lastWeek>
+
+  <thisWeek isReachBottom="{{isReachBottom}}" wx:if="{{active==2}}"></thisWeek>
+</view>

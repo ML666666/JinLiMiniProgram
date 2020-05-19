@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "getUserInfo":"./component/getUserInfo/getUserInfo",
+    "popup": "/miniprogram_npm/lin-ui/popup/index"
+  }
+}

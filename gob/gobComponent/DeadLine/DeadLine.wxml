@@ -1,0 +1,2 @@
+<!--gob/gobComponent/DeadLine/DeadLine.wxml-->
+<view class="line">我是有底线的</view>

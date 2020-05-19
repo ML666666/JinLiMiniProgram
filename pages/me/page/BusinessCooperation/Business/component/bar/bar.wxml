@@ -1,0 +1,23 @@
+<view class="bar">
+  <view class="wrapper">
+      <view class="radius {{active>=1?'active_':''}} {{active==1?'active':''}}">
+        <text>1</text>
+        <view style="color:{{active>=1?'#333333':''}}" class="tips">填写企业信息</view>
+      </view>
+      <view class="line"></view>
+      <view class="radius {{active>=2?'active_':''}} {{active==2?'active':''}}">
+        <text>2</text>
+        <view style="color:{{active>=2?'#333333':''}}" class="tips">上传资质</view>
+      </view>
+      <view class="line"></view>
+      <view class="radius {{active>=3?'active_':''}} {{active==3?'active':''}}">
+        <text>3</text>
+        <view style="color:{{active>=3?'#333333':''}}" class="tips">填写店铺信息</view>
+      </view>
+      <view class="line"></view>
+      <view class="radius {{active>=4?'active_':''}} {{active==4?'active':''}}">
+        <text>4</text>
+        <view style="color:{{active>=4?'#333333':''}}" class="tips">平台审核</view>
+      </view>
+  </view>
+</view>

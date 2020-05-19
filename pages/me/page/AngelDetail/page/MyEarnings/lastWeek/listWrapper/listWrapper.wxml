@@ -1,0 +1,36 @@
+<view class="listWrapper">
+    <view class="flexbox">
+        <view class="flexboxNav {{active==1?'active':''}} one"  data-index="1" bindtap="setActive">
+          直推
+        </view>
+        <view class="flexboxNav {{active==2?'active':''}} two" data-index="2" bindtap="setActive">
+          代理收益
+        </view>
+    </view>
+</view>
+
+<view wx:if="{{active==1}}" class="dataWrapper">
+  <view class="item">
+    <view class="num">{{userData.DirectlyUnderCommission}}</view>
+    <view class="text">直推总业绩</view>
+  </view>
+  <view class="item">
+    <view class="num">{{userData.DirectlyActualBillingAmount}}</view>
+    <view class="text">直推总佣金</view>
+  </view>
+</view>
+
+<view wx:if="{{active==2}}" class="dataWrapper">
+  <view class="item">
+    <view class="num">{{GetLastWeekAgentObj.AgentUnderCommission}}</view>
+    <view class="text">代理总业绩</view>
+  </view>
+  <view class="item">
+    <view class="num">{{GetLastWeekAgentObj.AgentActualBillingAmount}}</view>
+    <view class="text">贡献总佣金</view>
+  </view>
+</view>
+
+
+<AgentUnder list="{{GetLsLastWeekAgentPer.list}}" wx:if="{{active==1}}"></AgentUnder>
+<AgentList list="{{GetLastWeekAgentObj.list}}"  wx:if="{{active==2}}"></AgentList>

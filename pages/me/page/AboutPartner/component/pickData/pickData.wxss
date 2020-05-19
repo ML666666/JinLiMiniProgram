@@ -1,0 +1,154 @@
+.picker-view-column view{
+  text-align: center;
+}
+.timeWrapper{
+  width:630rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 1rpx 10rpx 0px rgba(0,0,0,0.1);
+  border-radius:20rpx;
+  line-height: 88rpx;
+  text-align: center;
+  position: relative;
+}
+.timerWrapper .closeUrl{
+  position: absolute;
+  width: 26rpx ;
+  height: 26rpx;
+  top: 30rpx;
+  right: 30rpx;
+}
+.btnWrapper{
+  width: 100%;
+  display: flex;
+  margin-top: 30rpx;
+}
+.btnWrapper_1 .btnW{
+  flex: 1;
+}
+.btn{
+  width: 100%;
+  line-height: 54rpx;
+  text-align: center;
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(173,173,173,1);
+}
+.selectBtn{
+  color:rgba(229,41,32,1);
+}
+.time_c{
+  line-height: 48rpx;
+}
+.mask{
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:rgba(0,0,0,0.7);
+  z-index: 502;
+}
+.timerWrapper{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.timerWrapper .time_c{
+  font-size:30rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  padding:0 74rpx;
+  box-sizing: border-box;
+  line-height: 24rpx;
+}
+.tips{
+  font-size:24rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(173,173,173,1);
+  line-height: 24rpx;
+  margin-bottom: 18rpx;
+}
+.CBtnWrapper{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+.CBtnWrapper .btnW{
+  width:240rpx;
+  height:86rpx;
+  background:rgba(238,238,238,1);
+  border-radius:50rpx;
+  line-height: 86rpx;
+  text-align: center;
+  font-size:30rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+}
+.CBtnWrapper .SBTN{
+  color: #fff;
+  background:linear-gradient(270deg,rgba(229,41,32,1) 0%,rgba(237,69,60,1) 100%);
+}
+
+.DataWrapper{
+  width: 100%;
+  height: 120rpx;
+  justify-content: space-between;
+  display: flex;
+  background: #Fff;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.DataWrapper .tips{
+  position: absolute;
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(173,173,173,1);
+  top: 64rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.DataWrapper .CW{
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}
+.DataWrapper .CW .h{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(173,173,173,1);
+  margin-bottom: 8rpx;
+}
+.DataWrapper .CW .h image{
+  width: 18rpx;
+  height: 18rpx;
+  margin-left: 8rpx;
+}
+.DataWrapper .CW .D{
+  font-size:36rpx;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  color:rgba(51,51,51,1);
+}
+.DataWrapper .CW .notSelet{
+  color:rgba(221,221,221,1);
+}
+picker-view-column view{
+  line-height: 34px !important;
+}

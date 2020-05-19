@@ -1,0 +1,111 @@
+
+
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+  <changeAttr bind:hide='hide' bind:getList='getList' isShow="{{isShow}}" num="{{BuyNum}}" CardId="{{CardId}}" PID='{{PID}}'></changeAttr>
+
+  <top isShowArror='{{true}}' bind:reSetList='getAllList' cardData="{{cardData}}" timestamp="{{timestamp}}"></top>
+  <view style="min-height:{{windowHeight}}px;" class="cardWrapper">
+
+      <view class="vWrapper">
+        <view wx:for="{{cardData}}" wx:if="{{cardData.length && !isPaySuccess}}" class="shopWrapper" wx:for-index='ground_index'>
+          <view class="topShopTitle">
+
+            <view catchtap="isCheckAllGround" data-IsCheck="{{item.isAllCheck}}" data-index="{{ground_index}}">
+                    <image wx:if="{{item.isAllCheck}}" class="check" src="./image/check.png"></image>
+                    <image wx:else class="check" src="./image/nocheck.png"></image>
+            </view>
+
+            <view class="t">{{item.GroupTitle}}</view>
+          </view>
+
+          <block wx:for="{{item.LstProduct}}" wx:for-index='index'>
+            <l-slide-view  height="140" width="700" slide-width="210" wx:for-index='index'>
+              <view slot="left" class="item">
+
+                  <view  catchtap="changeStatus" data-IsCheck="{{item.IsCheck}}" data-Id="{{item.Id}}">
+                    <image wx:if="{{item.IsCheck}}" class="check" src="./image/check.png"></image>
+                    <image wx:else class="check" src="./image/nocheck.png"></image>
+                  </view>
+
+                  <image
+                        bindtap="toDetail" data-Id="{{item.ProductId}}"
+                        class="goodImage" 
+                        src="{{item.ProductImg}}"></image>
+
+                  <view class="detail">
+                      <view class="z">
+                        <view bindtap="toDetail" data-Id="{{item.ProductId}}" class="title d_S">{{item.ProductTitle}}</view>
+                        <view 
+                            wx:if='{{item.AttValueName}}' 
+                            data-Id="{{item.ProductId}}" 
+                            data-CardId="{{item.Id}}"
+                            data-BuyNum="{{item.BuyNum}}"  
+                            bindtap="toChangeAttr" 
+                            class="attr">{{item.AttValueName}}</view>
+                      </view>
+                      <view class="c">
+                          <view class="p">
+                            ￥{{item.SalePrice}}
+                          </view>
+                          <van-stepper value="{{item.BuyNum}}"  data-Id="{{item.Id}}" bind:change="onChangeNum"></van-stepper>
+                      </view>
+                  </view>
+
+              </view>
+              <view slot="right" class="right">
+                  <view bindtap="AddProductFavorite" data-ProductId="{{item.ProductId}}" data-Id="{{item.Id}}" class="right_item right_item_1">
+                      <view class="text">移至</view>
+                      <view class="text">收藏夹</view>
+                  </view>
+                  <view bindtap="toDelete" data-Id="{{item.Id}}" class="right_item right_item_2">
+                      <view class="text">删除</view>
+                  </view>
+              </view>
+            </l-slide-view>
+            <view class="line_1" wx:if="{{(index+1)!=item.LstProduct.length}}"></view>
+          </block>
+        </view>
+
+        <nothingStatus wx:if="{{cardData.length==0 && !isPaySuccess}}"></nothingStatus>
+        <block wx:if="{{isPaySuccess}}">
+            <OrderStatus orderid="{{orderid}}" isPaySuccess="{{isPaySuccess}}"></OrderStatus>
+        </block>
+        
+        <reSetGoodList  
+            wx:if="{{!isPaySuccess}}" 
+            bind:delete="toDelete" 
+            bind:getList='refresh' 
+            ShoppingCartExpireGoods="{{ShoppingCartExpireGoods}}">
+        </reSetGoodList>
+
+
+        <view class="buttomBar" wx:if="{{!isPaySuccess}}">
+            <view class="isCheckAll" bindtap="isCheckAll">
+              <view catchtap="isCheckAll">
+                    <image wx:if="{{isSeletAll}}" class="check" src="./image/check.png"></image>
+                    <image wx:else class="check" src="./image/nocheck.png"></image>
+              </view>
+              <view class="all">全部</view>
+            </view>
+            <view class="PriceWrapper">
+              <view class="p">
+                <view class="one">合计:￥{{AllGOODPRICE}}</view>
+                <view class="two">未包含运费</view>
+              </view>
+              <view bindtap="makesureBuy" class="btn">
+                去结算({{AllCheck}})
+              </view>
+            </view>
+        </view>
+      </view>
+      <youlike CateId="{{CateId}}" isReactBottom="{{isReactBottom}}"></youlike>
+
+  </view>
+
+
+</PageLoadingWrapper>

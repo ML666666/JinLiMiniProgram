@@ -1,0 +1,26 @@
+/* pages/index/indexPage/specialSell/specialSell.wxss */
+.hotSell{display: flex;flex-direction: column;width: 100%;}
+.hotSell .banner{width: 100%;height: 255rpx}
+.hotSell .tipsIconWrapper{width: 100%;margin: 24rpx 0rpx;padding-left: 20rpx;}
+.hotSell .tipsIconWrapper image{width: 174rpx;}
+.hotSell .product_good{width: 100%}
+
+.hotSell .productsList{width:100%;height:283rpx;overflow:hidden;white-space:nowrap;}
+.hotSell .productsList .goodItem{margin-left: 30rpx; width:207rpx;height:283rpx; overflow: hidden;display: inline-block;box-sizing: border-box;position: relative;}
+.hotSell .productsList .goodItem .tips{position: absolute;top: 0px;left: 0px;width: 88rpx;height:36.4rpx}
+.hotSell .productsList .goodItem image{width: 200rpx;height: 200rpx;}
+.hotSell .productsList .itemWrapper{display: flex;flex-direction: column; height: 100%;}
+.hotSell .productsList .itemWrapper .title{font-size: 22rpx; overflow: hidden; white-space: nowrap;
+text-overflow: ellipsis;color: #888;margin-bottom: 10rpx;margin-top: 10rpx;}
+.hotSell .productsList .itemWrapper .price{color: #ff1329;font-weight: 700;font-size: 22rpx;}
+
+.warterFailList{display: flex;flex-wrap: wrap;justify-content: space-around;border-top: 2rpx solid #eee;}
+.warterFailList .item{flex: 1; margin-bottom: 20rpx;padding: 20rpx; border-bottom: 2rpx solid #eee;}
+.warterFailList .item:nth-child(odd) {border-right: 2rpx solid #eee;}
+.warterFailList .item image{width:323rpx;height:323rpx;}
+.warterFailList .item .title{font-size: 26rpx;margin:10rpx 0rpx;display: -webkit-box;text-overflow: ellipsis;
+overflow: hidden;height: auto;white-space: normal;word-wrap: normal;-webkit-box-orient: vertical;-webkit-line-clamp: 2;    color: #2c3e50;}
+.warterFailList .Integral{display: flex;justify-content: space-between;align-items: center;margin-top: 20rpx;}
+.warterFailList .Integral view{color: #f02b22;font-size: 26rpx;font-weight: 700;}
+.warterFailList .Integral text{color: #2c3e50;font-size: 24rpx}
+.warterFailList .line{font-size: 30rpx;text-align: center;margin: 20rpx 0rpx;margin-bottom: 50rpx;}

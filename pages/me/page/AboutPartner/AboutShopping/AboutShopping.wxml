@@ -1,0 +1,32 @@
+<bg color="rgba(255,255,255,1)">
+  <view class="CCCC">
+      <TopBar title="门店购物产出"></TopBar>
+      <pickData startTimeDay="{{1}}" endTimeDay="{{1}}" bind:resetTime="resetTime"></pickData>
+      <view class="listWrapper">
+          <block wx:for="{{row}}" wx:for-index="index">
+            <view class="barWrapper" wx:if="{{item.DegreeBar>50}}" >
+              <view class="TitleWrapper">
+                <view class="b">{{item.ShopName}}</view>
+                <view class="c">{{item.Percentage}}%</view>
+              </view>
+              <view class="bar {{index==0?'one':''}} {{index==1?'two':''}} {{index==2?'three':''}}" 
+                    style="width:{{item.DegreeBar}}%">
+                {{item.ShoppingBi}}
+              </view>
+            </view>
+
+            <view wx:else class="barWrapper">
+              <view class="TitleWrapper">
+                <view class="b">{{item.ShopName}}</view>
+                <view class="c">{{item.Percentage}}%</view>
+              </view>
+              <view class="TbarWrapper">
+                <view style="width:{{item.DegreeBar}}%" class="bar {{index==0?'one':''}} {{index==1?'two':''}} {{index==2?'three':''}}"></view> 
+                <view class="out">{{item.ShoppingBi}}</view>
+              </view>  
+            </view>
+
+          </block>
+      </view>
+  </view>
+</bg>

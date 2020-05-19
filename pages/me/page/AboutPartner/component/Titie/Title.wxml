@@ -1,0 +1,10 @@
+<view class="bar" bindtap="click">
+  <view class="C">
+    <view class="r"></view>
+    <view class="t"><slot></slot></view>
+  </view>
+  <view class="arrow">
+    <view>{{t}}</view>
+    <image mode="widthFix" src="./image/a.png"></image>
+  </view>
+</view>

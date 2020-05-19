@@ -1,0 +1,22 @@
+/* pages/search/SearchResult.wxss */
+.SearchResult{display: flex;width: 100%;flex-direction: column;}
+.SearchResult .top{width:100%;height: 100rpx;display: flex;justify-content: space-between;align-items: center;box-sizing: border-box;padding-left: 28rpx;border-bottom: 2rpx solid #eee;z-index: 200}
+.SearchResult .top .cancel{color: #333;font-size: 26rpx;padding: 26rpx 24rpx;}
+.SearchResult .top .searchBar{width: 608rpx;height: 64rpx;background: #f0f0f0;border-radius: 40rpx;display: flex;justify-content: flex-start;align-items: center;box-sizing: border-box;}
+.SearchResult .top .searchBar image{width: 32rpx;height: 32rpx; margin: 0rpx 20rpx;}
+.SearchResult .top .searchBar input{width: 472rpx;height: 64rpx;font-size: 24rpx;}
+.SearchResult .HistoryWrapper{width: 100%;padding: 28rpx;box-sizing: border-box;}
+.SearchResult .HistoryWrapper .top_2{display: flex;justify-content: space-between;width: 100%;align-items: center;}
+.SearchResult .HistoryWrapper .top_2 image{width: 28rpx;}
+.SearchResult .HistoryWrapper .top_2 text{color: #333;font-size: 24rpx;}
+.SearchResult .HistoryWrapper .Wrapper{display: flex;justify-items: flex-start;flex-wrap: wrap;}
+.SearchResult .HistoryWrapper .Wrapper .item{background: #eee;color: #2c3150;padding: 10rpx 20rpx;font-size: 24rpx;margin: 40rpx 20rpx 0rpx 0rpx}
+.SearchResult .resultPage{display: flex;flex-wrap: wrap;justify-content: space-between;}
+.SearchResult .resultPage .item{padding: 20rpx;width: 375rpx;box-sizing: border-box;}
+.SearchResult .resultPage image{width: 335rpx;margin-bottom: 10rpx;}
+.SearchResult .resultPage .item .title{word-wrap: normal;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;text-align: justify;color: #505050;font-weight: 800;font-size: 26rpx;}
+.SearchResult .resultPage .item .detail{display: flex;justify-content: space-between;align-items: center;}
+.SearchResult .resultPage .item .price{color: #ff0000;font-size: 30rpx;}
+.SearchResult .resultPage .item .sell{color: #999999;font-size: 24rpx;text-decoration:line-through;}
+.SearchResult .line{color: #999999;font-size: 34rpx;text-align: center;padding: 30rpx 0rpx;}
+.SearchKeyItem{box-sizing: border-box; height:90rpx;line-height:90rpx;border-bottom: 2rpx solid #eee;margin: 0 20rpx;font-size: 24rpx;}

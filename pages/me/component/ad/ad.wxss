@@ -1,0 +1,9 @@
+.adWrapper{margin: 0 auto;width: 707rpx;height: 150rpx;margin-top: 23rpx;display: block;margin-bottom: 23rpx;}
+.adWrapper image{
+  width: 100%;
+  height: 100%;
+}
+.adWrapper swiper-item{
+  width: 100%;
+  height: 100%;
+}

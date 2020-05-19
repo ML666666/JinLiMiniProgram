@@ -1,0 +1,5 @@
+<!--pages/me/page/ShareQtCode/Invite/Invite.wxml-->
+<TopBar title="邀请规则"></TopBar>
+<view style="padding: 12px">
+  <rich-text style="width:100%;" nodes="{{html}}"></rich-text>
+</view>

@@ -1,0 +1,160 @@
+<TopBar title="{{'申请进度查询'}}"></TopBar>
+<view class="wrapper">
+
+    <view class="item" wx:for='{{list}}'>
+        <view class="top">
+          <image wx:if="{{item.ApplyStatus == 3}}"  src="{{notPassUrl}}"></image>
+          <image wx:if="{{item.ApplyStatus == 1}}"  src="{{havePassing}}"></image>
+          <image wx:if="{{item.ApplyStatus != 1 && item.ApplyStatus != 3}}"  src="{{PassingUrl}}"></image>
+          <view wx:if="{{item.ApplyType == 100}}" class="tips">个体工商户登记申请</view>
+          <view wx:if="{{item.ApplyType == 101}}" class="tips">企业代理商登记申请</view>
+          <view wx:if="{{item.ApplyType == 102}}" class="tips">个人门店登记申请</view>
+        </view>
+        <view class="detial">
+          
+          <block wx:if="{{item.ApplyType == 100}}">
+            <view class="p">
+              <view class="title">店铺名称：</view>
+              <view class="content">{{item.ShopName}}</view>
+            </view>
+            <view class="p">
+              <view class="title">银行卡号：</view>
+              <view class="content">{{item.BankAccount}}</view>
+            </view>
+            <view class="p">
+              <view class="title">申请编号：</view>
+              <view class="content">{{item.ApplyId}}</view>
+            </view>
+            <view class="p">
+              <view class="title">申请时间：</view>
+              <view class="content">{{item.ApplyTime}}</view>
+            </view>
+            <view wx:if="{{item.ApplyStatus == 3}}" style="{{item.ApplyStatus == 3?'margin-bottom:60rpx;':''}}" class="p">
+              <view class="title">驳回原因：</view>
+              <view class="content">{{item.Rejectreason}}</view>
+            </view>
+          </block>
+
+          <block wx:if="{{item.ApplyType == 101}}">
+            <view class="p">
+              <view class="title">店铺名称：</view>
+              <view class="content">{{item.ShopName}}</view>
+            </view>
+            <view class="p">
+              <view class="title">申请编号：</view>
+              <view class="content">{{item.ApplyId}}</view>
+            </view>
+            <view class="p">
+              <view class="title">申请时间：</view>
+              <view class="content">{{item.ApplyTime}}</view>
+            </view>
+            <view wx:if="{{item.ApplyStatus == 3}}" style="{{item.ApplyStatus == 3?'margin-bottom:60rpx;':''}}" class="p">
+              <view class="title">驳回原因：</view>
+              <view class="content">{{item.Rejectreason}}</view>
+            </view>
+          </block>
+          
+          <block wx:if="{{item.ApplyType == 102}}">
+            <view class="p">
+              <view class="title">姓名：</view>
+              <view class="content">{{item.IdentityCardName}}</view>
+            </view>
+            <view class="p">
+              <view class="title">申请编号：</view>
+              <view class="content">{{item.ApplyId}}</view>
+            </view>
+            <view class="p">
+              <view class="title">银行卡号：</view>
+              <view class="content">{{item.BankAccount}}</view>
+            </view>
+            <view class="p">
+              <view class="title">申请时间：</view>
+              <view class="content">{{item.ApplyTime}}</view>
+            </view>
+            <view wx:if="{{item.ApplyStatus == 3}}" style="{{item.ApplyStatus == 3?'margin-bottom:60rpx;':''}}" class="p">
+              <view class="title">驳回原因：</view>
+              <view class="content">{{item.Rejectreason}}</view>
+            </view>
+          </block>
+          
+          <block>
+            <view style="width:244rpx;"
+                  data-ApplyId="{{item.ApplyId}}"  
+                  wx:if="{{item.ApplyStatus == 1}}"
+                  data-type="{{item.ApplyType}}" 
+                  bindtap="getMerchantCode"  
+                  data-ApplyStatus="{{item.ApplyStatus}}"
+                  class="btn">
+                  获取商户二维码
+            </view>
+            <view wx:if="{{item.ApplyStatus != 1 && item.ApplyStatus != 3}}" 
+                  data-ApplyId="{{item.ApplyId}}"  
+                  data-type="{{item.ApplyType}}" 
+                  bindtap="toCheckStatus"  
+                  data-ApplyStatus="{{item.ApplyStatus}}"
+                  class="btn">
+                  查看申请
+            </view>
+            <view wx:if="{{item.ApplyStatus == 3}}"
+                  data-ApplyId="{{item.ApplyId}}" 
+                  data-type="{{item.ApplyType}}" 
+                  bindtap="toCheckStatus"   
+                  data-ApplyStatus="{{item.ApplyStatus}}"
+                  class="btn">
+                  修改资料
+            </view>
+          </block>
+
+        </view>
+    </view>
+
+    <!-- <view class="item">
+        <view class="top">
+          <image  src="{{PassingUrl}}"></image>
+          <view class="tips">个人供应商入驻申请</view>
+        </view>
+        <view class="detial">
+          <view class="p">
+            <view class="title">公司名称：</view>
+            <view class="content">广州前方高能网络科技有限公司</view>
+          </view>
+          <view class="p">
+            <view class="title">公司名称：</view>
+            <view class="content">广州前方高能网络科技有限公司</view>
+          </view>
+          <view class="p">
+            <view class="title">公司名称：</view>
+            <view class="content">广州前方高能网络</view>
+          </view>
+          <view style="width:264rpx;" bindtap="getMerchantCode" class="btn">
+            获取商户二维码
+          </view>
+        </view>
+    </view>
+
+    <view class="item">
+        <view class="top">
+          <image  src="{{havePassing}}"></image>
+          <view class="tips">个人供应商入驻申请</view>
+        </view>
+        <view class="detial">
+          <view class="p">
+            <view class="title">公司名称：</view>
+            <view class="content">广州前方高能网络科技有限公司</view>
+          </view>
+          <view class="p">
+            <view class="title">公司名称：</view>
+            <view class="content">广州前方高能网络科技有限公司</view>
+          </view>
+          <view class="p">
+            <view class="title">公司名称：</view>
+            <view class="content">广州前方高能网络</view>
+          </view>
+          <view class="btn">
+            查看申请
+          </view>
+        </view>
+    </view> -->
+
+
+</view>

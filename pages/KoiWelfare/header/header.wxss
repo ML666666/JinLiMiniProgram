@@ -1,0 +1,198 @@
+.navHeightBar{
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: flex-end;
+  z-index: 1000;
+}
+.statusBar{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}
+.statusBar .logo{
+  width: 104rpx;
+  height: 34rpx;
+}
+.statusBar .dq{
+  width: 20rpx;
+  height: 25rpx;
+  margin:  0rpx 10rpx;
+  margin-left: 30rpx;
+}
+.statusBar .dz{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  max-width: 300rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+.statusBar .downArrow{
+  width: 20rpx;
+  height: 11rpx;
+  margin-left: 10rpx;
+}
+.banner{
+  width: 750rpx;
+  height: 464rpx;
+  position: relative;
+  /* padding-bottom: 124rpx; */
+  background: #f6f6f6;
+}
+.banner .tag{
+  width:160rpx;
+  height:52rpx;
+  background:linear-gradient(90deg,rgba(239,191,139,1) 0%,rgba(251,239,203,1) 100%);
+  box-shadow:0px 2rpx 4rpx 0px rgba(51,51,51,0.2);
+  border-radius:26rpx 0px 0px 26rpx;
+  text-align: center;
+  line-height: 52rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(237,69,60,1);
+  position: absolute;
+  right: 0rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+.banner .bannerImage{
+  width: 750rpx;
+  height: 340rpx;
+  position: relative;
+}
+.banner .detial{
+  position: absolute;
+  width:700rpx;
+  height:130rpx;
+  background:linear-gradient(0deg,rgba(241,213,178,1) 0%, rgba(255,240,218,1) 100%);
+  border-radius: 120rpx;
+  margin: 0 auto;
+  top: 310rpx;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner .Login{
+  width:160rpx;
+  height:64rpx;
+  background:rgba(255,255,255,1);
+  border:2rpx solid rgba(237,69,60,1);
+  border-radius:10rpx;
+  text-align: center;
+  line-height: 66rpx;
+  color: rgba(237,69,60,1);
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  margin-left: 60rpx;
+  padding: 0 10rpx;
+}
+.banner .tips{
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-left: 17rpx;
+  text-align: center;
+}
+.isShowChangeAddressStatus{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  background: #fff;
+  z-index: 100;
+  font-size: 28rpx;
+}
+.banner .detial{
+  width: 700rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner .detial .item{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 60rpx;
+}
+.banner .detial .d{
+  flex-direction: column;
+}
+
+.banner .detial .item .myGWB{
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(126,74,19,1);
+}
+
+.banner .detial .item .GWBNum{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(225,22,1,1);
+}
+
+.banner .detial .item .btn{
+  width:140rpx;
+  height:56rpx;
+  background:linear-gradient(0deg,rgba(191,35,23,1) 0%,rgba(228,69,57,1) 100%);
+  box-shadow:0px 2rpx 9rpx 0px rgba(178,123,68,0.27);
+  border-radius:10rpx;
+  text-align: center;
+  line-height: 56rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(252,243,208,1);
+}
+
+.banner .detial .item .icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 13rpx;
+}
+
+.banner .detial .haveLine{
+  border-left: 2rpx solid rgba(203,143,85,0.3);
+  border-right: 2rpx solid rgba(203,143,85,0.3)
+}
+
+.banner .detial .item .wra{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner .detial .item .wra .c{
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(126,74,19,1);
+  margin-bottom:5rpx;
+  width: 120rpx;
+  text-align: left;
+}
+
+.banner .detial .item .wra .k{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(225,22,1,1);
+  width: 120rpx;
+  text-align: left;
+}

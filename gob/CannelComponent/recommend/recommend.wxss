@@ -1,0 +1,90 @@
+.cannelOne{
+  width: 700rpx;
+  display: flex;
+  flex-wrap: wrap;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 0px 8rpx 1rpx rgba(0, 0, 0, 0.08);
+  border-radius:8rpx;
+  overflow: hidden;
+  position: relative;
+}
+.cannelOneWrapper{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cannelOne .spiltLine_x{
+  width: 93%;
+  background: rgba(143, 136, 136, 0.15);
+  height: 1.5rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.cannelOne .spiltLine_y{
+  height: 90%;
+  background: rgba(143, 136, 136, 0.15);
+  width: 3rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 20;
+}
+.cannelOne .item{
+  flex: 1;
+  padding-top: 24rpx;
+  padding-left: 22rpx;
+  padding-bottom: 16rpx;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+}
+.cannelOne .item .title{
+  height:29rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:600;
+  color:rgba(8,8,8,1);
+  box-sizing: border-box;
+  padding-left: 10rpx;
+}
+.cannelOne .item .subTitle{
+  height:22rpx;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:#0098CB;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  box-sizing: border-box;
+  padding-left: 10rpx;
+}
+.cannelOne .goodWrapper{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.cannelOne .goodWrapper image{
+  width: 126rpx;
+  height: 126rpx;
+}
+.cannelTwo{
+  width: 700rpx;
+  display: flex;
+  justify-content: space-around;
+  border-radius:8rpx;
+  overflow: hidden;
+}
+.cannelTwo image{
+  width: 225rpx;
+  border-radius: 8rpx;
+}
+.type_2Wrapper{
+  width: 700rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -8rpx;
+}
+.type_2Wrapper image{
+  flex: 1;
+}

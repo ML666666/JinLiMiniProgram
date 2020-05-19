@@ -1,0 +1,13 @@
+<view class="bar">
+  <view class="wrapper">
+      <view class="radius {{active>=1?'active_':''}} {{active==1?'active':''}}">
+        <text>1</text>
+        <view style="color:{{active>=1?'#333333':''}}" class="tips">{{title_1}}</view>
+      </view>
+      <view class="line"></view>
+      <view class="radius {{active>=2?'active_':''}} {{active==2?'active':''}}">
+        <text>2</text>
+        <view style="color:{{active>=2?'#333333':''}}" class="tips">{{title_2}}</view>
+      </view>
+  </view>
+</view>

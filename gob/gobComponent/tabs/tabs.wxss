@@ -1,0 +1,4 @@
+/* gob/gobComponent/tabs/tabs.wxss */
+.tabs .van-tab--active{
+  color: #f44 !important;
+}

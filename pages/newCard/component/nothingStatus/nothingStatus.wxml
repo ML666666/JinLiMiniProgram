@@ -1,0 +1,8 @@
+<view class="nothing">
+  <image class="nothingImage" src="{{imgUrl}}"></image>
+  <view class="tips">将心仪好物放进购物车吧！</view>
+  <view class="buttom">
+    <view class="btn" bindtap="toS">特卖抢购</view>
+    <view wx:if="{{false}}" class="btn" style="margin-left: 30rpx;">逛逛足迹</view>
+  </view>
+</view> 

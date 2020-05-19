@@ -1,0 +1,20 @@
+<wxs src="../setUrl.wxs" module="tools" />
+<view class="myLike">
+  <image class="top" wx:for="{{param.list}}" src="./image/like.png"></image>
+  <view class="goodListWrapper">
+    <view class="good" wx:for="{{youlike.list}}" wx:for-index="index" data-index="{{index}}" data-id="{{item.Id}}" bindtap="click">
+        <image  src="{{tools.setUrl(item.ProductImg,imgDomain,imgVersion)}}"></image>
+        <view class="goodDetail">
+          <view class="title">{{item.ProductTitle}}</view>
+          <KDTag price='{{item.ShoppingBi}}'></KDTag>
+          <view class="price">
+            <view class="left">￥{{item.SalePrice}}</view>
+            <view class="right">￥{{item.MarketPrice}}</view>
+          </view>
+        </view>
+    </view>
+  </view>
+   <Loading 
+        show="{{youlike.list.length}}" 
+        type="{{youlike.isOver?'end':'loading'}}" ></Loading>
+</view>

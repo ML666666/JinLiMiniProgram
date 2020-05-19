@@ -1,0 +1,120 @@
+/* pages/me/page/orderList/GeneralOrderDetails/GeneralOrderDetails.wxss */
+.top{
+  width: 100%;
+  height: 180rpx;
+  background: url('http://h5.taobaby.cn/static/img/ddtb1.8b74b7e.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 50rpx 100rpx;
+  font-size: 36rpx;
+  color: #fff;
+}
+.address{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20rpx;
+  height: 126rpx;
+  align-items: center;
+  background: #fff;
+}
+.address .imgWrapper{
+  width: 120rpx;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.address .imgWrapper image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.address  .addressText{
+  color: #2c3e50;
+  font-size: 24rpx;
+}
+
+.w_item{
+  padding: 0 24rpx;
+  font-size: 27rpx;
+  color: #999;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.w_item view{
+  font-size: 27rpx;
+  color: #999;
+   background: #fff;
+}
+.headerPrice{
+  border-top: 2rpx solid #ccc;
+  height: 100rpx;
+  align-items: center;
+  color: #333;
+}
+.headerPrice view{
+  color: #333 ;
+   background: #fff;
+}
+.detailWrapper{
+  margin-top: 20rpx;
+  padding: 30rpx;
+  color: #2c3e50;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 24rpx;
+  background: #fff;
+}
+.StatueWrapper{
+  box-sizing: border-box;
+  padding-right: 20rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 35rpx;
+  background: #fff;
+  padding-top: 35rpx;
+}
+.headerPrice .p{
+  color: #f32c32;
+  font-weight: 700;
+  font-size: 30rpx;
+}
+.shareWrapper{
+  padding: 0 24rpx;
+}
+.shareWrapper .share{
+  display: flex;
+  box-shadow: 0 0 8rpx #ddd;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  line-height: 34rpx;
+  border: none;
+}
+.shareWrapper .share .s{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-top: -4rpx;
+  margin-right: 6rpx;
+}
+.shareWrapper .share .w{
+  font-size: 28rpx;
+  color: #000;
+}
+.shareWrapper .share .z{
+  font-size: 24rpx;
+}
+.shareWrapper .share .arrow{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 0;
+}

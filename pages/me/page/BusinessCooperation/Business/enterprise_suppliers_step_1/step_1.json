@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "bar": "../component/bar/bar",
+    "InputWrppaer":"../component/InputWrppaer/InputWrppaer",
+    "InputTips":"../component/InputTips/InputTips",
+    "getPhoneCode":"../component/getPhoneCode/getPhoneCode",
+    "makeSureBtn":"../component/makeSureBtn/makeSureBtn"
+  }
+}

@@ -1,0 +1,72 @@
+.top{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #fff;
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  z-index: 200;
+}
+.statusBar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.Arrow{width: 55rpx;height: 55rpx;position: absolute;left: 20rpx;top: 50%;transform: translateY(-50%);}
+.statusBar view{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+}
+.statusBar .t{
+  color: #333333;
+}
+.statusBar .w{
+  margin-left: 15rpx;
+  color: #E62A21;
+}
+.status{
+  width:550rpx;
+  height:300rpx;
+  background:rgba(255,255,255,1);
+  border-radius:8rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 44rpx;
+  box-sizing: border-box;
+}
+.status .title{
+  font-size:36rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  margin-bottom: 30rpx;
+}
+.status .p{
+  width:440rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-bottom: 30rpx;
+}
+
+.status .btnWrapper{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+}
+
+.status .btnWrapper .btn_1{
+  color:rgba(255,51,51,1);
+  margin-left: 40rpx;
+}

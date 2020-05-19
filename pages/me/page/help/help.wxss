@@ -1,0 +1,4 @@
+/* pages/me/page/help/help.wxss */
+.help rich-text{
+  font-size: 14rpx;
+}

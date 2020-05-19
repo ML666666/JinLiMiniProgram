@@ -1,0 +1,28 @@
+<!--pages/TypeList/TypeList.wxml-->
+
+
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+      <TopBar title="{{title?title:''}}"></TopBar>
+      <view style='height:44px;'></view>
+      <view style="z-index:100;background:#fff;position: fixed;top:{{navHeight}}px;left:0rpx;height:44px;width:100%;">
+        <van-tabs 
+              bind:getActiveObj="getActiveObj"   
+              active="{{targetIndex}}">
+              <van-tab 
+                wx:for="{{category}}" 
+                wx:key="key"
+                CategoryId="{{item.CategoryId}}" 
+                RecommendType="{{item.RecommendType}}" 
+                title="{{item.CateName}}"></van-tab>
+        </van-tabs>
+      </view>
+      <hotSell isWaterfall="{{true}}" orderCannal="{{orderCannal}}" orderCannal_2="{{orderCannal_2}}"></hotSell>
+
+      
+</PageLoadingWrapper>

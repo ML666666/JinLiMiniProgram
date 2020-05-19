@@ -1,0 +1,127 @@
+/* pages/me/component/header/header.wxss */
+.header{
+  width: 100%;
+  height: 442rpx;
+  background: url('http://h5.huizhisuo.com/upload/Picture/comment/201911/d0babd13d6bd453096612b779d2e8bce.png?v=1.0.42') no-repeat center center;
+  background-size: cover;  
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.header .info .c .headerImg{
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 50%;
+  margin-right: 28rpx;
+}
+.header .info{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 66rpx;
+  margin-top: 35rpx;
+}
+.header .info .c{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header .info .c .t text{
+  font-size:28rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+.header .info .c .t view{
+  line-height:29rpx;
+  background:rgba(0,0,0,0.2);
+  border-radius:15rpx;
+  font-size:20rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  padding: 0 15rpx;
+}
+
+.header .numWrapper{
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); */
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size:26rpx;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  flex: 1;
+}
+.header .numWrapper .r{
+  text-align: center;
+  flex: 1;
+}
+.header .numWrapper .r view{
+  margin-top: 17rpx;
+}
+.header .isAngelWrapper{
+  position: absolute;
+  width: 100%;
+  height:83rpx;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding:0rpx 24rpx;
+  box-sizing: border-box;
+}
+
+.header .isAngelWrapper .isAngel{
+  height: 100%;
+  background:linear-gradient(90deg,rgba(17,17,17,1),rgba(68,68,68,1));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .isAngelWrapper .isAngel image{
+  width: 257rpx;
+  height: 39rpx;
+}
+.header .isAngelWrapper .isAngel{
+  padding: 0rpx 20rpx;
+}
+.header .isAngelWrapper .isAngel .c{
+ font-size:20rpx;
+ font-family:PingFang-SC-Medium;
+ font-weight:500;
+ color:rgba(249,213,163,1);
+}
+
+.CheckAngel{
+  width: 636rpx;
+  height: 734rpx;
+  background: url('http://h5.huizhisuo.com/static/img/angle-bg3.1aafd09.png') no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.CheckAngel .btn{
+  background: url('http://h5.huizhisuo.com/static/img/angle-btn3.b87f209.png') no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  bottom: 64rpx;
+  left: 50%;
+  width: 424rpx;
+  transform: translateX(-50%);
+  height: 141rpx;
+}
+
+.CheckAngel .close{
+  position: absolute;
+  bottom: -120rpx;
+  left: 50%;
+  width: 60rpx;
+  transform: translateX(-50%);
+  height: 60rpx;
+}

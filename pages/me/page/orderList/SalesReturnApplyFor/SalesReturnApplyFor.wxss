@@ -1,0 +1,112 @@
+.backAddress{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.backAddress .detailWrapper{
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+.backAddress .detailWrapper{
+  font-size: 26rpx;
+  line-height: 50rpx;
+  color: #2c3e50;  
+}
+
+.btn{
+  color: #fff;
+  line-height: 60rpx;
+  text-align: center;
+  height: 60rpx;
+  font-size: 24rpx;
+  display: inline-block;
+  padding: 0 20rpx;
+  box-sizing: content-box;
+  border-radius: 4rpx;
+  white-space: nowrap;
+  background-color: #ef4f4f;
+}
+
+.backAddress .inputWrapper{
+  display: flex;
+  width: 100%;
+  padding-left: 24rpx;
+  overflow: hidden;
+  height: 100rpx;
+  align-items: center;
+}
+.backAddress .inputWrapper text{
+  color: #555;
+  font-size: 28rpx;
+}
+.backAddress .inputWrapper input{
+  height: 100rpx;
+  border: none;
+  display: block;
+  color: #a9a9a9;
+  font-size: 28rpx;
+  margin-left: -8rpx;
+  width: 80%;
+  padding-left: 20rpx;
+}
+.addressBottom{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+}
+
+
+.SalesGroupText{
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.SalesGroupText .o{
+  display: flex;
+  margin-top: 10rpx;
+}
+.SalesGroupText .o image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.SalesGroupText .o view{
+  width: 500rpx;
+  margin-left: 10rpx;
+  display: inline-block;
+  font-size: 26rpx;
+  line-height: 50rpx;
+}
+.SalesGroupText .x_1{
+  font-size: 26rpx;
+  line-height: 50rpx;
+  color: #2c3e50;
+}
+
+.SalesGroupText_1{
+  padding: 30rpx;
+  box-sizing: border-box;
+  padding-top: 0rpx;
+}
+.SalesGroupText_1 textarea{
+  border: none;
+  width: 100%;
+  display: block;
+  height: 150rpx;
+  font-size: 26rpx;
+  color: inherit;
+  background-color: transparent;
+}
+.SalesGroupText_1 view{
+  font-size: 28rpx;
+  color: #b2b2b2;
+  text-align: right;
+  padding-top: 6rpx;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,564 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.7",
+	"appid": "wxe6868f062114d440",
+	"projectname": "JinLiApp",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 67,
+			"list": [
+				{
+					"id": 0,
+					"name": "个人中心",
+					"pathName": "pages/me/me",
+					"query": "index",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "订单",
+					"pathName": "pages/me/page/orderList/orderList",
+					"query": "index=3",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "登录",
+					"pathName": "pages/Login/Login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "ShareQtCode",
+					"pathName": "pages/me/page/ShareQtCode/ShareQtCode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Invite",
+					"pathName": "pages/me/page/ShareQtCode/Invite/Invite",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/GeneralItemDescription/GeneralItemDescription",
+					"pathName": "pages/GeneralItemDescription/GeneralItemDescription",
+					"query": "id= 87666&goodtype=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Collection",
+					"pathName": "pages/me/page/Collection/Collection",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "makeSureOrder",
+					"pathName": "pages/makeSureOrder/makeSureOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "orderList",
+					"pathName": "pages/me/page/orderList/orderList",
+					"query": "index=3",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "Comment",
+					"pathName": "pages/me/page/orderList/Comment/Comment",
+					"query": "OrderId=403158",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "GeneralOrderDetails",
+					"pathName": "pages/me/page/orderList/GeneralOrderDetails/GeneralOrderDetails",
+					"query": "orderid=79953&goodtype=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "FreeOfCharge",
+					"pathName": "pages/Active/FreeOfCharge/FreeOfCharge",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "search",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "TypeList",
+					"pathName": "pages/TypeList/TypeList",
+					"query": "categoryid=161002000&title=酒水饮料&type=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "AngelGiftBag",
+					"pathName": "pages/AngelGiftBag/AngelGiftBag",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "card",
+					"pathName": "pages/newCard/newCard",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "LuckyDouble",
+					"pathName": "pages/Active/LuckyDouble/LuckyDouble",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "RemainingSum",
+					"pathName": "pages/me/page/RemainingSum/RemainingSum",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "getBalance",
+					"pathName": "pages/me/page/RemainingSum/getBalance/getBalance",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "TheCoupleWithdrawal",
+					"pathName": "pages/me/page/RemainingSum/TheCoupleWithdrawal/TheCoupleWithdrawal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "WithdrawalRecord",
+					"pathName": "pages/me/page/RemainingSum/WithdrawalRecord/WithdrawalRecord",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "TouchBalance",
+					"pathName": "pages/me/page/RemainingSum/TouchBalance/TouchBalance",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "DeductMoney",
+					"pathName": "pages/me/page/DeductMoney/DeductMoney",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 23,
+					"name": "pages/me/page/orderList/GeneralOrderDetails/GeneralOrderDetails",
+					"pathName": "pages/me/page/orderList/GeneralOrderDetails/GeneralOrderDetails",
+					"query": "orderid=79953",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "SalesReturnApplyFor",
+					"pathName": "pages/me/page/orderList/SalesReturnApplyFor/SalesReturnApplyFor",
+					"query": "orderid=403150&orderitemid=303231",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Comment",
+					"pathName": "pages/me/page/orderList/Comment/Comment",
+					"query": "OrderId=403280",
+					"scene": null
+				},
+				{
+					"id": 26,
+					"name": "LuckyShareConfirm",
+					"pathName": "pages/makeSureOrder/page/LuckyShareConfirm/LuckyShareConfirm",
+					"query": "OrderIdList=403376",
+					"scene": null
+				},
+				{
+					"id": 27,
+					"name": "LuckyDoubleSuccess",
+					"pathName": "pages/makeSureOrder/page/LuckyDoubleSuccess/LuckyDoubleSuccess",
+					"query": "OrderIdList=413355",
+					"scene": null
+				},
+				{
+					"id": 28,
+					"name": "LuckyDoubleShare",
+					"pathName": "pages/Active/LuckyDouble/page/LuckyDoubleShare/LuckyDoubleShare",
+					"query": "TwoPersonChipNo=addd4f20df964068bbe17a8eae5efb9a",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MessageQueue",
+					"pathName": "pages/search/MessageQueue/MessageQueue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "FreeConfirmation",
+					"pathName": "pages/Active/FreeOfCharge/FreeConfirmation/FreeConfirmation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "AngeDetail",
+					"pathName": "pages/me/page/AngelDetail/AngeDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MaterialCircle",
+					"pathName": "pages/me/page/AngelDetail/page/MaterialCircle/MaterialCircle",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "PromotionRewards",
+					"pathName": "pages/me/page/AngelDetail/page/PromotionRewards/PromotionRewards",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MaterialCircle",
+					"pathName": "pages/me/page/AngelDetail/page/MaterialCircle/MaterialCircle",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MaterialCircleArticle",
+					"pathName": "pages/me/page/AngelDetail/page/MaterialCircle/MaterialCircleArticle/MaterialCircleArticle",
+					"query": "id=5",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "DirectMember",
+					"pathName": "pages/me/page/AngelDetail/page/DirectMember/DirectMember",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 37,
+					"name": "MessageDetail",
+					"pathName": "pages/search/MessageQueue/page/MessageDetail/MessageDetail",
+					"query": "id=322907",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "aboutMsg",
+					"pathName": "pages/search/MessageQueue/page/MessageDetail/aboutMsg/aboutMsg",
+					"query": "id=322907",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MyEarnings",
+					"pathName": "pages/me/page/AngelDetail/page/MyEarnings/MyEarnings",
+					"query": "index=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "SearchResult",
+					"pathName": "pages/search/SearchResult/SearchResult",
+					"query": "index=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Collection",
+					"pathName": "pages/me/page/Collection/Collection",
+					"query": "id= 86701&goodtype=0",
+					"scene": null
+				},
+				{
+					"id": 42,
+					"name": "BrandGoods",
+					"pathName": "pages/BrandGoods/BrandGoods",
+					"query": "branid=955&categoryid=168001014",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "NewAddress",
+					"pathName": "pages/AddAddress/NewAddress/NewAddress",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 44,
+					"name": "TheEvaluationList",
+					"pathName": "pages/TheEvaluationList/TheEvaluationList",
+					"query": "productid=130032",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "NewAddress",
+					"pathName": "pages/AddAddress/NewAddress/NewAddress",
+					"query": "productid=87535",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "MainChannel",
+					"pathName": "pages/MainChannel/MainChannel",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 47,
+					"name": "SpecialPage",
+					"pathName": "pages/SpecialPage/SpecialPage",
+					"query": "SpecialAreaId=19",
+					"scene": null
+				},
+				{
+					"id": 48,
+					"name": "ShareEvaluationDetail",
+					"pathName": "pages/TheEvaluationList/ShareEvaluationDetail/ShareEvaluationDetail",
+					"query": "key= Temp_SaveProductCommentShare_208178_b9b5298f6ca74449a0cf6da81eb87eaa",
+					"scene": null
+				},
+				{
+					"id": 49,
+					"name": "BrandGoods",
+					"pathName": "pages/BrandGoods/BrandGoods",
+					"query": "categoryidLst=104001001,104001002",
+					"scene": null
+				},
+				{
+					"id": 50,
+					"name": "menuThree",
+					"pathName": "pages/menuThree/menuThree",
+					"query": "Group_id=0&SupplierId=1059",
+					"scene": null
+				},
+				{
+					"id": 51,
+					"name": "KoiWelfare",
+					"pathName": "pages/KoiWelfare/KoiWelfare",
+					"query": "id=83326&goodtype=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "WelfareDescription",
+					"pathName": "pages/KoiWelfare/WelfareDescription/WelfareDescription",
+					"query": "id=83326&goodtype=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "BusinessCooperationEnter",
+					"pathName": "pages/me/page/BusinessCooperation/Enter/Enter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 54,
+					"name": "BusinessEnter",
+					"pathName": "pages/me/page/BusinessCooperation/Enter/Enter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 55,
+					"name": "BusinessStep_1",
+					"pathName": "pages/me/page/BusinessCooperation/Business/enterprise_suppliers_step_1/step_1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "individualbusiness",
+					"pathName": "pages/me/page/BusinessCooperation/Business/individualbusiness/individualbusiness",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 57,
+					"name": "CorporateAgents",
+					"pathName": "pages/me/page/BusinessCooperation/Business/CorporateAgents/CorporateAgents",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "PersonalStores",
+					"pathName": "pages/me/page/BusinessCooperation/Business/PersonalStores/PersonalStores",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 59,
+					"name": "ApplicationProgress",
+					"pathName": "pages/me/page/BusinessCooperation/Business/ApplicationProgress/ApplicationProgress",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "getMerchantCode",
+					"pathName": "pages/me/page/BusinessCooperation/Business/getMerchantCode/getMerchantCode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 61,
+					"name": "toCheckQualificationImg",
+					"pathName": "pages/menuThree/toCheckQualificationImg/toCheckQualificationImg",
+					"query": "shopid=1011",
+					"scene": null
+				},
+				{
+					"id": 62,
+					"name": "TnewCard",
+					"pathName": "pages/newCard/TnewCard",
+					"query": "isPaySuccess=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "webView",
+					"pathName": "pages/webView/webView",
+					"query": "id=89647&goodtype=0",
+					"scene": null
+				},
+				{
+					"id": 64,
+					"name": "TmakeSureOrder",
+					"pathName": "pages/TmakeSureOrder/TmakeSureOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "SpPartner",
+					"pathName": "pages/me/page/AboutPartner/SpPartner/SpPartner",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "AreaPartner",
+					"pathName": "pages/me/page/AboutPartner/AreaPartner/AreaPartner",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 67,
+					"name": "LowLevelOrder",
+					"pathName": "pages/me/page/AboutPartner/LowLevelOrder/LowLevelOrder",
+					"query": "CommissionType=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "AboutShopping",
+					"pathName": "pages/me/page/AboutPartner/AboutShopping/AboutShopping",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "AboutShopping",
+					"pathName": "pages/me/page/AboutPartner/AboutShopping/AboutShopping",
+					"query": "CommissionType=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Active/GetBi/GetBi",
+					"pathName": "pages/Active/GetBi/GetBi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "AndroidAndIosPay",
+					"pathName": "pages/AndroidAndIosPay/AndroidAndIosPay",
+					"scene": null
+				}
+			]
+		}
+	}
+}

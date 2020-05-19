@@ -1,0 +1,20 @@
+<wxs src="../setUrl.wxs" module="tools" />
+
+<view class="deductionTwo">
+    <image class="banner" bindtap="toDetail" mode="widthFix" src="{{pic_url}}"></image>
+    <view class="goodWrapper">
+      <view class="item" wx:for="{{list}}" bindtap="toDetail" data-Id="{{item.Id}}">
+        <image class="tag" src="./image/tag.png"></image>
+        <image class="img" src="{{item.ProductImg}}"></image>
+        <view class="detail">
+          <view class="t">{{item.ProductTitle}}</view>
+          <view class="p">￥{{item.SalePrice}}</view>
+          <view class="b">
+            <view class="daoshou">到手价</view>
+            <view class="price">￥{{item.tprice}}</view>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+</view>

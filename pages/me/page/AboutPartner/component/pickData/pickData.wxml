@@ -1,0 +1,57 @@
+
+<view class="DataWrapper">
+  <view class="CW" bindtap="showMask_1">
+    <view class="h"><view>开始日期</view><image mode="widthFix" src="{{ArrowUrl}}"></image></view>
+    <view class="D">{{startValueStr}}</view>
+  </view>
+  <view class="tips">至</view>
+  <view class="CW" bindtap="showMask_2">
+    <view class="h"><view>结束日期</view><image mode="widthFix" src="{{ArrowUrl}}"></image></view>
+    <view class="D">{{endValueStr}}</view>
+  </view>
+</view>
+
+
+<view class="mask" wx:if="{{isShowMask}}">
+  <view class="timeWrapper">
+    <image 
+          bindtap="hideMask"
+          src="{{closeUrl}}" 
+          style="position:absolute;width:26rpx;height:26rpx;top:30rpx;right:30rpx;" 
+          mode="widthFix" 
+          class="closeUrl"></image>
+    <view class="btnWrapper btnWrapper_1">
+      <view class="btnW" data-type="1" bindtap="changeDataType">
+        <view class="btn {{isPickStartTime?'selectBtn':''}}">开始日期</view>
+        <view class="time_c">{{startValueStr}}</view>
+      </view>
+      <view class="btnW" data-type="0" bindtap="changeDataType">
+        <view class="btn {{isPickStartTime?'':'selectBtn'}}">结束日期</view>
+        <view class="time_c">{{endValueStr}}</view>
+      </view>
+    </view>
+
+
+    
+    <picker-view 
+          indicator-style="height: 88rpx;line-height: 88rpx;text-align: center;" 
+          style="width: 100%; height: 440rpx;" 
+          value="{{isPickStartTime?startValue:endValue}}" 
+          bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+      </picker-view-column>
+    </picker-view>
+    <view class="tips">*开始时间须小于结束时间</view>
+    <view class="CBtnWrapper">
+      <view bindtap="hideMask" class="btnW">取消</view>
+      <view bindtap="makeSure" class="btnW SBTN">确认</view>
+    </view>
+  </view>
+</view>

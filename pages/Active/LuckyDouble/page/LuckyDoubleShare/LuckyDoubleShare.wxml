@@ -1,0 +1,58 @@
+
+
+<view class="LickyDoubleShare">
+  <view style="heigth:{{navHeight}}px;" class="backHome">
+    <TopBar title="幸运双拼"></TopBar>
+  </view>
+
+    <image src="http://h5.huizhisuo.com/static/img/pintuan-title.a028761.png" class="banner"></image>
+    <view class="user-container">
+
+      <view class="item">
+        <view class="header">
+          <image src="{{TwoPersonObj.TowGroup[0].UserIcon}}"></image>
+          <view class="pinzu">拼主</view>
+        </view> 
+        <text class="user_Info">{{TwoPersonObj.TowGroup[0].UserName}}</text>
+      </view>
+
+      <image src="http://h5.huizhisuo.com/static/img/vs.ed3f1a0.png" class="p"></image>
+
+      <view wx:if="{{TwoPersonObj.TowGroup.length==1}}" class="item">
+        <view class="header">
+          <image src="./image/nothing.png"></image>
+        </view> 
+        <text class="user_Info">???</text>
+      </view>
+
+      <view wx:if="{{TwoPersonObj.TowGroup.length==2}}" class="item">
+        <view class="header">
+          <image src="{{TwoPersonObj.TowGroup[1].UserIcon}}"></image>
+        </view> 
+        <text class="user_Info">{{TwoPersonObj.TowGroup[1].UserName}}</text>
+      </view>
+
+    </view>
+
+    <view bindtap="toDetail" class="Product">
+      <image class="ProductImg" src="{{TwoPersonObj.Product.ProductImg[0].ImgUrl}}"></image>
+      <view class="detail">
+          <view class="title">{{TwoPersonObj.Product.ProductTitle}}</view>
+          <view class="price">
+            ￥{{TwoPersonObj.Product.SalePrice}}
+          </view>
+      </view>
+    </view>
+
+    <view wx:if="{{TwoPersonObj.TowGroup.length==1}}" class="count-down">仅剩<text>1</text>个名额，<text>{{EndTimeStr}}</text>后结束</view>
+    <view wx:if="{{TwoPersonObj.TowGroup.length==2}}" class="count-down">仅剩<text>0</text>个名额，拼团已结束</view>
+    
+    <view wx:if="{{TwoPersonObj.TowGroup.length==1}}" bindtap="toDetail" class="btn">
+      参与 <text>{{TwoPersonObj.TowGroup[0].UserName}}</text> 的拼团
+    </view>
+    <view style="background: #b7b2b2;;" wx:if="{{TwoPersonObj.TowGroup.length==2}}" class="btn">
+      参与 <text>{{TwoPersonObj.TowGroup[0].UserName}}</text> 的拼团
+    </view>
+    <view class="tips">*参与好友拼团50%机会得免单.</view>
+
+</view>

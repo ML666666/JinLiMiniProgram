@@ -1,0 +1,123 @@
+<!-- goodtype==0为普通商品 -->
+<!-- goodtype==1为天使会员 -->
+<!-- goodtype==2为幸运双拼 -->
+<!-- goodtype==3为免单接龙 -->
+
+<!-- ProductType == 0 为普通商品/天使会员 -->
+<!-- ProductType == 1 为幸运双拼 -->
+<!-- ProductType == 2 为免单接龙 -->
+<!-- ProductType == 3 为免单接龙 -->
+
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}">
+
+<view class="goodDetail">
+   
+   <!-- 自定义头部 -->
+   <!-- <TopBar isShowArror="{{true}}" zIndex="200" customTitle="{{true}}">
+    <view class="changeStatus">
+        <view 
+            data-heigth='0' 
+            bindtap="scrollTo" 
+            class="item {{scrollTop<ActiveScroll?'active':''}}"
+            style="border-right:2rpx solid rgb(160, 160, 160) ">商品</view>
+        <view data-heigth='{{ActiveScroll+1}}' bindtap="scrollTo" class="item  {{scrollTop>=ActiveScroll?'active':''}}">详情</view>
+    </view>
+   </TopBar> -->
+   
+   <view class="newTop {{scrollTop>200?'activeBar':''}}"  style="height:{{navHeight}}px">
+        <view class="statusBar" style="height:{{statusBar}}px">
+            <image bindtap="back" 
+                   style="width:20rpx;height:34rpx;margin-left:45rpx;margin-right:25rpx;" 
+                   class="back" 
+                   wx:if="{{scrollTop>200}}" 
+                   src="./image/arrow.png"></image>
+            <image wx:else bindtap="back" class="back" src="./image/blackArrow.png"></image>
+            <view bindtap="toCard" class="cardNumWrapper">
+              <view class="num" wx:if="{{cardNum}}">{{cardNum}}</view>
+              <image src="./image/card.png"></image>
+            </view>
+            <view class="status_bar" wx:if="{{scrollTop>100}}">
+              <view data-top="{{0}}" bindtap="scorllTo"
+                 class="item {{scrollTop>0&&scrollTop<(commentTop?(commentTop-50):(richTextTop-100))?'active':''}}">
+                <view>商品</view>
+                <view class="line"></view>
+              </view>
+              <view data-top="{{commentTop}}" bindtap="scorllTo" wx:if="{{getproductdetail.object.CommentNum>0}}" 
+                    class="item {{scrollTop>(commentTop-50)&&scrollTop<(richTextTop-50)?'active':''}}">
+                <view>评价</view>
+                <view class="line"></view>
+              </view>
+              <view data-top="{{richTextTop}}" bindtap="scorllTo"
+                    class="item {{scrollTop>(richTextTop-50)?'active':''}}">
+                <view>详情</view>
+                <view class="line"></view>
+              </view>
+            </view>
+        </view>
+   </view>
+
+   <!-- 分享模块 -->
+   <ShareWrapper LstAtt="{{LstAtt}}" 
+                 showShare="{{showShare}}" detail="{{getproductdetail.object}}"></ShareWrapper>
+
+   <!-- 轮播 -->
+   <t_swiper bind:share="toShare" 
+             detail="{{getproductdetail.object}}" 
+             list="{{getproductdetail.object.ProductImg}}"></t_swiper> 
+   
+   <!-- 商品价格信息 -->
+   <Good_Detail PickGoodObj='{{PickGoodObj}}' detail="{{getproductdetail.object}}"></Good_Detail>
+   
+   <!-- 规格选择 -->
+   <specifications bind:setOrder="setOrder"  detail="{{getproductdetail.object}}"></specifications>
+   
+   <!-- 幸运双拼 getproductdetail.object=2 -->
+   <LuckyDouble 
+    bind:setOrder="setOrder"
+    wx:if="{{getproductdetail.object.ProductType==3}}" 
+    detail="{{getproductdetail.object}}"></LuckyDouble>
+  
+   <!-- 选择规格区 -->
+   <toOder
+      isactive="{{isactive}}"
+      bind:emitPickGoodObj="getPickGoodObj"
+      GroupNo="{{GroupNo}}"
+      cardNum="{{cardNum}}" 
+      bind:reGetCarNum="toReGetCarNum"
+      OrderType="{{orderType}}" 
+      detail="{{getproductdetail.object}}" 
+      bind:hide="hide" isShow="{{show}}"></toOder>
+
+   <!-- 评论区 -->
+   <comment id="comment"  detail="{{getproductdetail.object}}"></comment>
+   
+   <!-- 今日专区 -->
+   <GoodsDirectly  detail="{{getproductdetail.object}}"></GoodsDirectly>
+  
+   <!-- 店铺推荐 -->
+   <ShopRecommendation 
+      SupplierId="{{getproductdetail.object.Supplier.SupplierId}}" 
+      wx:if="{{getproductdetail.object.Supplier.SupplierId}}"></ShopRecommendation>
+      
+   <!-- 商品详情--图片展示 -->
+   <rich-text id="richText" style="width:100%;" nodes="{{getproductdetaildesc.object.ProductDesc}}"></rich-text>
+
+    <!-- 最底部的按钮模块 -->
+    <!-- TwoPersonChipNo团号，用于判断是否参团对象 -->
+    <!-- cardNum购物车数量 -->
+   <order  
+          PickGoodObj='{{PickGoodObj}}'
+          TwoPersonChipNo="{{TwoPersonChipNo}}" 
+          detail="{{getproductdetail.object}}" 
+          cardNum="{{cardNum}}" 
+          bind:setOrder="setOrder"></order>
+    
+  <youlike CateId="{{CateId}}" isReactBottom="{{isReactBottom}}"></youlike>
+   
+</view>
+
+</PageLoadingWrapper>

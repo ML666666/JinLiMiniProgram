@@ -1,0 +1,26 @@
+<view class="wrapper">
+
+  <view class="AgentBenefitLi" wx:for="{{list}}">
+    <view class="info">
+      <image src="{{item.UserIcon}}"></image>
+      <view class="name">{{item.NickName}}</view>
+    </view>
+    <view class="AgentPerformance">
+      <view class="item">
+        <view class="name">代理业绩</view>
+        <view class="text">{{item.TotalsCommission}}</view>
+      </view>
+      <view class="item">
+        <view class="name">等级</view>
+        <view class="text">{{item.LevelNameComm}}</view>
+      </view>
+      <view class="item">
+        <view class="name">代理佣金</view>
+        <view class="text">{{item.ActualBillingAmount}}</view>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>

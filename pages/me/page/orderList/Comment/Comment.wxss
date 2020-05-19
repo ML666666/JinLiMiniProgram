@@ -1,0 +1,46 @@
+/* pages/me/page/orderList/Comment/Comment.wxss */
+.CommentWrapper{
+  border-top:1rpx solid #ececec;
+  border-bottom: 1rpx solid #ececec; 
+}
+.CommentWrapper .item{
+  width: 100%;
+  padding: 20rpx 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.CommentWrapper .item image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.CommentWrapper .item view{
+  width: 580rpx;
+  margin-left: 20rpx;
+  text-align: right;
+  color: #333;
+  font-size: 30rpx;
+  text-align: left;
+}
+.Comment_t{padding: 20rpx;width: 100%;box-sizing: border-box;font-size:28rpx;text-align: left;color: #888;position: relative;
+z-index: 1;border-bottom: 1rpx solid #ececec;}
+.textArea{padding: 20rpx;box-sizing: border-box;border-bottom: 1rpx solid #ececec;display: flex;flex-direction: column;}
+.textArea textarea{height: 150rpx;width:100%;font-size:26rpx; color: #333;margin-bottom: 20rpx;}
+.textArea .wx{font-size:26rpx;}
+.textArea .b{display: flex;justify-content: space-between;align-items: flex-end;}
+.textArea .b image{width: 80rpx; height: 80rpx;margin-right: 20rpx;}
+.textArea .b .l{font-size: 28rpx;color: #b2b2b2;}
+.btn{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  color: #fff;
+  font-size: 28rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background:linear-gradient(to right, #F02B22, #FC2D59);
+}

@@ -1,0 +1,51 @@
+
+<view class="navHeightBar" style="height:{{navHeight}}px">
+  <view class="statusBar" style="height:{{statusBar}}px">
+      <image src="{{logoUrl}}" class="logo"></image>
+      <image src="{{dqUrl}}" class="dq"></image>
+      <view bindtap="changeAddress" class="dz">
+            {{addressComponent.province}}{{addressComponent.city}}{{addressComponent.district}}</view>
+      <image 
+        bindtap="changeAddress" 
+        class="downArrow" 
+        src="{{downArrowUrl}}"></image>
+  </view>
+</view>
+<view 
+    bindtap="toChangeAddress"
+    class="isShowChangeAddressStatus" 
+    style="height:{{statusBar/1.5}}px;top:{{isShowChangeAddressStatus?navHeight-1:-navHeight}}px;">
+    刷新地址
+</view>
+
+<view class="banner">
+  <view class="tag" bindtap="toRule">购物币指南</view>
+  <image class="bannerImage" bindtap="toDetail" src="{{bannerImage}}"></image>
+  <view class="detial">
+      <view class="item d">
+        <block wx:if="{{isLogin}}">
+          <view class="myGWB">我的购物币</view>
+          <view class="GWBNum">{{shoppingBalance}}</view>
+        </block>
+        <block wx:else>
+            <view class="btn" bindtap="toLogin">
+              点击登录
+            </view>
+        </block>
+      </view>
+      <view class="item haveLine" bindtap="toOrder">
+        <image class="icon" src="{{OrderUrl}}"></image>
+        <view class="wra">
+          <view class="c">我的订单</view>
+          <view class="k">立即查看></view>
+        </view>
+      </view>
+      <view class="item" bindtap="toAddresss">
+        <image class="icon" src="{{AddresssUrl}}"></image>
+        <view class="wra">
+          <view class="c">附近门店</view>
+          <view class="k">更多折扣></view>
+        </view>
+      </view>
+  </view>
+</view>

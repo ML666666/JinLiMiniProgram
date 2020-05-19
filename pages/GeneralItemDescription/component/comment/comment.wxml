@@ -1,0 +1,24 @@
+<!--pages/GeneralItemDescription/component/comment/comment.wxml-->
+<view wx:if="{{detail.CommentNum>0}}" class="comment">
+    <view class="checkAll">
+      <view class="left">买家评价（{{detail.CommentNum}}）</view>
+      <view bindtap="toGetMore" class="right">
+        查看全部
+        <image style="margin-left:9rpx;" src="./image/arrow.png"></image>
+      </view>
+    </view>
+    <view class="commentDetail">
+      <view wx:if='{{detail.LstComment[0].UserIcon}}' class="t">
+        <view class="c">
+          <image src="{{detail.LstComment[0].UserIcon}}"></image>
+          <view>{{detail.LstComment[0].NickName}}</view>
+        </view>
+        <view class="v">
+          {{detail.LstComment[0].Comment}}
+        </view>
+      </view>
+      <view class="nothing" wx:else>
+          该商品暂无评论
+      </view>
+    </view>
+</view>

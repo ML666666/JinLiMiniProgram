@@ -1,0 +1,43 @@
+<view class="wrapper" wx:if="{{_isPaySuccess==2}}">
+    <image src="{{fail_URL}}"></image>
+    <view class="t">支付失败</view>
+    <view class="p">您的商品很抢手，请尽快下单</view>
+    <view class="buttom">
+      <view class="btn_1" bindtap="isShowMaskFn" style="margin-right: 30rpx;">重新支付</view>
+      <view class="btn" bindtap="toOrder">查看订单</view>
+    </view>
+</view>
+
+<view class="wrapper" wx:if="{{_isPaySuccess==1}}">
+    <image src="{{s_URL}}"></image>
+    <view class="t">支付成功</view>
+    <view class="p">已获得相关商品减价优惠</view>
+    <view class="buttom">
+      <view class="btn" bindtap="toHome" style="margin-right:30rpx; width:200rpx; font-size:26rpx;">获取更多优惠</view>
+      <view class="btn" bindtap="toOrder">查看订单</view>
+    </view>
+</view>
+
+<popup show="{{isShowMask}}" bind:lintap="isShowMaskFn">
+    <view class="status">
+        <view class="title">
+          <view class="line"></view>
+          <text>选择支付方式</text>
+        </view>
+        <view wx:for="{{payTypeList}}"
+              wx:for-index="index" 
+              bindtap="selectType" 
+              data-payType="{{item.payType}}" 
+              data-index="{{index}}" 
+              class=" border">
+              <image src="{{wx_Url}}" wx:if="{{item.payType==10000}}" class="wx"></image>
+              <image src="{{zf_Url}}" wx:if="{{item.payType==20000}}" class="wx"></image>
+              <image wx:if="{{payIndex==index}}" class="check" src="../../image/check.png"></image>
+              <image wx:else class="check" src="../../image/nocheck.png"></image>
+        </view>
+        <view class="btnWrapper">
+          <view class="btn_1 b1" bindtap="isShowMaskFn">取消</view>
+          <view class="btn_1 b2" bindtap="toPay">去支付</view>
+        </view>
+    </view>
+</popup>

@@ -1,0 +1,209 @@
+.cardWrapper{
+  padding-top: 20rpx;
+  padding-bottom: 220rpx;
+  background:rgba(246,246,246,1);
+}
+.vWrapper{
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  box-sizing: border-box;
+}
+.shopWrapper{
+  background:rgba(255,255,255,1);
+  box-shadow:0px 0px 9rpx 1rpx rgba(0, 0, 0, 0.08);
+  border-radius:8rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.shopWrapper .topShopTitle{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.cardWrapper  .check{
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+}
+.shopWrapper .topShopTitle .t{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-left: 20rpx;
+}
+l-slide-view{
+  margin: 30rpx auto;
+}
+.cardWrapper .item{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 27rpx;
+}
+.cardWrapper .item .goodImage{
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.cardWrapper .item .detail{
+  width: 428rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+}
+.cardWrapper .item .title{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.d_S{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.S_S{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.cardWrapper .item .attr{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  margin-top: 0rpx;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+}
+.cardWrapper .item .c{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardWrapper .item .c .p{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(229,43,34,1);
+}
+.cardWrapper .right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cardWrapper .right_item{
+  width:105rpx;
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cardWrapper .right_item .text{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+}
+.cardWrapper .right_item_1 .text{
+  color: #333333;
+}
+.cardWrapper .right_item_2 .text{
+  color: #FFFFFF;
+}
+.cardWrapper .right_item_1{
+  background:linear-gradient(90deg,rgba(237,69,60,0.15) 0%,rgba(229,41,32,0.15) 100%);
+}
+.cardWrapper .right_item_2{
+  background:linear-gradient(90deg,rgba(237,69,60,1) 0%,rgba(229,41,32,1) 100%);
+}
+
+
+
+.line_1{
+  width: 600rpx;
+  height:1rpx;
+  background:rgba(246,246,246,1);
+}
+
+
+.buttomBar{
+  display: flex;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  background: #fff;
+  height: 100rpx;
+  z-index: 200;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttomBar .isCheckAll{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 45rpx;
+}
+.buttomBar .all{
+  margin-left: 20rpx;
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+.buttomBar .PriceWrapper{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.buttomBar .p{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+  padding-right: 20rpx;
+}
+.buttomBar .one{
+  font-size:30rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  color:rgba(230,47,38,1);
+}
+.buttomBar .two{
+  font-size:26rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.buttomBar .btn{
+  width:220rpx;
+  height:100rpx;
+  background:linear-gradient(90deg,rgba(229,41,32,1) 0%,rgba(237,69,60,1) 100%);
+  text-align: center;
+  line-height: 100rpx;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}

@@ -1,0 +1,12 @@
+.LoadingPage{
+  position: fixed;
+  top:0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  background: #fff;
+  z-index: 210;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

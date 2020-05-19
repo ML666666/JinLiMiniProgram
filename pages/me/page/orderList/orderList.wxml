@@ -1,0 +1,97 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+        <view wx:if="{{!isRenderingPage}}">
+            <TopBar></TopBar>
+            <view class="sp" style="position: fixed;top:{{flexTop}}px;height:36px;width:100%;z-index:100">
+              <van-tabs
+                  bind:change="changeTab" 
+                  active="{{ index }}">
+                  <van-tab title="全部"></van-tab>
+                  <van-tab title="待付款"></van-tab>
+                  <van-tab title="待发货"></van-tab>
+                  <van-tab title="待收货"></van-tab>
+                  <van-tab title="待评价"></van-tab>
+                  <van-tab title="售后"></van-tab>
+              </van-tabs>
+            </view>
+            
+            <view style="height:36rpx;margin-bottom: 35rpx;"></view>
+
+            <view wx:if="{{currentObj.Rows.length}}" class="itemList">
+
+              <view class="item"  wx:for="{{currentObj.Rows}}" wx:key="key" wx:for-item="_item">
+                <view class="container">
+                  <view class="t">
+                    <view class="statusContainer">
+
+                        <view class="sp" wx:if="{{_item.OrderType==3}}">双拼</view>
+                        <view class="view">订单编号:{{_item.OrderNumber}}</view>
+                    
+                    </view>
+                    <text class="view red">{{_item.OrderStatusStr}}</text>
+                  </view>
+
+                  <view  
+                      wx:for='{{_item.LstProduct}}' 
+                      wx:key="_key" 
+                      data-OrderId="{{_item.OrderId}}" 
+                      data-OrderType="{{_item.OrderType}}"
+                      bindtap="toGeneralOrderDetails" class="c">
+
+                    <view style="display:flex;">
+                      <image src="{{item.ProductImg}}"></image>
+                      <view class="z">
+                        <view class="q1">{{item.ProductTitle}}</view>
+                        <view class="q2">{{item.AttValueName?item.AttValueName:''}}</view>
+                        <!-- <text class="q3">积分奖励{{item.Integral}}分</text> -->
+                      </view>
+                    </view>
+                    <view class="price">
+                      <view class="p1">￥{{item.BuyPrice}}</view>
+                      <view class="p2">x{{item.BuyNumber}}</view>
+                    </view>
+                  </view>
+
+                  <view class="buttom">
+                    <view class="w" wx:if="{{_item.OrderType==3}}">
+                      <view wx:for="{{_item.TowGroup.list}}" class="item_c">
+                        <image wx:if="{{item.WinStatus==1}}" class="q" src="./image/q.png"></image>
+                        <image class="image" src="{{item.UserIcon}}"></image>
+                      </view>
+                      <view wx:if="{{_item.TowGroup.list.length==1}}" class="item_c">
+                        <image wx:if="{{item.WinStatus==1}}"  class="q" src="./image/q.png"></image>
+                        <image class="image" src="./image/nothing.png"></image>
+                      </view>
+                      <view wx:if="{{_item.TowGroup.list.length==1}}" class="item_c">拼团中</view>
+                      <view wx:if="{{_item.TowGroup.list.length==2}}" class="item_c">拼团成功</view>
+                    </view>
+                    <view>共1件商品，合计￥{{_item.OrderAmount}}(含运费￥{{_item.ExpressAmount}})</view>
+                  </view>
+
+                
+                  <OrderStatue
+                      isSP="{{_item.TowGroup.list.length>0?true:false}}"
+                      OrderId="{{_item.OrderId}}" 
+                      bind:reSetData='reSetData' 
+                      payTypelist="{{payTypelist}}" 
+                      item="{{_item}}">
+                      </OrderStatue>
+
+                </view>
+              </view>
+
+              <Loading 
+                        show="{{(isLoading&&currentObj.Rows.length>pagesize) || (currentObj.isOver&&currentObj.Rows.length>pagesize)}}" 
+                        type="{{currentObj.isOver?'end':'loading'}}" ></Loading>
+                        
+            </view>
+
+            <view class="spc">
+              <l-status-show type="data" show="{{currentObj.Rows.length==0}}"></l-status-show>
+            </view>
+        </view>
+</PageLoadingWrapper>

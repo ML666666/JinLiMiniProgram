@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ibutton":"/miniprogram_npm/lin-ui/button/index",
+    "van-stepper": "/miniprogram_npm/vant-weapp/stepper/index"
+  }
+}

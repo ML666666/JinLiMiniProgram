@@ -1,0 +1,9 @@
+<!-- <view wx:if="{{$state.SocketObj.Code<10}}">
+  1
+</view>
+<view wx:if="{{$state.SocketObj.Code>10}}">
+  10
+</view> -->
+
+<!-- <popup show="{{$state.SocketObj.Code>5&&$state.SocketObj.Code<10}}"></popup> -->
+<SpStatus></SpStatus>

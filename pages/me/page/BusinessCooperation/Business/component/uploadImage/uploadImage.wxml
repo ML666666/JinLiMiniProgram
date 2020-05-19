@@ -1,0 +1,15 @@
+<view class="wrapper">
+  
+  <view class="itemWrapper">
+    <label data-index="img" wx:if="{{!img}}"  bindtap="addImg" class="item">
+      <image class="bg" src="./image/bg.png"></image>
+      <image class="c" src="./image/c.png"></image>
+    </label>
+    <view  wx:else class="imagewrapper">
+      <image data-index="img" bindtap="close" class="close" src="./image/close.png"></image>
+      <image class="item" src="{{img}}" ></image>
+    </view> 
+    <view wx:if='{{isShowTips}}' class="tips">{{tips}}</view>
+  </view>
+
+</view>

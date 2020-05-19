@@ -1,0 +1,15 @@
+<!--pages/search/component/leftBar/leftBar.wxml-->
+<scroll-view style="top:{{fixedTop}}px;" class='SearchScrollBar' id="SearchScrollBar" scroll-y="{{true}}">
+
+    <view 
+         wx:for="{{list}}" 
+         wx:key='{{index}}' 
+         data-ActiveIndex='{{index}}'  
+         data-JumpValue='{{item.JumpValue}}' 
+         data-JumpType="{{item.JumpType}}" 
+         bind:tap='emit' 
+         class="item">
+    <view class="{{activeIndex == index?'active':''}}">{{item.CateName}}</view></view>
+
+    
+</scroll-view>

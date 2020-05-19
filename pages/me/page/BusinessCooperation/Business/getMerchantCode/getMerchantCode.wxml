@@ -1,0 +1,20 @@
+
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+<TopBar title="{{'商户二维码'}}"></TopBar>
+
+  <view class="wrapper">
+    <image class="topBanner" src="{{topUrl}}"></image>
+    <image class="canvasImage" src="{{path}}"></image>
+    <view bindtap="saveImage" class="btn">保存收款码</view>
+  </view>
+
+
+
+</PageLoadingWrapper>
+<canvas canvas-id="canvasImage" class="type_1"></canvas>

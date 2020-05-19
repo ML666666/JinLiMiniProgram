@@ -1,0 +1,24 @@
+<view class="wrapper">
+  <view class="item" wx:for="{{DlistObj.list}}">
+      <view class="AgentInfo">
+        <image src="{{item.UserIcon}}"></image><view>{{item.NickName}}</view>
+      </view>
+      <view class="AgentPerformance">
+        <view class="en">
+          <view class="a">本周代理业绩</view>
+          <view class="b">{{item.TotalsCommissionIntegral}}</view>
+        </view>
+        <view class="en">
+          <view class="a">待入账代理业绩</view>
+          <view class="b">{{item.ToCreditedCommission}}</view>
+        </view>
+      </view>
+  </view>
+</view>
+
+<Loading 
+        show="{{!DlistObj.isOver}}" 
+                type="{{'loading'}}" ></Loading>
+<Loading 
+        show="{{DlistObj.isOver}}" 
+                type="{{'end'}}" ></Loading>

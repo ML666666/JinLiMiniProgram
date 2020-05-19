@@ -1,0 +1,11 @@
+<!--gob/gobComponent/tabs/tabs.wxml-->
+<view class="tabs">
+  <van-tabs active="{{ active }}">
+    <van-tab title="标签 1"></van-tab>
+    <van-tab title="标签 2"></van-tab>
+    <van-tab title="标签 3"></van-tab>
+    <van-tab title="标签 4"></van-tab>
+    <van-tab title="标签 5"></van-tab>
+    <van-tab title="标签 6"></van-tab>
+  </van-tabs>
+</view>

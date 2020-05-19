@@ -1,0 +1,19 @@
+{
+  "usingComponents": {
+      "fourpalace":"/gob/CannelComponent/fourpalace/fourpalace",
+      "header":"/gob/CannelComponent/header/header",
+      "banner":"/gob/CannelComponent/banner/banner",
+      "nav":"/gob/CannelComponent/nav/nav",
+      "rubik":"/gob/CannelComponent/rubik/rubik",
+      "newpeople":"/gob/CannelComponent/newpeople/newpeople",
+      "recommend":"/gob/CannelComponent/recommend/recommend",
+      "selectedgood":"/gob/CannelComponent/selectedgood/selectedgood",
+      "specialperformance":"/gob/CannelComponent/specialperformance/specialperformance",
+      "youlike":"/gob/CannelComponent/youlike/youlike",
+      "secondkill":"/gob/CannelComponent/secondkill/secondkill",
+      "deductionTwo": "/gob/CannelComponent/deductionTwo/deductionTwo",
+      "deductionMore": "/gob/CannelComponent/deductionMore/deductionMore",
+      "FDOT":"./FDOT/FDOT",
+      "POP":"./POP/POP"
+  }
+}

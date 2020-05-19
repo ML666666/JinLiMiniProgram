@@ -1,0 +1,21 @@
+.makeSureBtn{
+  width:750rpx;
+  height:100rpx;
+  background:rgba(153,153,153,1);
+  line-height: 100rpx;
+  text-align: center;
+  font-size:32rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  position: fixed;
+  bottom: 0rpx;
+  z-index: 100;
+}
+.active{
+  background:linear-gradient(90deg,rgba(238,71,62,1) 0%,rgba(229,41,33,1) 100%);
+  font-size:32rpx;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}

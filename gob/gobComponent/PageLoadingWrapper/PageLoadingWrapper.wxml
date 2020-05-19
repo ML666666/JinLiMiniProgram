@@ -1,0 +1,16 @@
+<!-- isGetDataFail请求出错时显示该状态 -->
+<van-transition  wx:if="{{$state.isGetDataFail}}">
+    <view class="mask">
+      <l-status-show type="network" show="{{true}}" bind:lintap="regetError"></l-status-show>
+    </view>
+</van-transition>
+<pullDownRefresh
+  wx:else
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}">
+  <LoadingPage isShow="{{isRenderingPage}}"></LoadingPage>
+  <van-transition wx:if="{{!isRenderingPage}}">
+    <slot wx:if="{{!isRenderingPage}}"></slot>
+  </van-transition>
+</pullDownRefresh>

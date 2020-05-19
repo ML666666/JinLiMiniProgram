@@ -1,0 +1,5 @@
+<van-transition show="{{isShow}}">
+  <view class="LoadingPage">
+    <!-- loading.. -->
+  </view>
+</van-transition>

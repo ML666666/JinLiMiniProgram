@@ -1,0 +1,61 @@
+<bg>
+
+  <view class="CCCC">
+      <TopBar title="下级用户商城订单"></TopBar>
+      <view class="TW">
+      <image src="{{CommissionType==4?SPURL:AEURL}}" class="BG"></image>
+      <view class="W">
+        <view class="t">{{PObj.SpecialAreaName}}</view>
+        <view class="CW">
+          <view class="item">
+            <view class="r">今日结算(元)</view>
+            <view class="c"><TF num="{{topData.Today.ActualAmount}}"></TF></view>
+          </view>
+          <view class="item">
+            <view class="r">今日订单</view>
+            <view class="c">{{topData.Today.Num}}</view>
+          </view>
+          <view class="item">
+            <view class="r">昨日结算(元)</view>
+            <view class="c"><TF num="{{topData.Yesterday.ActualAmount}}"></TF></view>
+          </view>
+          <view class="item">
+            <view class="r">剩余待结算(元)</view>
+            <view class="c"><TF num="{{topData.TotalSurplusActualAmount}}"></TF></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <pickData startTimeDay="{{2}}" bind:resetTime="resetTime"></pickData>
+
+    <view class="block">
+      <view class="item" wx:for="{{PObj.listMallOrder}}">
+        <view class="title">
+          <view class="t"></view>
+          <view class="c">{{item.Date}}</view>
+        </view>
+        <view class="wrapper">
+          <view class="status">
+            <view>已结算：￥{{item.SettlementTotal}}</view>
+            <view>待结算：￥{{item.NoSettlementTotal}}</view>
+          </view>
+          <view class="itemWrapper">
+            <view class="itemWrapper_title">
+              <view class="item item_1">关联门店</view>
+              <view class="item item_2">订单编号</view>
+              <view class="item item_3">购物币使用</view>
+              <view class="item item_4">预估佣金(元)</view>
+            </view>
+            <view wx:for="{{item.Lst}}" class="itemWrapper_title_T">
+              <view class="item item_1">{{item.ShopName}}</view>
+              <view class="item item_2">{{item.TradeNo}}</view>
+              <view class="item item_3">{{item.ShoppingBi}}</view>
+              <view class="item item_4">{{item.ActualAmount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</bg>

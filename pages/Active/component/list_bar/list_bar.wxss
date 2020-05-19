@@ -1,0 +1,48 @@
+/* pages/Active/component/list_bar/list_bar.wxss */
+.isF{
+  position: fixed;
+}
+.list_bar{
+  width:100%;
+  overflow:hidden;
+  white-space:nowrap;
+  height: 130rpx;
+  background: #eee !important;
+  padding-top: 20rpx;
+}
+.list_bar .wrapper{
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.list_bar .item{
+  overflow: hidden;
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  margin-right: 20rpx;
+}
+.list_bar .item image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.list_bar .item .wrapper view{
+  margin-top: 10rpx;
+  width: 120rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx; 
+  text-align: center;
+  transition: 0.3s;
+}
+.list_bar .item  .active{
+  background: red;
+  color: #fff;
+}
+
+.hide{
+  display: none;
+}

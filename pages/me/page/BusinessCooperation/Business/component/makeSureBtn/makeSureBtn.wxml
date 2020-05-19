@@ -1,0 +1,3 @@
+<view bindtap="tab" class="makeSureBtn {{!isDisabled?'active':''}}">
+  下一步
+</view>

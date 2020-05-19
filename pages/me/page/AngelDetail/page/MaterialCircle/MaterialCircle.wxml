@@ -1,0 +1,18 @@
+<TopBar title="素材圈"></TopBar>
+<image class="bannerImagg" src="{{topData.banner[0].Src}}"></image>
+<view class="list">
+  <view bindtap="changeTabs" wx:for="{{topData.types}}" wx:for-index="index" data-type="{{item.type}}" data-index="{{index}}"  class="itemWrapper">
+    <view class="item {{activeIndex==item.type?'active':''}}">
+      <text>{{item.name}}</text>
+      <view class="bar"></view>
+    </view>
+  </view>
+</view>
+<view class="listWrapper">
+  <view bindtap="toDetail" class="item" wx:for="{{listWrapper[index].list}}" data-Id="{{item.Id}}">
+    <image src="{{item.Cover}}"></image><text>{{item.Title}}</text>
+  </view>
+</view>
+
+<Loading show="{{loading}}" />
+<Loading show="{{listWrapper[index].list.length == 0}}" type='end' />

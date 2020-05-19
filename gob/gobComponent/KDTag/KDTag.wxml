@@ -1,0 +1,3 @@
+<view class="wrapper">
+  <view class="zgkd"><view class="w">可抵扣</view><view class="p">最高{{price}}元</view></view>
+</view>

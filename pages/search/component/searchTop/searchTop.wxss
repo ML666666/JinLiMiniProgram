@@ -1,0 +1,8 @@
+/* pages/search/component/searchTop/searchTop.wxss */
+.searchTop{display: flex;justify-content: space-around;align-items: center;padding: 20rpx;position: fixed;background: #fff;width: 100%;box-sizing: border-box;z-index: 100;border-bottom: 2rpx solid rgba(143, 136, 136, 0.2);}
+.searchTop  .Search{width:100%;height:60rpx;background: #eee; border-radius:50rpx;display: flex;display: flex;justify-content: flex-start;align-items: center;}
+.searchTop  .Search image{width: 22rpx;margin-left:20rpx;margin-right:10rpx;}
+.searchTop  .Search text{color: #2c3e50;font-size: 25rpx;}
+.searchTop .icon{padding: 0rpx 30rpx;}
+.searchTop .icon_1{width: 50rpx;}
+.searchTop .icon_2{width: 40rpx;}

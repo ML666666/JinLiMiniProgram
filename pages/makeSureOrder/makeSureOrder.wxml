@@ -1,0 +1,229 @@
+
+<wxs src="./WxGobMethod.wxs" module="tools"></wxs>
+
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+   
+    <login bind:reSetBuy="reSetBuy" show="{{isBindPhone}}"></login> <!-- 绑定手机号 -->
+    <view class="makeSureOrder" style="min-height:{{windowHeight}}px">
+      <TopBar title="{{'提交订单'}}"></TopBar>
+      <block wx:if="{{isShowTheASBar}}">
+        <view class="DefaultAdress" bindtap="toAddAddress" wx:if='{{getaddress.rows.length}}'>
+            <view class="one">
+              <!-- <view class="w">{{orderObj.DefaultAddress.ShipTo}}</view>
+              <view class="e" wx:if="{{orderObj.DefaultAddress.IsDefault}}">默认</view> -->
+              <image style="width:68rpx;height:68rpx;" src="./image/address.png"></image>
+            </view>
+            <view class="two">
+              <view class="w">{{orderObj.DefaultAddress.ShipTo}}</view>
+              <view class="e">
+                {{orderObj.DefaultAddress.Province}}
+                {{orderObj.DefaultAddress.CityName}}
+                {{orderObj.DefaultAddress.AreaName}}
+                {{orderObj.DefaultAddress.Address}} 
+              </view>
+            </view>
+            <image class="arrow" src="./image/ARROW.png"></image>
+        </view>
+        <view wx:else bindtap="toAddAddress" class="adress_wrapper DefaultAdress">
+          请添加地址
+          <image class="arrow" src="./image/ARROW.png"></image>
+        </view>
+      </block>
+
+      <view class="splitWrapper">
+        
+        <view class="payType">
+          <view class="tag"></view> <text>支付方式</text>
+        </view>
+
+        <block
+           wx:for="{{payTypeList}}"
+           wx:for-index="index">
+          <view 
+                bindtap="selectType" 
+                data-payType="{{item.payType}}" 
+                data-index="{{index}}"
+                class="t_item border">
+                <image src="{{wx_Url}}" 
+                       data-payType="{{item.payType}}" 
+                       data-index="{{index}}" 
+                       wx:if="{{item.payType==10000}}" class="wx"></image>
+                <image src="{{zf_Url}}" 
+                       data-payType="{{item.payType}}" 
+                       data-index="{{index}}" 
+                       wx:if="{{item.payType==20000}}" class="wx"></image>
+                <!-- <image wx:if="{{payIndex==index}}" class='gou' src="./image/gou.png"></image> -->
+                <image data-payType="{{item.payType}}" 
+                       data-index="{{index}}" 
+                       wx:if="{{payIndex==index}}" 
+                       class="check" 
+                       src="./image/check.png"></image>
+                <image data-payType="{{item.payType}}" 
+                       data-index="{{index}}" 
+                       wx:else class="check" 
+                       src="./image/uncheck.png"></image>
+          </view>
+        </block>
+      </view>
+      
+      <!-- 只允许使用购物币时，才显示该模块 -->
+      <view class="moneyWrapper"  wx:if="{{!payOnlyByGwb&&!(orderObj.DeductionBalanceLimit==0&&orderObj.useDeduction)}}">
+        <view class="w">
+          <view>购物币抵扣</view>
+          <!-- <text>￥{{orderObj.balance}}</text> -->
+        </view>
+        <view class="c">
+          <text wx:if="{{toPayByBalance}}">-￥{{orderObj.DeductionBalanceLimit}}</text>
+          <text wx:else>账户余额￥{{orderObj.DeductionBalanceTotal}}</text>
+          <image bindtap="onChange" wx:if="{{toPayByBalance}}" class="check" src="./image/check.png"></image>
+          <image bindtap="onChange" class="check" src="./image/uncheck.png" wx:else></image>
+        </view>
+      </view>
+
+      <view class="splitWrapper">
+        
+        <view class="payType">
+          <view class="tag"></view> <text>订单合计</text>
+          <view class="isAllMDZQ"></view>
+        </view>
+
+        <view class="t_item">
+        <view>商品金额</view>
+        <text wx:if="{{ProductType == 2}}">
+            {{ProductType==2?'购物币:':'￥'}}{{orderObj.Amount}}
+        </text>
+        <text wx:else>￥{{orderObj.TotalsAmount}}</text>
+        </view>
+        <view class="t_item">
+          <view>平台优惠</view>
+          <text>￥{{toPayByBalance?((orderObj.DiscountAmount-0)+(orderObj.DeductionBalanceLimit-0)):orderObj.DiscountAmount}}</text>
+        </view>
+        <view class="t_item">
+          <view>运费</view>
+          <text>￥{{orderObj.ExpressAmount}}</text>
+        </view>
+        <!-- <view wx:if="{{orderObj.DeductionBalanceLimit}}" class="t_item">
+          <view>购物币</view>
+          <text>￥{{orderObj.DeductionBalanceLimit}}</text>
+        </view> -->
+
+      </view>
+
+
+      <view class="splitWrapper" wx:for="{{orderObj.rows}}" wx:for-index='index'>
+        
+        <view class="payType">
+          <view class="tag"></view> <text>{{ProductType == 2?'免单接龙':'订单信息'}}</text>
+          <view wx:if="{{item.isShowAllZT}}" data-index="{{index}}" bindtap="pickAll" class="isAllMDZQ">
+              <image  wx:if="{{item.isSelectAllZT}}" class="check" src="./image/check.png"></image>
+              <image  wx:else class="check" src="./image/uncheck.png"  wx:else></image>
+              <view>全部门店自提</view>
+          </view>
+        </view>
+        
+        <view class="listWrapper">
+          <view class="itemList">
+
+            <block  wx:for="{{item.LstProduct}}">
+            
+              <view class="item">
+                <image src="{{item.ProductImg}}"></image>
+                <view class="Wrapper">
+                  <view class="t">{{item.ProductTitle}}</view>
+                  <view wx:if="{{item.AttValueName}}" class="c">{{item.AttValueName}}</view>
+                  <view class="p">
+                    <view class="w">
+                      <text>{{ProductType==2?'购物币:':'￥'}}{{item.SalePrice}}</text>
+                      <!-- 普通商品才显示积分 -->
+                      <!-- <text wx:if="{{ProductType==0}}">获赠积分{{item.Integral}}</text>  -->
+                    </view>
+                    <text class="k">x {{item.BuyNum}}</text>
+                  </view>
+                </view>
+              </view>
+
+              <view wx:if="{{item.OfflinePack>=0}}"
+                    data-id="{{item.ProductId}}" 
+                    data-AttId="{{item.AttId}}"
+                    bindtap="changePacks" 
+                    class="isZTWrapper">
+                      <image  wx:if="{{item.OfflinePack==1}}" class="check" src="./image/check.png"></image>
+                      <image  wx:else class="check" src="./image/uncheck.png"  wx:else></image>
+                      <view>商品线下自提，无需快递发货</view>
+              </view>
+
+            </block>
+
+            <view class="CanDeductionWrapper">
+              <view class="w">最高可优惠:¥{{item.CanDeduction}}</view>
+              <view class="r"><text>小计:</text>￥{{item.GroupPrice}}</view>
+            </view>
+            <input
+                  data-GroupId="{{item.GroupId}}" 
+                  maxlength="200" 
+                  class="inputWrapper" 
+                  placeholder-class="PCLASS"
+                  bindinput="inputPL" 
+                  placeholder="买家留言200字以内(选填)" data-GroupId="{{item.GroupId}}" />
+          </view>
+        </view>
+
+
+      </view>
+
+
+
+      <view class="buttom">
+        <view class="price">
+          <text>合计:{{ProductType==2?'购物币:':'￥'}}{{tools.toFixed(toPayByBalance?(orderObj.OrderTotalsAmount-orderObj.DeductionBalanceLimit-orderObj.DiscountAmount):(orderObj.OrderTotalsAmount-orderObj.DiscountAmount))}}
+          </text>
+          <text class="w">运费: ￥{{orderObj.ExpressAmount}}</text>
+        </view> 
+        <view bindtap="buy" class="btn">
+          提交
+        </view>
+      </view>
+
+    </view>
+
+</PageLoadingWrapper>
+
+
+
+
+
+      <!-- <l-popup
+        content-align="{{'center'}}"
+        animation="{{'show'}}" 
+        z-index="{{250}}" 
+        show="{{isShowBuyMask}}">
+        <view class="makeSureBuy">
+          <image src="./image/bg.png" class="bg"></image>
+          <view class="c">
+            <image bindtap="showBuyMask" 
+                  src="./image/close.png" 
+                  class="close"></image>
+            <view class="i_1">订单总金额：<text style="color:#FF0000">{{tools.toFixed(orderObj.Amount)}}元</text></view>
+            <view class="i_2">
+              余额支付：{{tools.toFixed(
+              toPayByBalance?
+                  orderObj.balance>orderObj.Amount?
+                      orderObj.Amount:
+                          orderObj.balance:0)}}元</view>
+            <view class="i_2">其他支付：{{tools.toFixed(
+              toPayByBalance?
+                orderObj.balance>orderObj.Amount?
+                0:orderObj.Amount-orderObj.balance:
+                orderObj.Amount
+            )}}元</view>
+            <image class="btn" bindtap="buy"  src="./image/sure.png"></image>
+          </view>
+        </view>
+      </l-popup> -->
+
+

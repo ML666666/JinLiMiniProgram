@@ -1,0 +1,4 @@
+
+<TopBar></TopBar>
+<image style="width:100%" mode="widthFix" src="http://h5.huizhisuo.com/static/img/tshy_01.f894ba7.png"></image>
+<image bindtap="toAngel" style="width:100%" mode="widthFix" src="http://h5.huizhisuo.com/static/img/tshy_02.b252861.png"></image>

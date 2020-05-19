@@ -1,0 +1,33 @@
+<view style="padding-top:100rpx;">
+  <TopBar title="支付"></TopBar>
+
+  <!-- <button open-type="launchApp" app-parameter="{{isPaySuccessCode}}" binderror="launchAppError">返回APP</button> -->
+  <view class="btnWrapper">
+  
+    <view wx:if="{{isPaySuccessCode==2}}" class="center">
+      <image 
+        src="http://h5.huizhisuo.com/upload/Picture/comment/202003/494179bd865648b9b0cb6c83fcc7a3f3.png?v=1.0.38" 
+        class="payLoading"></image>
+      <text>支付中...</text>
+    </view>
+
+    <view  wx:if="{{isPaySuccessCode==1}}"  class="center">
+      <image 
+      src="http://h5.huizhisuo.com/upload/Picture/comment/202003/29853f75797c4558ae85d71d7ef436eb.png?v=1.0.38" 
+      class="payOk"></image>
+      <text>支付成功</text>
+      <button class="RedBtn" open-type="launchApp" app-parameter="{{isPaySuccessCode}}" binderror="launchAppError">返回APP</button>
+    </view>
+
+    <view wx:if="{{isPaySuccessCode==0}}" class="center">
+      <image 
+      src="http://h5.huizhisuo.com/upload/Picture/comment/202003/c78eb874529e4c618fc611e97d02942a.png?v=1.0.38" 
+      class="payError"></image>
+      <text>支付失败</text>=
+      <button class="RedBtn" bindtap="toPay">重新支付</button>
+      <button class="UnBtn" open-type="launchApp" app-parameter="{{isPaySuccessCode}}" binderror="launchAppError">返回APP</button>
+    </view>
+
+  </view>
+
+</view>

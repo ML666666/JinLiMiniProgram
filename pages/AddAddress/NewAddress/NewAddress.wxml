@@ -1,0 +1,52 @@
+<!--pages/AddAddress/NewAddress/NewAddress.wxml-->
+<view class="NewAddress" style="min-height:{{windowHeight}}px;background: #f5f5f5;">
+  
+  <TopBar
+    titleColor="{{'#ffffff'}}"
+    ArrowType='{{false}}' 
+    bgColor="{{'linear-gradient(270deg,#fd4068,#f23e35)'}}"
+    title="{{'新增地址选择'}}"></TopBar>
+
+  <view style="background: #fff;">
+    <view class="itemWrapper border">
+      <text class="label">所在地区:</text>
+      <input disabled="true" placeholder="请选择收货地址" bindtap="setAddress" value="{{fullareaname}}" type="text"></input>
+      <image class="Arrow" src="./image/ARROW.png"></image>
+    </view>
+
+    <view class="itemWrapper">
+      <input  placeholder="请输入详细地址" data-name="address" bindinput="input"  value="{{address}}" type="text"></input>
+    </view>
+    <view class="itemWrapper">
+      <text class="label">姓名:</text>
+      <input  placeholder="请输入收货人姓名" data-name="shipto" bindinput="input" value="{{shipto}}" type="text"></input>
+      <!-- <image wx:if="{{shipto}}" style="width:55rpx;" mode="widthFix" class="icon" src="./image/pass.png"></image>
+      <image wx:else class="icon"  mode="widthFix" src="./image/wram.png"></image> -->
+    </view>
+    <view class="itemWrapper border">
+      <text class="label">手机号:</text>
+      <input  placeholder="请输入手机号" data-name="shipphone" bindinput="input"  value="{{shipphone}}" type="text"></input>
+    </view>
+
+    <view class="isD" bindtap="changeIsdefault">
+      <van-checkbox checked-color="#ff1d26" value="{{isdefault}}"></van-checkbox> 
+      <view class="tips">设为默认</view>
+    </view>
+    
+  </view>
+
+  <view class="btn" bindtap="toAdd">保存地址</view>
+  
+  <van-transition show="{{ show_area }}">  
+    <view class="area">
+        <view bindtap="setAddress" class="mask"></view>
+        <van-area
+          value="{{key?key:110101}}" 
+          bind:cancel="setAddress" 
+          bind:confirm="makeSureAddress" 
+          bind:change="makeSureAddress" 
+          area-list="{{ c }}"></van-area>
+    </view>
+  </van-transition>
+
+</view>

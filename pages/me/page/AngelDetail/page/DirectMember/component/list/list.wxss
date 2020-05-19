@@ -1,0 +1,87 @@
+.listWrapper .item{display: flex;justify-content: space-around;border-bottom: 2rpx solid #f3f3f3;height: 115rpx;text-align: center;}
+.listWrapper .item .w{display: flex;justify-content: center;align-items: center;flex: 1}
+.listWrapper .item .wxWrapper image{width:60rpx;height:60rpx;}
+.listWrapper .item .num{font-size:28rpx;color: #333;}
+.icon{
+  width:64rpx;
+  height:64rpx;
+  border-radius:50%;
+  margin-right:10rpx;
+}
+.wr{
+  position: relative;
+}
+.hg{
+  position: absolute;
+  top: -19rpx;
+  left: -10rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+.headerWrapper .o{
+  font-size: 30rpx;
+  font-weight: 700;
+  max-width: 160rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333;
+  text-align:left;
+} 
+.headerWrapper .k{
+  text-align: left;
+  color: #888;
+  font-size: 24rpx;
+}
+.member-info{
+  position: relative;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 33rpx 42rpx 46rpx 26rpx;
+  box-sizing: border-box;
+  width: 630rpx;
+}
+.member-info .close{
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+.item_w_Wrapper{
+  padding: 0 2rpx 0 88rpx;
+}
+.item_w{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 37rpx;
+}
+.item_w .o{
+  display: flex;
+  align-items: center;
+  color: #2c3e50;
+  font-size: 26rpx;
+}
+.item .w .o .name{
+  margin-left: 18rpx;
+}
+.item .w .o .text{
+  font-weight: 700;
+}
+.item_w .phone{
+  width: 62rpx;
+  height: 62rpx;
+  margin-left: 10rpx;
+  pointer-events: none;
+}
+
+.item_w .btn_W{
+  border: none;
+  background: #01c800;
+  border-radius: 4rpx;
+  padding: 9rpx 15rpx;
+  color: #fff;
+  font-size: 24rpx;
+}

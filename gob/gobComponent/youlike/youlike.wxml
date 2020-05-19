@@ -1,0 +1,26 @@
+<view class="youlike" wx:if='{{Pro.length}}'>
+  <view class="top">
+    <image src="./image/left.png"></image>
+    <view class="t">更多商品推荐</view>
+    <image src="./image/right.png"></image> 
+  </view>
+  <view class="goodList">
+    <view wx:for="{{Pro}}" data-Id="{{item.Id}}" class="good" bindtap="toDetail">
+        <image class="imgaeBanner" src="{{item.ProductImg}}"></image>
+        <view class="detail">
+          <view class="title">{{item.ProductTitle}}</view>
+          <!-- <view class="sell">热销{{item.SaleCount}}</view> -->
+          <!-- {{item.ShoppingBi}} -->
+          <KDTag price="{{item.ShoppingBi}}"></KDTag>
+          <view class="priceWrapper">
+            <view class="price">￥{{item.SalePrice}}</view>
+            <view class="_price">￥{{item.MarketPrice}}</view>
+          </view>
+        </view>
+    </view>
+  </view>
+  
+  <Loading 
+        show="{{true}}" 
+        type="{{isOver?'end':'loading'}}" ></Loading>
+</view>

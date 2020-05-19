@@ -1,0 +1,114 @@
+<!--pages/me/page/orderList/component/OrderStatus.wxml-->
+<view class="OrderStatus" wx:if="{{item.OrderStatus == 0}}">
+
+      <view 
+           data-content="你确定取消订单吗?" 
+           bindtap="tuikuan" 
+           class="btn grayBtn">取消订单</view>
+      <!-- <view bindtap="showMakeSureOrderMask" class="btn zf">立即支付</view> -->
+      <view bindtap="toPay" class="btn zf">立即支付</view>
+
+      <popup bind:lintap="showMakeSureOrderMask" content-align="center" z-index="{{201}}" show="{{isShowMakeSureOrderMask}}">
+          <view class="wrapper">
+            <view  wx:for="{{payTypelist}}" data-payType="{{item.payType}}" bindtap="toPay"   class="item">
+                {{item.payName}}
+            </view>
+          </view>
+      </popup>
+
+</view>
+
+<view class="OrderStatus" wx:if="{{item.OrderStatus == 1 && !isSP}}">
+      <view
+           data-content="你确定申请退款吗?" 
+           bindtap="tuikuan" 
+           class="btn grayBtn">申请退款</view>
+</view>
+      
+<view class="OrderStatus" wx:if="{{item.OrderStatus == 2}}">
+      <view bindtap="isShowCheckExpress" wx:if="{{item.OfflinePack != true}}" class="btn grayBtn">物流信息</view>
+      <view bindtap="makeSureOrder" class="btn zf">确认收货</view>
+
+      <popup bind:lintap="isShowCheckExpress" content-align="center" z-index="{{201}}" show="{{isCheckExpress}}">
+          <!-- height: 610rpx; -->
+          <view class="express_wrapper">
+              <swiper indicator-dots="true">
+                <swiper-item  wx:for="{{expressData.rows}}" wx:for-index="index">
+                    <view class="_wrapper">
+
+                      <view  class="view_express">
+                        <view class="top">
+                          <view wx:for="{{item.lsOrderItem}}" class="item">
+                            <image src="{{item.ProductImg}}"></image>
+                            <view>{{item.ProductTitle}}</view>
+                          </view>
+                          <view class="_T">
+                            <text>快递公司</text>
+                            <text class="a">:</text>
+                            <text>{{item.FShipmentName}}</text>
+                          </view>
+                          <view class="_T">
+                            <text>快递编号</text>
+                            <text class="a">:</text>
+                            <text>{{item.FShipmentNumber}}</text>
+                          </view>
+                        </view>
+                      </view>
+
+                      <scroll-view scroll-y="true"  class="ExpressListWrapper">
+
+                          <van-transition show="{{isLoadingExpress}}">
+                            <view class="loading">
+                                <loading show="{{true}}" type="change" color="#f44" ></loading>
+                            </view>
+                          </van-transition> 
+
+                          <van-transition show="{{!isLoadingExpress}}">
+
+                                <view class="EWrapper">
+                                  <view  wx:for="{{expressData.rows[index].data}}" wx:for-index="index" class="Eitem">
+                                      <view class="radius {{index==0?'finish':''}}">{{index+1}}</view>
+                                      <view class="title">{{item.context}}</view>
+                                      <view class="time">{{item.time}}</view>
+                                  </view>
+                                </view>
+
+                                  <!-- <steps 
+                                        icon-color="{{'#f05145'}}'  
+                                        active-index="{{1}}" 
+                                        direction="{{'column'}}">
+                                        <block  wx:for="{{expressData.rows[0].data}}" >
+                                            <step 
+                                                  title="{{item.context}}" 
+                                                  describe="{{item.time}}"></step>
+                                        </block>
+                                  </steps> -->
+
+                                  <view wx:if="{{expressData.rows[index].data.length==0}}" class="nothing">~暂无数据~</view>
+
+                          </van-transition>
+
+                      </scroll-view>
+
+
+                  </view>
+                </swiper-item>
+              </swiper>
+     
+              
+              <image bindtap="isShowCheckExpress" class="close" src="./image/close.png"></image>
+          </view>
+      </popup>
+
+</view>
+
+<view class="OrderStatus" wx:if="{{item.OrderStatus == 3}}">
+      <view bindtap="toComment" class="btn zf">评价</view>
+</view>
+
+<view class="OrderStatus" wx:if="{{item.OrderStatus == 4}}">
+</view>
+
+<dialog />
+
+

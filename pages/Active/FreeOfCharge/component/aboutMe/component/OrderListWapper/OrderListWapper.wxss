@@ -1,0 +1,89 @@
+.OrderListWapper .item{
+  margin: 30rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  box-shadow: 0 0 4rpx #ddd;
+  padding-bottom: 40rpx;
+}
+.OrderListWapper .item .order-detail{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.OrderListWapper .item .order-detail .w{
+  color: rgb(44, 62, 80);
+  font-size: 26rpx;
+}
+.OrderListWapper .item .order-detail .r{
+  color: rgb(246, 44, 63);
+  font-size: 24rpx;
+}
+.OrderListWapper .item .good_item{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+.OrderListWapper .item .good_item image{
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.OrderListWapper .item .good_item .wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 450rpx;
+}
+.OrderListWapper .item .good_item .wrapper .title{
+  font-size: 30rpx;
+  font-weight: 700;
+  color: rgb(44, 62, 80);
+}
+.OrderListWapper .item .good_item .wrapper .c{
+  display: flex;
+  align-items: center;
+}
+.OrderListWapper .item .good_item .wrapper .p{
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #f92d4d;
+  margin-right:20rpx;
+}
+.OrderListWapper .item .good_item .wrapper .w{
+  color: #888;
+  font-size: 24rpx;
+}
+
+
+.OrderListWapper .item .share{
+  display: flex;
+  box-shadow: 0 0 8rpx #ddd;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  line-height: 34rpx;
+  border: none;
+}
+.OrderListWapper .item .share .s{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-top: -4rpx;
+  margin-right: 6rpx;
+}
+.OrderListWapper .item .share .w{
+  font-size: 28rpx;
+  color: #000;
+}
+.OrderListWapper .item .share .z{
+  font-size: 24rpx;
+}
+.OrderListWapper .item .share .arrow{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 0;
+}

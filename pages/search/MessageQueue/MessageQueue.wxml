@@ -1,0 +1,18 @@
+<TopBar title="信息"></TopBar>
+<view class="itemWrapper">
+  <view class="item" wx:for="{{list}}" data-type="{{item.messageType}}" data-name="{{item.name}}" bindtap="toDetail">
+      <view class="a">
+        <view class="imageWrapper">
+          <view wx:if="{{item.noReadNum>0}}" class="dot"></view>
+          <image class="b" src="{{item.icon}}"></image>
+        </view>  
+        <view class="c">
+          <view class="d">{{item.name}}</view>
+          <view class="e">{{item.content}}</view>
+        </view>
+      </view>
+      <view class="f">
+        <view class="g">{{item.time}}</view>
+      </view>
+  </view>
+</view>

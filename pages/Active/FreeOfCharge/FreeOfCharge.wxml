@@ -1,0 +1,56 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+
+    <van-transition show="{{isaboutme==0}}" name="fade">
+      <view wx:if="{{isaboutme==0}}"  class="FreeOfChange">
+          {{options}}
+          <view bindtap="toRule" class="rule">免单规则 {{options}}</view>
+
+          <TopBar title="免单接龙"></TopBar>
+
+          <swiper
+            autoplay="{{true}}"
+            >
+            <swiper-item wx:for="{{solitaireTopData.broadcastAd}}">
+              <image src="{{item.Src}}"></image>
+            </swiper-item>
+          </swiper>
+
+          <scroll-x-List goodtype="3" solitaireTopData="{{solitaireTopData}}"></scroll-x-List>
+
+          <list_bar
+              goodtype="3"
+              bind:changeTab="changeTab" 
+              fixedTop="306" 
+              isRenderingPage="{{isRenderingPage}}" 
+              currentTop="{{currentTop}}"  
+              solitaireTopData="{{solitaireTopData}}"></list_bar>
+        
+          <goodList 
+              goodtype="3"
+              Label="月销" 
+              BtnLabel="立即购买" 
+              rows="{{allRow[index].list}}"></goodList>
+        
+          <Loading 
+              show="{{isLoading || allRow[index].isOver}}" 
+              type="{{allRow[index].isOver?'end':'loading'}}" ></Loading>
+    
+      </view>
+    </van-transition>
+
+    <van-transition show="{{isaboutme==1}}" name="fade">
+      <!-- 个人中心 -->
+      <aboutMe member="{{member}}" userInfoGetList="{{userInfoGetList}}" isLoadData="{{isaboutme}}"></aboutMe>
+    </van-transition>  
+
+    <!-- 底部导航栏 -->
+    <bar isaboutme="{{isaboutme}}" bind:changeTab="changeTabButtom"></bar>
+
+
+</PageLoadingWrapper>

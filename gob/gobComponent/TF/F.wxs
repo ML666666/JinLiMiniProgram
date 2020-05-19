@@ -1,0 +1,6 @@
+function TF(num) {
+  return num.toFixed(2)
+}
+module.exports = {
+  TF: TF
+}

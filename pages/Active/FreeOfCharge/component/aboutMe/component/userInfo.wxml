@@ -1,0 +1,32 @@
+<view class="userInfo">
+  <view class="item">
+    <image class="header" src="{{member.UserIcon}}"></image>
+    <view class="detailWrapper">
+    
+      <view class="item_W">
+        <view class="p">{{member.GoldCoin}}</view>
+        <view class="r">购物币</view>
+        <image class="q" src="./image/question.png"></image>
+      </view>
+
+      <view class="item_W">
+        <view class="p">{{member.ShoppingValue}}</view>
+        <view class="r">购物值</view>
+        <image class="q" src="./image/question.png"></image>
+      </view>
+
+    </view>
+  </view> 
+  <view class="numDetail">
+    
+    <view class="d">
+      <view>{{member.NickName}}</view>
+      <view class="i">id:{{member.MemberId}}</view>
+    </view>
+
+    <button plain="true" open-type="share" class="s">
+        <image class="share" src="./image/toShare.png"></image>
+        <text>分享得购物币</text>
+    </button>
+  </view>
+</view>

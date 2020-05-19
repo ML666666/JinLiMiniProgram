@@ -1,0 +1,84 @@
+.fullWrapper{
+  width: 100%;
+  overflow-x: hidden;
+}
+.container {box-sizing: border-box;}
+.xiaoxi{width: 20rpx;height: 20rpx;color: #fff;}
+/* 首页备注 */
+.specialSellContainer{position: relative; display: flex;justify-content:  center; align-items:center;flex-direction: column;}
+.toMsg{display: flex;flex-direction: column;align-items: center;justify-content: center;position: relative;}
+.toMsg .dot{font-size:18rpx; color: #fff; background: red;border-radius: 50%;text-align: center;position: absolute;left: 55%;
+top: -20%;font-size: 18rpx;
+border-radius: 1000rpx;
+padding: 2px 4px;
+line-height: 30rpx;}
+.toMsg image{width: 28rpx;height: 28rpx;margin-bottom: 2rpx;}
+.toMsg text{font-size: 20rpx; color: #fff;}
+.toMsgB text{color: #000000;}
+.specialSellContainer .bg{
+transition: 0.2s;
+transition-timing-function:linear;
+height: 200rpx;
+width: 100%;position: absolute;top: 0px;left: 0px;background: #7540ab;}
+
+.specialSellContainer .genuine{width: 646rpx;height: 25rpx;margin-bottom: 20rpx;}
+
+.specialSellContainer .navigationIcoAd{width: 100%;display: flex;flex-direction: row;justify-content: space-around;}
+.specialSellContainer .navigationIcoAd view {width: 150rpx;height: 144rpx;overflow: hidden;display: flex;flex-direction: column;
+align-items: center; justify-content: center;}
+.specialSellContainer .navigationIcoAd view image {width: 80rpx;height: 80rpx;}
+.specialSellContainer .navigationIcoAd view text {font-size: 21rpx;margin: 10rpx auto;color: #999;}
+
+.specialSellContainer .imgAdListWrapper{width: 100%;padding: 0rpx 18rpx;  box-sizing: border-box;margin-top: 20rpx;}
+.specialSellContainer .imgAdListWrapper .imgAdList_Item{width: 100%;}
+
+.specialSellContainer .products{width: 100%;}
+.specialSellContainer .products .productsAd{display:flex;flex-direction: row;justify-content: space-between;width: 100%;
+align-items: center;padding: 0rpx 18rpx;box-sizing: border-box;padding-top: 50rpx;padding-bottom: 20rpx;}
+
+ /* <!-- 活动入口2 --> */
+.specialSellContainer .products .productsAd image{width: 166rpx;}
+.specialSellContainer .products .productsAd text{font-size: 24rpx;color: #ff1d26;}
+
+
+.specialSellContainer .product_good{width: 100%}
+
+
+
+/* 横向轮播 <!-- 今日特卖Top --> */
+.specialSellContainer .products .productsList{margin-left: 16rpx; width:100%;height:283rpx;overflow:hidden;white-space:nowrap;}
+.specialSellContainer .products .productsList .goodItem{width:207rpx;height:283rpx; overflow: hidden;display: inline-block;box-sizing: border-box;padding: 26rpx 26rpx 22rpx 26rpx;position: relative;}
+.specialSellContainer .products .productsList .goodItem .tips{position: absolute;top: 0px;left: 0px;width: 88rpx;height:36.4rpx}
+.specialSellContainer .products .productsList .goodItem image{width: 155.2rpx;height: 155.2rpx;}
+.specialSellContainer .products .productsList .itemWrapper{display: flex;flex-direction: column; height: 100%;}
+.specialSellContainer .products .productsList .itemWrapper .title{font-size: 22rpx; overflow: hidden; white-space: nowrap;
+text-overflow: ellipsis;color: #333;margin-bottom: 10rpx;margin-top: 10rpx;}
+.specialSellContainer .products .productsList .itemWrapper .price{color: #ff1329;font-weight: 700;font-size: 22rpx;text-align: center;}
+
+.swiperContainer{width: 710rpx !important;}
+.swiperContainer .slide-image{width: 100%;height: 95%;border-radius: 20rpx;}
+/* 顶部横向导航栏 */
+
+.recommendTitle{
+  width: 100%;
+}
+
+.tabsWrapper{width: 100%;}
+.isTabsContainetSticky{position: fixed;top: 0px;z-index: 200;}
+.tabsContainer{
+width: 100%;display: flex;
+height: 70rpx;
+transition: 0.2s;
+transition-timing-function:linear;}
+.tabsContainer van-tabs{width: 100% !important;}
+.tabsContainer .van-tabs__wrap{background-color:transparent !important;}
+.tabsContainer .van-hairline--top-bottom:after{border: 0rpx !important;}
+.tabsContainer .van-tab__title{color: #fff;}
+.tabsContainer .van-tabs__line{background: #fff;}
+.tabsContainer .van-tabs--line{padding-top:60rpx;}
+.tabsContainer .van-tabs--line .van-tabs__wrap{height:60rpx;}
+.tabsContainer .van-tab{min-width:0;padding:0 10rpx;font-size:28rpx;line-height:60rpx;color:#7d7e80;text-align:center;cursor:pointer;box-sizing:border-box;-webkit-flex:1;flex:1}
+
+/* 非特卖状态到航栏 */
+.barFontColor .van-tab__title{color: #000 !important;}
+.barFontColor .van-tabs__line{background: #ff273b !important;}

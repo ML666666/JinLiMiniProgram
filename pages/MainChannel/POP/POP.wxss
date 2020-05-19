@@ -1,0 +1,27 @@
+.mask{
+  background:rgba(0,0,0,0.51);
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+}
+.mask .ws{
+  width: 540rpx;
+  /* height: 560rpx;
+  background: #fff; */
+  border-radius: 8rpx;
+  position: relative;
+}
+.mask .x{
+  position: absolute;
+  bottom: -100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60rpx;
+  height: 60rpx;
+}

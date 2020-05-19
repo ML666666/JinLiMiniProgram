@@ -1,0 +1,139 @@
+.secondkill{
+  width:700rpx;
+  height:476rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 0rpx 9rpx 1rpx rgba(0, 0, 0, 0.08);
+  border-radius:8rpx;
+  margin-bottom: 25rpx;
+}
+
+.secondkill .top{
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.secondkill .top .timeWrapper{
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.secondkill .top .timeWrapper .title{
+  font-size:36rpx;
+  font-family:FZCuYuan-M03;
+  font-weight:800;
+  color:rgba(0,0,0,1);
+  padding-left: 24rpx;
+  padding-right: 21rpx;
+}
+.secondkill .top .timeWrapper .time{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.secondkill .top .timeWrapper .time .radius{
+  width:40rpx;
+  height:40rpx;
+  background:rgba(0,0,0,1);
+  border-radius:50%;
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  align-items: center;
+  line-height: 40rpx;
+}
+.secondkill .top .timeWrapper .time .t{
+  background: transparent;
+}
+.secondkill .top .timeWrapper .time .m{
+  font-size:30rpx;
+  font-family:FZCuYuan-M03;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  margin: 0 9rpx
+}
+.secondkill .top  .more{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(140,140,140,1);
+}
+.secondkill .top .more image{
+  width: 15rpx;
+  height: 26rpx;
+  margin-left: 10rpx;
+  margin-right: 26rpx;
+}
+.secondkill .timeBtn{
+  display: flex;
+  background:rgba(236,236,236,1);
+  justify-content: space-around;
+}
+.secondkill .timeBtn .btn{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 9rpx;
+  padding-bottom: 7rpx;
+  box-sizing: border-box;
+  transition: 0.25s;
+}
+.secondkill .timeBtn .btn .time{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+}
+.secondkill .timeBtn .btn  .tips{
+  font-size:20rpx;
+  font-family:PingFang SC;
+  font-weight:500;
+  color:rgba(140,140,140,1);
+}
+.secondkill .timeBtn .active{
+  background:linear-gradient(86deg,rgba(255,0,0,1) 0%,rgba(253,63,144,1) 100%);
+}
+.secondkill .timeBtn .active .time,.secondkill .timeBtn .active .tips{
+  color: #fff;
+}
+.secondkill  .goodWrapper{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 24rpx;
+}
+.secondkill  .goodWrapper .good{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.secondkill  .goodWrapper .good image{
+  width:205rpx;
+  height:205rpx;
+}
+.secondkill  .goodWrapper .good .price{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:800;
+  color:rgba(229,43,34,1);
+  margin-bottom: 5rpx;
+}
+.secondkill  .goodWrapper .good  .subPrice{
+  font-size:24rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  text-decoration:line-through;
+  color:rgba(188,188,188,1);
+}

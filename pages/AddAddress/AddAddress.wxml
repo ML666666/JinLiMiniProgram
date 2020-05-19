@@ -1,0 +1,47 @@
+<!--pages/AddAddress/AddAddress.wxml-->
+<view class="AddAddress" style="min-height:{{windowHeight}}px;">
+
+  <TopBar
+    titleColor="{{'#ffffff'}}"
+    bgColor="{{'linear-gradient(270deg,#fd4068,#f23e35)'}}"
+    ArrowType='{{false}}' 
+    title="{{'收货地址'}}"></TopBar>
+
+    <view wx:if="{{!addressList.length}}" class="nothing" style="height:{{windowHeight}}px">
+      <view bindtap="toAddAddress">
+            <image src="./image/add.png"></image>
+            <view>点击新增收货地址</view>
+      </view>
+    </view>
+
+    <view wx:else class="list">
+      <view class="item" 
+            wx:for="{{addressList}}" 
+            wx:for-index="index" 
+            data-index="{{index}}" 
+            data-AddressId="{{item.AddressId}}"
+            bindtap="tapAddress"
+            >
+            <view class="top">
+              <text style="margin-right:10rpx;">{{item.ShipTo}}</text>
+              <text>{{item.ShipPhone}}</text>
+            </view>
+            <text class="detial">{{item.FullAreaName}}-{{item.Address}}</text>
+            <view class="top s">
+              <view  data-AddressId="{{item.AddressId}}" data-index="{{index}}"   class="isDeafult" catchtap="changeIsDeafult">
+                <van-checkbox checked-color="#ff1d26"  value="{{item.IsDefault}}"></van-checkbox>
+                <text style="margin-left: 20rpx;">设为默认地址</text>
+              </view>
+              <view class="t">
+                <view data-AddressId="{{item.AddressId}}"  catchtap="delete">删除</view>
+                <view data-AddressId="{{item.AddressId}}" catchtap="edit">编辑</view>
+              </view>
+            </view>
+      </view>
+
+      <view class="btn" catchtap="toAddAddress">添加地址</view>
+    </view>
+
+    <dialog />
+
+</view>

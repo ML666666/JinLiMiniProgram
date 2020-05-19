@@ -1,0 +1,48 @@
+<PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  >
+
+  <TopBar
+    ArrowType="{{false}}"
+    titleColor="#fff"
+    bgColor="linear-gradient(270deg,#fd4068,#f23e35)"
+    title='我的余额'></TopBar>
+
+  <view class="WithdrawDeposit">
+
+    <view class="wd_back">
+    <view class="title">提现金额</view>
+      <view class="p">
+        <view class="c">￥</view>
+        <input type="number" bindinput="input" value="{{getBalance}}"></input>
+        <van-icon color="#10aeff" size="42rpx" name="info" />
+      </view>
+      <view class="E">
+        <view class="z">
+          <text style="margin-right:10rpx;">可提现余额</text>
+          <text>￥{{balance}}</text>
+        </view>
+        <view bindtap="getAll" class="x">全部提现</view>
+      </view>
+    </view>
+
+    <view class="title_2">
+      提现方式
+    </view>
+
+    <view wx:for="{{Draw}}" bindtap="selectType" data-type="{{item.type}}" class="item_W">
+      <view><text>{{item.name}}</text><text wx:if="{{item.DrawAccount}}">({{item.DrawAccount}})</text></view>
+      <van-icon size="42rpx" name="success" color="{{selectType==item.type?'#4cd864':'#fff'}}" />
+    </view> 
+
+    <view class="jl">
+      <view bindtap="toJl">提现记录</view>
+    </view>
+    <view bindtap="toGetBalance" class="btn">提现</view>
+    
+  </view>
+
+</PageLoadingWrapper>

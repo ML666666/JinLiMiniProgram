@@ -1,0 +1,51 @@
+.withDrawalRecord{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.withDrawalRecord .countWrapper{
+  padding: 60rpx 0rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.withDrawalRecord .countWrapper .count{
+  text-align: center;
+  font-size: 80rpx;
+  color: red;
+}
+.withDrawalRecord .countWrapper .t{
+  text-align: center;
+  font-size: 28rpx;
+}
+.withDrawalRecord .wrapper{
+  width: 100%;
+}
+.withDrawalRecord .wrapper .titleWrapper{
+  display: flex;
+  width: 100%;
+}
+.withDrawalRecord .wrapper .titleWrapper view{
+  flex: 1;
+  text-align: center;
+  padding:20rpx 0rpx;
+  font-size: 28rpx;
+}
+.withDrawalRecord .item_list{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.withDrawalRecord .item_list view{
+  flex: 1;
+  text-align: center;
+  padding: 40rpx 0;
+  font-size: 28rpx;
+}
+.withDrawalRecord .item_list .t{
+  color: #2c3e50;
+}
+.withDrawalRecord  .item_list .w{
+  color: #2c3e50;
+}

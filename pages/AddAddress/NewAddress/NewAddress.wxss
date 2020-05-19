@@ -1,0 +1,71 @@
+.NewAddress{
+
+}
+.NewAddress .area{
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx;
+  top:0rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 300;
+}
+.NewAddress .mask{
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.itemWrapper{
+  height: 100rpx;
+  width: 100%;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.itemWrapper .label{
+  color: #555;
+  font-size: 28rpx;
+  white-space: nowrap;
+  line-height: 100rpx;
+}
+.itemWrapper input{
+  width: 100%;
+  margin-left: 10rpx;
+  font-size: 30rpx;
+  color: #555;
+  height: 100%;
+}
+.itemWrapper .Arrow{
+  width: 35rpx;
+  height: 35rpx;
+}
+.itemWrapper .icon{
+  width: 45rpx;
+  height: 40rpx;
+}
+.NewAddress .border{
+  border-bottom: 2rpx solid #e4e4e4;
+}
+.NewAddress .btn{
+    width: 650rpx;
+    color: #fff;
+    font-size: 26rpx;
+    border: none;
+    border-radius: 6rpx;
+    background: #ff1d26;
+    padding: 20rpx;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30rpx;
+}
+.isD{
+  padding: 20rpx 24rpx;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+}
+.isD van-checkbox{
+  margin-right: 16rpx;
+}

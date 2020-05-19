@@ -1,0 +1,8 @@
+.dotObj{
+  position: fixed;
+  width: 147rpx;
+  position: fixed;
+  top: 1000rpx;
+  right: 20rpx;
+  z-index: 100;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "searchTop":"/pages/search/component/searchTop/searchTop",
+    "leftBar": "/pages/search/component/leftBar/leftBar",
+    "TopBar": "../../gob/gobComponent/TopBar/TopBar"
+  }
+}

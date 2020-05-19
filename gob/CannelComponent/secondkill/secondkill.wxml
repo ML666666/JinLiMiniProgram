@@ -1,0 +1,52 @@
+<wxs src="../setUrl.wxs" module="tools" />
+<wxs src="./getStatus.wxs" module="ST" />
+
+<view class="secondkill" wx:if="{{active>-1}}">
+  <view class="top">
+    <view class="timeWrapper">
+      <view class="title">限时秒杀</view>
+      
+      <view class="time" wx:if="{{list[active].CountDownTimestamp>0}}">
+        <view class="radius">{{Hours}}</view>
+        <view class="m">:</view>
+        <view class="radius">{{Minutes}}</view>
+        <view class="m">:</view>
+        <view class="radius">{{Seconds}}</view>
+        <view class="m">:</view>
+        <image class="radius t" src="./image/num.gif"></image>
+      </view>
+      
+    </view>
+    <!-- <view class="more">
+      <view>查看更多</view>
+      <image src="./image/arrow.png"></image>
+    </view> -->
+  </view>
+  <view 
+    style="{{list.length==4?'justify-content:space-around':'justify-content:flex-start'}}"
+    class="timeBtn">
+    <view 
+      wx:for="{{list}}" 
+      wx:for-index='index' 
+      data-index="{{index}}" 
+      bindtap="changeTab" 
+      class="btn {{index==active?'active':''}}">
+      <view class="time">{{item.scene}}:00</view>
+      <view class="tips">{{ST.getStatus(timestamp,item.start_time,item.end_time,todayEnd)}}</view>
+    </view>
+  </view>
+  <view 
+    class="goodWrapper" 
+    style="{{list[active].retData.Pro.length==3?'justify-content:space-around':'justify-content:flex-start'}}">
+    <view wx:for="{{list[active].retData.Pro}}" 
+          style="{{list[active].retData.Pro.length<3?'margin-left:15rpx':''}}" 
+          data-status="{{list[active].status}}"
+          data-CountDownTimestamp="{{list[active].CountDownTimestamp}}"
+          bindtap="toGoodDetail" 
+          data-Id="{{list[active].retData.SpecialAreaId}}" class="good">
+      <image src="{{item.ProductImg || item.LargePicture}}"></image>
+      <view class="price">￥{{item.SalePrice}}</view>
+      <view class="subPrice">￥{{item.MarketPrice}}</view>
+    </view>
+  </view>
+</view>

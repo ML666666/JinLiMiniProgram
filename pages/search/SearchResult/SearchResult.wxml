@@ -1,0 +1,68 @@
+<!-- <PageLoadingWrapper
+  bind:refresh="refresh"
+  refreshed="{{refreshed}}"
+  refreshing="{{refreshing}}"
+  isRenderingPage="{{isRenderingPage}}"
+  > -->
+
+
+  <view class='SearchResult'>
+    <TopBar></TopBar>
+    <view class='top'>
+      <view class='searchBar'>
+        <image src='/pages/search/SearchResult/image/search.png'></image>
+        <input type='text' value='{{keyword}}' focus="{{true}}" bindinput="input" bindconfirm="toSearch" name='keyWord'></input>
+      </view>
+      <view wx:if="{{!isSearch}}" bindtap="cancel" class='cancel'>取消</view> 
+      <view wx:if="{{isSearch}}" bindtap='toSearch' class='cancel'>确定</view> 
+    </view>
+
+    <van-transition show="{{ !isSearch }}" name="fade">
+      <view  class='HistoryWrapper'>
+        <view class='top_2'>
+          <text>历史记录</text>
+          <image mode='widthFix' bindtap='Delete' src='/pages/search/SearchResult/image/delet.png'></image>
+        </view>
+        <view class='Wrapper'>
+          <view class='item' bindtap='search' data-keyWord='{{item}}' wx:for="{{SearchKeyWord}}">{{item}}</view>
+        </view>
+      </view>
+    </van-transition>
+
+    <van-transition show="{{ isSearch }}" name="fade">
+      
+      <!-- 搜索关键字联想 -->
+      <view class="SearchKeyItem" 
+            data-qre="{{item.qre}}" 
+            wx:if="{{SearchKeyWordList.length}}"
+            data-keyword="{{item.key}}"
+            bindtap="tapSearchKetWord"
+            wx:for="{{SearchKeyWordList}}">{{item.key}}</view>
+
+      <!-- 搜索结果 -->
+      <view wx:if="{{resultList.length}}" class='resultPage'>
+        <view 
+          wx:for="{{resultList}}" 
+          class='item'
+          data-Id='{{item.Id}}'
+          bindtap="toGoodDetail">
+            <image mode='widthFix' src='{{item.ProductImg}}'></image>
+            <view class='title'>{{item.ProductTitle}}</view>
+            <KDTag price='{{item.ShoppingBi}}'></KDTag>
+            <view class='detail'>
+              <text class='price'>￥{{item.SalePrice}}</text>
+              <text class='sell'>￥{{item.MarketPrice}}</text>
+            </view>
+        </view>
+      </view>
+      
+
+      <l-status-show type="data" show="{{resultList.length==0 && SearchKeyWordList.length==0}}"></l-status-show>
+      
+      <view style='pa' wx:if="{{isOver && resultList.length}}" class='line'>我是有底线的</view>
+    </van-transition>
+
+
+  </view>
+
+<!-- </PageLoadingWrapper> -->

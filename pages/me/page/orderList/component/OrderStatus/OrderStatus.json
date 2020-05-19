@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "dialog":"/miniprogram_npm/lin-ui/dialog/index",
+    "popup":"/miniprogram_npm/lin-ui/popup/index",
+    "loading":"/miniprogram_npm/lin-ui/loading/index"
+  }
+}

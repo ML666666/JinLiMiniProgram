@@ -1,0 +1,34 @@
+<wxs src="../setUrl.wxs" module="tools" />
+
+<view wx:if="{{pageIndex==1}}" class="itemWrapper">
+    <view wx:for="{{secondArray}}"  wx:for-index="index"  data-index="{{index}}" bindtap="click"  class="item">
+          <view class="imageWrapper">
+            <image lazy-load="true" src="{{tools.setUrl(item.pic_url,imgDomain,imgVersion)}}"></image>
+          </view>
+          <view class="text">{{item.name}}</view>
+    </view>
+</view>
+
+<view wx:if="{{pageIndex>1}}" class="swiperWrapper">
+  <swiper bindchange="swiper" class="swiper"> 
+    <block wx:for="{{secondArray}}" wx:for-index="index">
+      <swiper-item>
+        <view class="itemWrapper">
+          <view wx:for="{{secondArray[index]}}" 
+                wx:for-index="TIndex"  
+                class="item">
+                <view class="imageWrapper">
+                  <image lazy-load="true" 
+                  data-TIndex="{{TIndex}}" 
+                  data-index="{{index}}" bindtap="click" src="{{tools.setUrl(item.pic_url,imgDomain,imgVersion)}}"></image>
+                </view>
+                <view class="text">{{item.name}}</view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+ </swiper>
+ <view class="idotWrapper">
+    <view class="idot {{index==activeIndex?'activeIndex':''}}" wx:for="{{secondArray}}" wx:for-index="index" ></view>
+ </view>
+</view>
