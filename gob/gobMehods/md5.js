@@ -208,7 +208,7 @@ function returnMd5(data) {
   for (let v in objKeySort(data)) {
     t += `${v}=${data[v]}&`
   }
-  t = t.substring(0, t.length - 1) + `&key=oUqJa1EmXKbY580Z3-fBTphbSO6U@6bac79e2978b4ad6ba07fce6a9720fc0`;
+  t = t.substring(0, t.length - 1) + `&key=oxxxxx0`;
   return hexMD5(t).toUpperCase()
 }
 //排序的函数
